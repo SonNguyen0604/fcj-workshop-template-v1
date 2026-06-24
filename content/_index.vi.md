@@ -1,40 +1,32 @@
 ---
 title: "Báo cáo thực tập"
-date: 2024-01-01
-weight: 1
-chapter: false
 ---
 
-# Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Văn A
+* **Họ và tên:** Nguyễn Duy Sơn
+  
+* **Số điện thoại:** 0928342484
+  
+* **Email:** nguyenduyson3009@gmail.com
+  
+* **Trường:** Đại học Sài Gòn (SGU)
+  
+* **Chuyên ngành:** Hệ thống thông tin
+  
+* **Lớp:** DCT1223
 
-&emsp; **Số điện thoại:** 0989888999
+* **Công ty thực tập:** Công ty TNHH Amazon Web Services Vietnam
 
-&emsp; **Email:** Anguyenvan@gmail.com
+* **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
 
-&emsp; **Trường:** Đại học Sư phạm Kỹ thuật TP.HCM
+* **Thời gian thực tập:** Từ ngày 22/06/2026 đến ngày 15/08/2026
 
-&emsp; **Ngành:** Công nghệ thông tin
-
-&emsp; **Lớp:** AWS082025
-
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
-
-&emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
-
-&emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
-
-![Ảnh đại diện của bạn](/images/avatar.png)
-
-
-
+---
 ### Nội dung báo cáo
-
-1.  [Worklog](1-Worklog/)
-2.  [Proposal](2-Proposal/)
-3.  [Các bài blogs đã đăng](3-BlogsPosted/)
-4.  [Các events đã tham gia](4-EventParticipated/)
-5.  [Workshop](5-Workshop/)
-6.  [Tự đánh giá](6-Self-evaluation/)
-7.  [Chia sẻ, đóng góp ý kiến](7-Feedback/)
+* [Nhật ký công việc](1-worklog)
+* [Đề xuất dự án](2-proposal)
+* [Bài viết Blogs](3-blogsposted)
+* [Các sự kiện đã tham gia](4-events-participated)
+* [Workshop](5-workshop)
+* [Tự đánh giá](6-self-evaluation)
+* [Chia sẻ và Phản hồi](7-sharing-and-feedback)

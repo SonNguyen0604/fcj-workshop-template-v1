@@ -1,46 +1,37 @@
 ---
-title: "Các events đã tham gia"
-date: 2024-01-01
+title: "Các sự kiện đã tham gia"
+date: 2026-06-22
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong suốt thời gian thực tập tại AWS Vietnam, tôi đã có cơ hội tham gia vào các sự kiện công nghệ và giải đấu cộng đồng vô cùng bổ ích. Mỗi sự kiện mang lại những trải nghiệm thực tế quý báu, giúp tôi củng cố kiến thức kỹ thuật, rèn luyện khả năng chịu áp lực cao và mở rộng góc nhìn về hệ sinh thái Cloud & AI.
 
-> Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
-> 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
-> * Tên sự kiện
-> * Thời gian tổ chức
-> * Địa điểm (nếu có)
-> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ tổ chức, diễn giả, v.v.)
-> * Mô tả ngắn gọn nội dung và hoạt động chính trong sự kiện
-> * Kết quả hoặc giá trị đạt được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
-> * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
+### [Sự kiện 1](4.1-Event1/)  
+&emsp;**Tên sự kiện:** Đấu trường kiến trúc "Cloud Architect"  
 
+&emsp;**Thời gian:** 09:00 - 12:00, Ngày 20/06/2026  
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+&emsp;**Địa điểm:** Trực tiếp tại Văn phòng Amazon Web Services Vietnam (TP. Hồ Chí Minh)  
 
-### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+&emsp;**Vai trò tham gia:** Thành viên đội thi đấu  
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+&emsp;**Mô tả ngắn:** Giải đấu trắc nghiệm kiến trúc đám mây đối kháng loại trực tiếp (Knockout) quy tụ 8 đội tuyển (mỗi đội 5 thành viên) với các cơ chế luật chơi chiến thuật độc đáo (Ngôi sao hy vọng, Rủi ro tối thiểu) nhằm kiểm tra phản xạ nhanh và kiến thức AWS cốt lõi. Đội của tôi thi đấu ở trận thứ 2; dù dừng bước sớm, tôi đã ở lại quan sát sâu cách các đội bạn xử lý các bẫy kỹ thuật cho đến khi loạt trận chung kết khép lại.
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+&emsp;**Kết quả đạt được:** Nhận diện và rà soát được các lỗ hổng kiến thức hạ tầng quan trọng (VPC, EC2, IAM) qua bộ câu hỏi thực tế từ các Mentors, đồng thời rút ra bài học đắt giá về cách phân chia vai trò phối hợp và ra quyết định nhóm nhanh chóng dưới áp lực thời gian.
 
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
+---
 
+### [Sự kiện 2](4.2-Event2/)  
+&emsp;**Tên sự kiện:** *[Sự kiện công nghệ tiếp theo trong kỳ thực tập]*  
 
+&emsp;**Thời gian:** *[Sẽ cập nhật ngay sau khi tham gia]*  
 
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+&emsp;**Địa điểm:** *[Sẽ cập nhật]*  
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+&emsp;**Vai trò tham gia:** Học viên tham dự  
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+&emsp;**Mô tả ngắn:** Nội dung sẽ được cập nhật dựa trên diễn biến và các điểm nhấn thực tế của sự kiện tiếp theo.
 
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
+&emsp;**Kết quả đạt được:** Sẽ cập nhật các bài học cốt lõi và kỹ năng gặt hái được sau sự kiện.

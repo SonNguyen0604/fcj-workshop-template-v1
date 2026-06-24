@@ -1,44 +1,37 @@
 ---
 title: "Events Participated"
-date: 2024-01-01
+date: 2026-06-22
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** for your report, including this warning.
-{{% /notice %}}
-
-> In this section, you should list and describe in detail the events you have participated in during your internship or work experience.  
-> 
-> Each event should be presented in the format Event 1, Event 2, Event 3…, along with the following details:
-> * Event name
-> * Date and time
-> * Location (if applicable)
-> * Your role in the event (attendee, event support, speaker, etc.)
-> * A brief description of the event’s content and main activities
-> * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
-> * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
-
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
+During my internship at AWS Vietnam, I have had the privilege to participate in various tech events and community tournaments. Each event offers a valuable hands-on experience that helps reinforce my technical skills, sharpen my ability to work under high pressure, and broaden my perspective on the Cloud & AI ecosystem.
 
 ### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+&emsp;**Event Name:** "Cloud Architect" Architecture Tournament  
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+&emsp;**Time:** 09:00 - 12:00, June 20, 2026  
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** In-person at Amazon Web Services Vietnam Office (Ho Chi Minh City)  
 
-&emsp;**Role:** Attendee  
+&emsp;**Role in Event:** Tournament Participant  
+
+&emsp;**Description:** A highly competitive cloud architecture trivia tournament featuring 8 registered teams (5 members each) in a single-elimination (Knockout) format with unique tactical mechanics (Star of Hope, Minimum Risk) designed to test rapid reflexes and core AWS knowledge. My team competed in the 2nd match; despite an early exit, I stayed to closely observe how other teams tackled technical pitfalls until the dramatic final matchups concluded.
+
+&emsp;**Outcomes:** Successfully identified and reviewed critical knowledge gaps (VPC, EC2, IAM) through real-world quiz questions provided by mentors, while gaining valuable insights regarding role delegation and swift decision-making within a team under strict time constraints.
 
 ---
 
 ### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+&emsp;**Event Name:** *[Next tech event during the internship program]*  
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+&emsp;**Time:** *[To be updated upon participation]*  
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** *[To be updated]*  
 
-&emsp;**Role:** Attendee  
+&emsp;**Role in Event:** Participant  
+
+&emsp;**Description:** *[To be updated with actual event highlights]*
+
+&emsp;**Outcomes:** *[To be updated with key takeaways and skills acquired]*

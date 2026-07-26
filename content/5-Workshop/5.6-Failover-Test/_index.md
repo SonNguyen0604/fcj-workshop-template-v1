@@ -14,7 +14,7 @@ To validate that the architecture meets High Availability standards, I conducted
 3.  Within 1-2 minutes, the **Auto Scaling Group** recognized a mismatch between the Desired Capacity (2) and the actual healthy count (1). It automatically triggered the Launch Template to provision a brand-new EC2 instance to replace the terminated one.
 
 <img width="1888" height="922" alt="image" src="https://github.com/user-attachments/assets/6f2398dc-1061-42c0-a056-7b8e9e3d95a4" />
-<img width="1889" height="920" alt="image" src="https://github.com/user-attachments/assets/f72fa875-fa9c-48d0-b7c6-6afc91470016" />
+<img width="1893" height="893" alt="image" src="https://github.com/user-attachments/assets/1071fb9f-261c-4a4c-bbe0-32a75df7fda7" />
 `![ASG Failover Log](/images/asg-failover.png)`
 
 **Conclusion:** The system successfully demonstrated its self-healing capabilities exactly as designed in the architecture.

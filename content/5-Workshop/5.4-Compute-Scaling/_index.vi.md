@@ -18,5 +18,5 @@ weight: 4
 *   **Capacity:** Min = 2, Desired = 2, Max = 4. 
 *   **Cơ chế tự phục hồi (Self-healing):** ASG liên tục kiểm tra trạng thái (Health Check) của các EC2 instances. Nếu phát hiện một instance bị lỗi, ASG sẽ tự động hủy (terminate) nó và tạo ra một instance mới từ Launch Template để thay thế.
 
-*(Chèn ảnh chụp màn hình ASG hiển thị Desired Capacity = 2 và Instances đang chạy trên 2 AZs vào đây)*
+<img width="1893" height="868" alt="image" src="https://github.com/user-attachments/assets/49202059-d916-4af0-aa2f-289663fcffc4" />
 `![Auto Scaling Group](/images/asg-setup.png)`

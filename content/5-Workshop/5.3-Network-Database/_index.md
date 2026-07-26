@@ -12,7 +12,7 @@ To achieve High Availability, the network infrastructure is deployed across 2 di
 *   **2 Private Subnets** for application EC2 instances.
 *   **2 Database Subnets** strictly isolated from the Internet for the database tier.
 
-*(Insert your VPC screenshot from AWS Console here)*
+<img width="1466" height="653" alt="{91937960-746A-4A4D-8B29-0753BB689873}" src="https://github.com/user-attachments/assets/5174d97c-0bd5-49fb-bbbf-4237a61a6241" />
 `![VPC Architecture](/images/vpc-setup.png)`
 
 ### 2. Database Provisioning (RDS PostgreSQL Multi-AZ)

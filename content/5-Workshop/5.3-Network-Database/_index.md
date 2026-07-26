@@ -21,5 +21,5 @@ Instead of hosting the database directly on an EC2 instance (which introduces a 
 
 The critical factor for this implementation is enabling **Multi-AZ Deployment**. When activated, AWS automatically provisions and maintains a synchronous standby replica in a different AZ. In the event of an infrastructure failure, Amazon RDS performs an automatic failover to the standby, preventing data loss.
 
-*(Insert your RDS screenshot showing Multi-AZ = Yes here)*
+<img width="1906" height="858" alt="{AFEFA673-FB31-43EA-9B65-4ADD6D86FBC5}" src="https://github.com/user-attachments/assets/cacd926c-1b5f-4c9f-851d-97b438feeda1" />
 `![RDS Multi-AZ](/images/rds-multiaz.png)`

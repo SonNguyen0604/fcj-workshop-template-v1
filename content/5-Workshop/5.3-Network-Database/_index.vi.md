@@ -21,5 +21,5 @@ Thay vì cài đặt Database trực tiếp lên EC2 (dễ gây điểm chết S
 
 Yếu tố cốt lõi để đạt điểm tuyệt đối cho phần này là bật tính năng **Multi-AZ Deployment**. Khi được kích hoạt, AWS sẽ tự động đồng bộ dữ liệu (synchronous replication) sang một bản Standby ở AZ thứ 2. Nếu Database chính gặp sự cố, hệ thống sẽ tự động chuyển hướng (failover) sang bản Standby mà không gây mất dữ liệu.
 
-*(Chèn ảnh chụp màn hình RDS hiển thị trạng thái Multi-AZ = Yes vào đây)*
+<img width="1906" height="858" alt="{AFEFA673-FB31-43EA-9B65-4ADD6D86FBC5}" src="https://github.com/user-attachments/assets/a1520d34-f18e-477d-a8ed-d84177ad84e8" />
 `![RDS Multi-AZ](/images/rds-multiaz.png)`

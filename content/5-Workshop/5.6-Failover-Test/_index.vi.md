@@ -13,7 +13,8 @@ weight: 6
 2.  Ngay lập tức, **Application Load Balancer** phát hiện Target bị lỗi thông qua Health Check và tự động chuyển toàn bộ request của người dùng sang máy ảo còn lại ở AZ thứ 2. Hệ thống vẫn tiếp tục phục vụ mà không bị gián đoạn hoàn toàn (Zero Downtime for active connections if handled gracefully).
 3.  Sau khoảng 1-2 phút, **Auto Scaling Group** phát hiện Desired Capacity (2) không khớp với số lượng thực tế (1). Nó ngay lập tức kích hoạt Launch Template để tạo ra một máy ảo EC2 hoàn toàn mới thay thế cho máy vừa chết.
 
-*(Chèn ảnh chụp màn hình tab "Activity" của Auto Scaling Group cho thấy log hệ thống tự động Terminate máy cũ và Launch máy mới vào đây)*
+<img width="1888" height="922" alt="image" src="https://github.com/user-attachments/assets/3a2eab26-9fa7-4726-a82a-3e06555a220a" />
+<img width="1889" height="920" alt="image" src="https://github.com/user-attachments/assets/5eff9ea4-371e-4571-b7fd-b4a04c7f8b90" />
 `![ASG Failover Log](/images/asg-failover.png)`
 
 **Kết luận:** Hệ thống đã tự động phục hồi thành công (Self-healing) đúng như thiết kế kiến trúc.

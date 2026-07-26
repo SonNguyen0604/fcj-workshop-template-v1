@@ -12,7 +12,7 @@ weight: 3
 *   **2 Private Subnets** dành cho các EC2 instances chạy ứng dụng.
 *   **2 Database Subnets** cách ly hoàn toàn với Internet dành cho cơ sở dữ liệu.
 
-<img width="1466" height="653" alt="{91937960-746A-4A4D-8B29-0753BB689873}" src="https://github.com/user-attachments/assets/db1eb083-f44c-4c03-9dc6-b327471fcb8b" />
+<img width="1892" height="912" alt="{2866C12A-A369-4DFB-9327-93EACD2AF998}" src="https://github.com/user-attachments/assets/6d00ac3d-921d-4c7b-85b1-2f851e93d0b7" />
 `![VPC Architecture](/images/vpc-setup.png)`
 
 ### 2. Khởi tạo Cơ sở dữ liệu (RDS PostgreSQL Multi-AZ)

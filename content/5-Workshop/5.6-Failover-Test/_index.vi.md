@@ -14,7 +14,7 @@ weight: 6
 3.  Sau khoảng 1-2 phút, **Auto Scaling Group** phát hiện Desired Capacity (2) không khớp với số lượng thực tế (1). Nó ngay lập tức kích hoạt Launch Template để tạo ra một máy ảo EC2 hoàn toàn mới thay thế cho máy vừa chết.
 
 <img width="1888" height="922" alt="image" src="https://github.com/user-attachments/assets/3a2eab26-9fa7-4726-a82a-3e06555a220a" />
-<img width="1889" height="920" alt="image" src="https://github.com/user-attachments/assets/5eff9ea4-371e-4571-b7fd-b4a04c7f8b90" />
+<img width="1893" height="893" alt="image" src="https://github.com/user-attachments/assets/1f0c3569-549f-491a-b91e-0502c3456fd0" />
 `![ASG Failover Log](/images/asg-failover.png)`
 
 **Kết luận:** Hệ thống đã tự động phục hồi thành công (Self-healing) đúng như thiết kế kiến trúc.

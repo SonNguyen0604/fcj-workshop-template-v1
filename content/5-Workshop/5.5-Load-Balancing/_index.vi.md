@@ -12,5 +12,6 @@ ALB thực hiện các nhiệm vụ:
 1.  **Phân tải (Traffic Routing):** Chia đều lưu lượng truy cập của người dùng đến các EC2 instances khỏe mạnh (Healthy targets) đang nằm rải rác ở 2 AZs.
 2.  **Health Check:** Liên tục gửi request đến endpoint `/health/ready` của ứng dụng. Nếu một máy ảo trả về lỗi (ví dụ: HTTP 500) hoặc timeout, ALB sẽ ngừng gửi traffic đến máy ảo đó để đảm bảo người dùng không gặp gián đoạn.
 
-*(Chèn ảnh màn hình ALB Target Group hiển thị các Targets đang ở trạng thái "Healthy" vào đây)*
+<img width="1895" height="908" alt="image" src="https://github.com/user-attachments/assets/5a3f549e-81e5-4f54-9a92-aaab04e2d60a" />
+<img width="1900" height="903" alt="image" src="https://github.com/user-attachments/assets/9d9627a9-24c7-4f89-9f25-7997452a32db" />
 `![ALB Target Group](/images/alb-target-group.png)`

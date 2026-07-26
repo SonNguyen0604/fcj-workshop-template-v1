@@ -18,5 +18,5 @@ The core of High Availability at the application tier relies on the **Auto Scali
 *   **Capacity:** Min = 2, Desired = 2, Max = 4.
 *   **Self-healing Mechanism:** The ASG continuously monitors the health of EC2 instances. If an instance becomes unhealthy, the ASG automatically terminates it and launches a replacement instance using the defined Launch Template.
 
-*(Insert your ASG screenshot showing Desired Capacity = 2 and Instances running across 2 AZs here)*
+<img width="1893" height="868" alt="image" src="https://github.com/user-attachments/assets/74407911-1949-41cd-a6df-1c7bc21f00dc" />
 `![Auto Scaling Group](/images/asg-setup.png)`

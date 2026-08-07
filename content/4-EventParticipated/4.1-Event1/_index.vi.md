@@ -1,45 +1,44 @@
 ---
-title: "Event 1: Đấu trường kiến trúc Cloud Architect"
+title: "Event 1 - Event 7: Cloud Architect"
 date: 2026-06-20
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# BÁO CÁO TỔNG KẾT: ĐẤU TRƯỜNG KIẾN TRÚC "CLOUD ARCHITECT"
+# Event 7: Cloud Architect
 
-### 1. Mục tiêu sự kiện (Event Objectives)
-* Kiểm tra và củng cố tư duy thiết kế kiến trúc đám mây, các dịch vụ cốt lõi của AWS và kiến thức nền tảng về Cloud thông qua mô hình trò chơi hóa (Gamification) đối kháng trực tiếp.
-* Thúc đẩy khả năng làm việc nhóm, phân chia vai trò và ra quyết định chiến thuật nhanh chóng dưới áp lực thời gian giới hạn.
-* Tạo không gian giao lưu công nghệ, gắn kết tinh thần học hỏi giữa toàn thể học viên trong chương trình First Cloud AI Journey (FCAJ).
+### Thông tin sự kiện
 
-### 2. Ban tổ chức & Thành phần tham gia (Speakers & Organizers)
-* **Ban tổ chức:** Các Mentors và Đội ngũ Vận hành cốt lõi của chương trình AWS FCAJ.
-* **Thành phần tham gia:** Gồm 8 đội tuyển xuất sắc được ban tổ chức duyệt ngẫu nhiên (Random) và công bố kết quả vào ngày 19/06/2026. Mỗi đội tuyển bắt buộc phải có đủ 5 thành viên để tham gia tranh tài.
+* **Thời gian:** 09:00 - 12:00, 20/06/2026.
+* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, TP. Hồ Chí Minh.
+* **Vai trò:** Thành viên một đội thi 5 người.
 
-### 3. Thể thức và Quy chế thi đấu độc đáo (Tournament Format & Rules)
-Giải đấu áp dụng thể thức loại trực tiếp (Knockout) với những quy định chuyên nghiệp:
-* **Cơ chế tính điểm:** Hai đội đối đầu trực tiếp, lần lượt trả lời bộ câu hỏi phân cấp từ Dễ đến Khó liên quan đến Cloud và kiến trúc hệ thống. Đội có tổng điểm cao hơn sau các lượt đấu sẽ giành quyền đi tiếp.
-* **Cú hích câu hỏi 11 (Tie-breaker):** Trường hợp hai đội hòa điểm sau các câu hỏi chính thức, câu hỏi số 11 sẽ được kích hoạt để phân định thắng thua dựa trên tốc độ phản xạ của đội bấm chuông nhanh và chính xác nhất.
-* **Hệ thống Kỹ năng Chiến thuật đặc biệt (1 lượt sử dụng):**
-  * **Rủi ro tối thiểu:** Sử dụng khi đội không chắc chắn về đáp án. Nếu trả lời sai sẽ không bị trừ điểm, nếu đúng chỉ được nhận 1/2 số điểm của câu hỏi đó.
-  * **Ngôi sao hy vọng:** Sử dụng cho câu hỏi tự tin nhất. Nếu trả lời đúng sẽ được nhân đôi số điểm (x2), ngược lại nếu sai sẽ bị trừ gấp đôi số điểm (x2).
+> Sự kiện diễn ra ngày 20/06/2026, tức trước ngày bắt đầu kỳ thực tập chính thức (22/06/2026) và được xem là hoạt động khởi động của chương trình.
 
-### 4. Diễn biến giải đấu và Trải nghiệm cá nhân (Key Highlights)
+### Thể thức
 
-#### Trận đấu vòng loại thứ 2 và Bài học từ thực tế
-Đội tuyển của tôi tham gia thi đấu ngay ở trận đấu thứ 2 của vòng loại. Dù cả 5 thành viên đã nỗ lực phối hợp, phân chia người đọc đề và chốt đáp án, nhưng trước áp lực thời gian và yêu cầu phản xạ quá nhanh về các thông số hạ tầng Cloud, đội chúng tôi đã không thể giành lợi thế điểm số trước đội bạn và phải dừng bước sớm. 
+Sự kiện được tổ chức theo mô hình đối kháng giữa hai đội. Mỗi đội lần lượt trả lời các câu hỏi theo bộ đề có độ khó tăng dần. Đội có nhiều điểm hơn đi tiếp; nếu bằng điểm sau phần chính, câu hỏi số 11 được dùng để phân định bằng tốc độ trả lời.
 
-#### Quan sát chuyên sâu và Đúc kết bẫy kiến thức
-Sau khi dừng bước, tôi chọn ở lại vị trí quan sát viên để theo dõi toàn diện các trận đấu tiếp theo. Việc này vô cùng có ích khi giúp tôi ghi chép lại được hàng loạt câu hỏi kiến trúc hay, nhận diện được các bẫy kiến thức kinh điển về cấu hình mạng VPC, phân quyền bảo mật IAM và các tham số vận hành mà các đội khác thường xuyên mắc lỗi dưới áp lực tâm lý.
+Nội dung câu hỏi tập trung vào **Cloud và kiến thức thiết kế kiến trúc**.
 
-#### Trận chung kết nghẹt thở và Cái kết mở
-Giải đấu diễn ra kịch tính đến tận những giây cuối cùng khi chỉ còn lại hai đội tuyển xuất sắc nhất. Do sự giằng co điểm số nghẹt thở bằng các chiến thuật sử dụng "Ngôi sao hy vọng" và thời lượng chương trình có hạn, hai đội đã quyết định dời trận chiến phân định ngôi vương tối cao sang buổi Event tiếp theo, tạo nên một kịch bản vô cùng hấp dẫn.
+Hai kỹ năng chiến thuật:
 
-### 5. Bài học rút ra & Khả năng ứng dụng (Key Takeaways & Action Plan)
-* **Tư duy phối hợp nhóm dưới áp lực:** Khi làm việc nhóm trong môi trường thời gian thực, việc phân định rõ ai là người bấm chuông, ai phân tích đề và ai đưa ra quyết định cuối cùng là yếu tố sống còn để tối ưu hóa điểm số.
-* **Ứng dụng vào dự án thực tế:** Thất bại trong phòng thi đấu giúp tôi nhận ra các lỗ hổng kiến thức hạ tầng cốt lõi. Tôi sẽ lập tức rà soát lại lý thuyết mạng VPC và cơ chế High Availability để phục vụ trực tiếp cho giai đoạn thiết kế Đề xuất dự án (Proposal) của nhóm mình.
+* **Rủi ro tối thiểu - 1 lượt:** dùng cho câu chưa chắc chắn; trả lời sai không bị trừ điểm, trả lời đúng nhận 1/2 số điểm.
+* **Ngôi sao hi vọng - 1 lượt:** dùng cho câu tự tin; đúng được x2 điểm, sai bị trừ x2 điểm.
 
-### 6. Minh chứng hình ảnh (Evidence)
-<img src="https://github.com/user-attachments/assets/8b6a4818-4c13-48e1-9023-279ca075874d" alt="Thi đấu Cloud Architect" style="width: 100% !important; max-width: 100% !important; height: auto !important; display: block; margin: 20px auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+### Trải nghiệm cá nhân
 
+Đội của tôi tham gia thi trực tiếp nhưng không đi đến vòng cuối. Điều hữu ích nhất là việc phải trao đổi rất nhanh trong nhóm trước khi chốt đáp án, đặc biệt với các câu hỏi có nhiều phương án kiến trúc gần giống nhau.
+
+Sau phần thi của đội, tôi tiếp tục theo dõi các trận còn lại để xem cách những đội khác phân tích câu hỏi, phân chia người trả lời và sử dụng hai kỹ năng chiến thuật.
+
+### Bài học rút ra
+
+* Kiến thức Cloud cần gắn với ngữ cảnh kiến trúc, không chỉ nhớ tên dịch vụ.
+* Khi làm việc nhóm dưới áp lực thời gian, cần xác định nhanh ai có thế mạnh ở Networking, Compute, Database hay Security.
+* Những câu trả lời sai giúp tôi nhận ra các mảng cần ôn lại trước khi thiết kế project HA.
+
+### Minh chứng
+
+<img src="https://github.com/user-attachments/assets/8b6a4818-4c13-48e1-9023-279ca075874d" alt="Cloud Architect event" style="width: 100% !important; max-width: 100% !important; height: auto !important; display: block; margin: 20px auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">

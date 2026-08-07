@@ -1,37 +1,28 @@
 ---
 title: "Các sự kiện đã tham gia"
-date: 2026-06-22
+date: 2026-06-20
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Trong suốt thời gian thực tập tại AWS Vietnam, tôi đã có cơ hội tham gia vào các sự kiện công nghệ và giải đấu cộng đồng vô cùng bổ ích. Mỗi sự kiện mang lại những trải nghiệm thực tế quý báu, giúp tôi củng cố kiến thức kỹ thuật, rèn luyện khả năng chịu áp lực cao và mở rộng góc nhìn về hệ sinh thái Cloud & AI.
+Trong chương trình FCAJ, tôi tham gia các hoạt động cộng đồng giúp bổ sung góc nhìn ngoài phần project cá nhân: thi kiến thức Cloud, quan sát vòng chung kết và nghe các nhóm khác chia sẻ sản phẩm/kỹ năng thi chứng chỉ AWS.
 
-### [Sự kiện 1](4.1-Event1/)  
-&emsp;**Tên sự kiện:** Đấu trường kiến trúc "Cloud Architect"  
+### [Sự kiện 1 - Event 7: Cloud Architect](4.1-Event1/)
 
-&emsp;**Thời gian:** 09:00 - 12:00, Ngày 20/06/2026  
+* **Thời gian:** 09:00 - 12:00, 20/06/2026.
+* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, TP. Hồ Chí Minh.
+* **Vai trò:** Thành viên đội thi.
+* **Nội dung:** Hai đội đối kháng trả lời bộ câu hỏi Cloud/Architecture từ dễ đến khó; có kỹ năng "Rủi ro tối thiểu" và "Ngôi sao hi vọng".
 
-&emsp;**Địa điểm:** Trực tiếp tại Văn phòng Amazon Web Services Vietnam (TP. Hồ Chí Minh)  
+### [Sự kiện 2 - Cloud Architect: Vòng chung kết](4.2-Event2/)
 
-&emsp;**Vai trò tham gia:** Thành viên đội thi đấu  
+* **Vai trò:** Người tham dự/quan sát sau khi đội đã dừng ở vòng trước.
+* **Nội dung:** Buổi tiếp nối để hoàn thành các trận còn lại và vòng chung kết do Event 1 chưa đủ thời gian.
+* **Cần bổ sung trước khi nộp:** ngày/giờ, địa điểm chính xác và ảnh minh chứng của buổi chung kết.
 
-&emsp;**Mô tả ngắn:** Giải đấu trắc nghiệm kiến trúc đám mây đối kháng loại trực tiếp (Knockout) quy tụ 8 đội tuyển (mỗi đội 5 thành viên) với các cơ chế luật chơi chiến thuật độc đáo (Ngôi sao hy vọng, Rủi ro tối thiểu) nhằm kiểm tra phản xạ nhanh và kiến thức AWS cốt lõi. Đội của tôi thi đấu ở trận thứ 2; dù dừng bước sớm, tôi đã ở lại quan sát sâu cách các đội bạn xử lý các bẫy kỹ thuật cho đến khi loạt trận chung kết khép lại.
+### [Sự kiện 3 - Chia sẻ sản phẩm và kinh nghiệm thi chứng chỉ AWS](4.3-Event3/)
 
-&emsp;**Kết quả đạt được:** Nhận diện và rà soát được các lỗ hổng kiến thức hạ tầng quan trọng (VPC, EC2, IAM) qua bộ câu hỏi thực tế từ các Mentors, đồng thời rút ra bài học đắt giá về cách phân chia vai trò phối hợp và ra quyết định nhóm nhanh chóng dưới áp lực thời gian.
-
----
-
-### [Sự kiện 2](4.2-Event2/)  
-&emsp;**Tên sự kiện:** *[Sự kiện công nghệ tiếp theo trong kỳ thực tập]*  
-
-&emsp;**Thời gian:** *[Sẽ cập nhật ngay sau khi tham gia]*  
-
-&emsp;**Địa điểm:** *[Sẽ cập nhật]*  
-
-&emsp;**Vai trò tham gia:** Học viên tham dự  
-
-&emsp;**Mô tả ngắn:** Nội dung sẽ được cập nhật dựa trên diễn biến và các điểm nhấn thực tế của sự kiện tiếp theo.
-
-&emsp;**Kết quả đạt được:** Sẽ cập nhật các bài học cốt lõi và kỹ năng gặt hái được sau sự kiện.
+* **Vai trò:** Người tham dự.
+* **Nội dung:** Nghe các nhóm lần lượt trình bày sản phẩm đã thực hiện và chia sẻ kinh nghiệm học/thi các chứng chỉ AWS.
+* **Cần bổ sung trước khi nộp:** ngày/giờ, địa điểm chính xác và ảnh/video minh chứng.

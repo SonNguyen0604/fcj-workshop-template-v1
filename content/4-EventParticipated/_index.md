@@ -1,37 +1,28 @@
 ---
 title: "Events Participated"
-date: 2026-06-22
+date: 2026-06-20
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-During my internship at AWS Vietnam, I have had the privilege to participate in various tech events and community tournaments. Each event offers a valuable hands-on experience that helps reinforce my technical skills, sharpen my ability to work under high pressure, and broaden my perspective on the Cloud & AI ecosystem.
+During the FCAJ program, I joined community activities that complemented my individual project: a Cloud knowledge competition, the final session, and a sharing session where other teams presented their products and AWS certification experiences.
 
-### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** "Cloud Architect" Architecture Tournament  
+### [Event 1 - Event 7: Cloud Architect](4.1-Event1/)
 
-&emsp;**Time:** 09:00 - 12:00, June 20, 2026  
+* **Time:** 09:00 - 12:00, 20/06/2026.
+* **Location:** Amazon Web Services Vietnam office, Ho Chi Minh City.
+* **Role:** Team contestant.
+* **Content:** Head-to-head Cloud/Architecture questions from easy to hard, with the "Minimum Risk" and "Hope Star" tactical skills.
 
-&emsp;**Location:** In-person at Amazon Web Services Vietnam Office (Ho Chi Minh City)  
+### [Event 2 - Cloud Architect: Final round](4.2-Event2/)
 
-&emsp;**Role in Event:** Tournament Participant  
+* **Role:** Attendee/observer after my team had already stopped in the earlier round.
+* **Content:** Continuation session to complete the remaining matches and final because Event 1 ran out of time.
+* **Before final submission:** add the exact date/time, location, and evidence image(s).
 
-&emsp;**Description:** A highly competitive cloud architecture trivia tournament featuring 8 registered teams (5 members each) in a single-elimination (Knockout) format with unique tactical mechanics (Star of Hope, Minimum Risk) designed to test rapid reflexes and core AWS knowledge. My team competed in the 2nd match; despite an early exit, I stayed to closely observe how other teams tackled technical pitfalls until the dramatic final matchups concluded.
+### [Event 3 - Project sharing and AWS certification experience sharing](4.3-Event3/)
 
-&emsp;**Outcomes:** Successfully identified and reviewed critical knowledge gaps (VPC, EC2, IAM) through real-world quiz questions provided by mentors, while gaining valuable insights regarding role delegation and swift decision-making within a team under strict time constraints.
-
----
-
-### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** *[Next tech event during the internship program]*  
-
-&emsp;**Time:** *[To be updated upon participation]*  
-
-&emsp;**Location:** *[To be updated]*  
-
-&emsp;**Role in Event:** Participant  
-
-&emsp;**Description:** *[To be updated with actual event highlights]*
-
-&emsp;**Outcomes:** *[To be updated with key takeaways and skills acquired]*
+* **Role:** Attendee.
+* **Content:** Listening to teams present their products and share study/exam experiences for AWS certifications.
+* **Before final submission:** add the exact date/time, location, and photo/video evidence.

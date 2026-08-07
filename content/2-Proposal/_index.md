@@ -6,41 +6,77 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-### 1. Project Overview
-This project focuses on researching and practically implementing an infrastructure capable of fault tolerance and ensuring High Availability (HA) for applications deployed on the AWS cloud platform. This architecture simulates a production-grade environment where the application must run continuously 24/7, even during a complete data center (Availability Zone) outage.
+## 1. Project overview
 
-### 2. Problem Statement
-* **Downtime Risks:** Systems operating on a single server (Single Point of Failure) are highly vulnerable to hardware failure or localized physical disasters at the data center.
-* **Overload Challenges:** When traffic spikes unexpectedly, traditional infrastructure fails to scale automatically, resulting in network congestion and server crashes.
-* **Data Loss:** Databases that lack real-time synchronization across independent zones run a high risk of permanent data loss in the event of a critical failure.
+**Project:** High Availability on AWS using Terraform.
 
-### 3. Project Objectives
-* Successfully deploy a containerized Python demo application using Docker.
-* Design an enterprise-grade AWS VPC partitioned into Public and Private Subnets across Multi-AZs.
-* Configure automated traffic routing using an Application Load Balancer (ALB) and dynamic computing allocation via an Auto Scaling Group (ASG).
-* Deploy an Amazon RDS database with automated backup policies and Multi-AZ replication enabled.
-* Establish a centralized logging, monitoring, and alerting system via Amazon CloudWatch.
+The project builds a 3-tier AWS lab environment to demonstrate how to reduce dependency on a single application server. A Python/Flask application is used as the demo workload; the main focus is cloud infrastructure design, deployment, operations, and failure testing.
 
-### 4. Proposed Solution Architecture
-The system integrates core AWS services to realize the HA model:
-* **Networking:** An AWS VPC spanning 2 independent Availability Zones (AZ-A and AZ-B). Each AZ contains a Public Subnet (hosting the ALB) and a Private Subnet (hosting the application EC2 instances).
-* **Compute:** Amazon EC2 Instances running the Python application, centrally orchestrated by an Auto Scaling Group.
-* **Load Balancing:** An Application Load Balancer (ALB) receives internet traffic and distributes it evenly to EC2 instances across both AZs.
-* **Database:** Amazon RDS (MySQL/PostgreSQL) with Multi-AZ deployment enabled for real-time standby replication.
-* **Storage:** Amazon S3 used for durable object storage of static assets and application attachments.
-* **Management & Monitoring:** AWS IAM roles for implementing the Principle of Least Privilege, and Amazon CloudWatch for metric monitoring.
+## 2. Problem statement
 
-### 5. Compressed 5-Week Timeline
-* **Week 1:** Finalize high-level architecture, initialize the reporting framework, and develop the Python application.
-* **Week 2:** Provision Multi-AZ VPC network, initialize RDS, S3, and containerize the application with Docker.
-* **Week 3:** Configure Application Load Balancer (ALB) and Auto Scaling Group (ASG) to achieve High Availability infrastructure.
-* **Week 4:** Set up Amazon CloudWatch monitoring, conduct Failover testing (simulating an AZ outage), and publish 3 technical blog posts.
-* **Week 5:** Optimize cloud spending, tighten IAM security policies, execute resource Clean-up to avoid unnecessary billing, and conduct final review.
+* A single EC2 instance creates a Single Point of Failure at the application tier.
+* Without a Load Balancer, users depend on individual server addresses.
+* The database tier needs better resilience than a single DB instance.
+* Manual provisioning is error-prone and difficult to reproduce or clean up.
+* The lab must control costs, especially NAT Gateway and RDS Multi-AZ runtime.
 
-### 6. Estimated Budget
-* Operating strictly within the **AWS Free Tier** limits paired with the **$200 Credit** provided by the First Cloud Journey program.
-* Configure AWS Budgets to alert immediately if expenditures exceed a $5 threshold.
+## 3. Objectives and success criteria
 
-### 7. Risks and Mitigations
-* **Risk:** Misconfigured Security Groups or IAM Roles could expose critical resources or private data to the public internet.
-* **Mitigation:** Strictly adhere to the Principle of Least Privilege, isolate EC2 and RDS instances inside Private Subnets, and completely avoid hard-coding any Access Keys into the application codebase.
+* Build a VPC across **two Availability Zones** with public, private, and database subnets.
+* Place the **Application Load Balancer** in public subnets and EC2 in private subnets.
+* Maintain **two EC2 instances** in an Auto Scaling Group with `health_check_type = "ELB"`.
+* Deploy **RDS PostgreSQL Multi-AZ** and S3 Versioning.
+* Manage infrastructure using **Terraform**.
+* Configure a **CloudWatch CPU Alarm** for monitoring.
+* Terminate one EC2 instance and observe ASG replacement behavior.
+* The test is considered successful when the ALB still has a healthy target serving traffic and the ASG restores Desired Capacity.
+
+## 4. Solution architecture
+
+Main services:
+
+* **Amazon VPC:** 10.0.0.0/16 with six subnets across two AZs.
+* **Internet Gateway + NAT Gateway:** Internet-facing ALB; private EC2 outbound through NAT.
+* **Application Load Balancer:** user entry point and target health checking.
+* **Amazon EC2 + Auto Scaling Group:** application tier, min = 2, desired = 2, max = 3.
+* **Amazon RDS PostgreSQL Multi-AZ:** managed database with synchronous standby.
+* **Amazon S3:** Versioning enabled; Flask upload/download integration is outside the current implementation.
+* **Amazon CloudWatch:** CPU monitoring; application logs are still local in `app.log` on EC2.
+
+![HA architecture](/images/5-Workshop/5.1-Workshop-overview/ha-architecture.png)
+
+## 5. Eight-week timeline
+
+| Week | Main work |
+|---|---|
+| 1 | Kick-off, project selection, template fork, AWS Budgets |
+| 2 | Networking, HA theory, architecture diagram, Terraform foundation |
+| 3 | Flask demo, user_data, Security Groups, sensitive variable |
+| 4 | Two-AZ VPC, RDS Multi-AZ, S3 Versioning |
+| 5 | ALB, Target Group, Launch Template, ASG |
+| 6 | CloudWatch Alarm, security and limitation review |
+| 7 | EC2 termination test, self-healing observation, evidence collection |
+| 8 | Workshop, blogs, events, report finalization, and clean-up |
+
+## 6. Budget and cost control
+
+AWS Budgets is configured with a small warning threshold to detect unexpected spending early. It is a **warning threshold**, not a guarantee that the total project cost always remains below that number. NAT Gateway and RDS Multi-AZ can generate charges, so resources are kept only during the required lab windows and cleaned up afterwards.
+
+## 7. Risks and mitigations
+
+| Risk | Mitigation |
+|---|---|
+| Credential/password exposure | Do not hard-code access keys; use CloudShell/CLI profiles and a Terraform sensitive variable |
+| Direct EC2/RDS exposure | Keep EC2/RDS private; SG chain ALB -> App -> DB |
+| Single NAT Gateway as a SPOF | Accepted lab cost trade-off; production should use a per-AZ NAT strategy or another suitable design |
+| Local logs lost with EC2 termination | Documented limitation; future improvement is CloudWatch Agent/centralized logging |
+| No dynamic scaling policy | Current CloudWatch Alarm is monitoring only; Target Tracking is a future improvement |
+| Unexpected cost | AWS Budgets + `terraform destroy` after testing |
+
+## 8. Out of scope in the current version
+
+* No full Workforce business application.
+* Flask does not connect to or query RDS yet.
+* No RDS failover experiment and no measured downtime/error rate.
+* No application-side S3 integration.
+* No centralized application logging or dynamic scaling policy.

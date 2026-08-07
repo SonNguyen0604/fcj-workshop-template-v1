@@ -1,17 +1,78 @@
 ---
-title: "5.5 Load Balancing (ALB)"
-date: 2026-07-27T10:20:00+07:00
+title: "5.5 Application Load Balancer và CloudWatch"
+date: 2026-08-08
 weight: 5
 ---
 
-### Phân phối lưu lượng với Application Load Balancer
+## Bước 1 - Target Group và Health Check
 
-Do ứng dụng được đặt trong Private Subnets và có thể thay đổi số lượng máy ảo liên tục (nhờ Auto Scaling), người dùng không thể truy cập trực tiếp vào các EC2 instances. Do đó, một **Application Load Balancer (ALB)** được đặt ở Public Subnets đóng vai trò là điểm truy cập duy nhất (Single Entry Point).
+```hcl
+resource "aws_lb_target_group" "app_tg" {
+  name     = "workforce-tg-v2"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = module.vpc.vpc_id
 
-ALB thực hiện các nhiệm vụ:
-1.  **Phân tải (Traffic Routing):** Chia đều lưu lượng truy cập của người dùng đến các EC2 instances khỏe mạnh (Healthy targets) đang nằm rải rác ở 2 AZs.
-2.  **Health Check:** Liên tục gửi request đến endpoint `/health/ready` của ứng dụng. Nếu một máy ảo trả về lỗi (ví dụ: HTTP 500) hoặc timeout, ALB sẽ ngừng gửi traffic đến máy ảo đó để đảm bảo người dùng không gặp gián đoạn.
+  health_check {
+    path                = "/"
+    interval            = 30
+    timeout             = 5
+    healthy_threshold   = 2
+    unhealthy_threshold = 2
+  }
+}
+```
 
-<img width="1895" height="908" alt="image" src="https://github.com/user-attachments/assets/5a3f549e-81e5-4f54-9a92-aaab04e2d60a" />
-<img width="1900" height="903" alt="image" src="https://github.com/user-attachments/assets/9d9627a9-24c7-4f89-9f25-7997452a32db" />
-`![ALB Target Group](/images/alb-target-group.png)`
+Health check của project dùng **path `/`**, không phải `/health/ready`.
+
+## Bước 2 - Tạo ALB và Listener
+
+```hcl
+resource "aws_lb" "app_alb" {
+  name               = "workforce-alb-v2"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [aws_security_group.alb_sg.id]
+  subnets            = module.vpc.public_subnets
+}
+
+resource "aws_lb_listener" "front_end" {
+  load_balancer_arn = aws_lb.app_alb.arn
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.app_tg.arn
+  }
+}
+```
+
+ALB là public entry point; EC2 không cần public IP để người dùng truy cập trực tiếp.
+
+<img width="1895" height="908" alt="ALB" src="https://github.com/user-attachments/assets/5a3f549e-81e5-4f54-9a92-aaab04e2d60a" />
+<img width="1900" height="903" alt="Target Group" src="https://github.com/user-attachments/assets/9d9627a9-24c7-4f89-9f25-7997452a32db" />
+
+## Bước 3 - CloudWatch CPU Alarm
+
+```hcl
+resource "aws_cloudwatch_metric_alarm" "cpu_high" {
+  alarm_name          = "workforce-cpu-utilization-high"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  evaluation_periods  = "2"
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/EC2"
+  period              = "120"
+  statistic           = "Average"
+  threshold           = "80"
+  alarm_description   = "Giam sat CPU EC2"
+
+  dimensions = {
+    AutoScalingGroupName = aws_autoscaling_group.app_asg.name
+  }
+}
+```
+
+Alarm này **chỉ dùng để giám sát**. Project hiện chưa có `aws_autoscaling_policy`, nên không mô tả CloudWatch Alarm là cơ chế tự scale theo CPU.
+
+Application log hiện được ghi tại `/home/ec2-user/app.log`; chưa có CloudWatch Agent/centralized logging.

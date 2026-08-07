@@ -1,31 +1,39 @@
 ---
-title: "Blog 3"
-date: 2024-01-01
-weight: 1
+title: "Blog 3 - RDS Multi-AZ and CloudWatch: more resilient data and better observability"
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# RDS Multi-AZ + CloudWatch: two important pieces of an HA architecture
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+High Availability is not only about having multiple EC2 instances. If the data tier still depends on one database or the system has no monitoring, operations become difficult when failures occur.
 
-Key points to know:
+In my project, **Amazon RDS PostgreSQL Multi-AZ** improves database resilience while **Amazon CloudWatch** provides infrastructure monitoring.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+## What problem does RDS Multi-AZ solve?
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+With `multi_az = true`, RDS maintains a synchronous standby in another Availability Zone. AWS manages the failover mechanism and database endpoint.
 
-...Image...
+Important notes:
 
-...Link...
+* Multi-AZ focuses on **high availability**, not read scaling.
+* Applications should use the RDS endpoint instead of hard-coding a database IP address.
+* Failover may cause temporary interruption; it should not be described as guaranteed zero downtime.
 
-...Guide...
+In the current demo, I deployed RDS Multi-AZ but **did not run an RDS failover experiment**, and Flask does not query the database yet. I document this limitation instead of claiming untested results.
+
+## CloudWatch in the project
+
+I configured a CloudWatch Metric Alarm for EC2 `CPUUtilization`. The current alarm is for monitoring only; it is **not connected to a scaling policy**.
+
+Application logs are stored in `app.log` on each EC2 instance. This is a limitation because local logs follow the instance lifecycle. A future improvement is CloudWatch Agent or another centralized logging solution.
+
+## Operations lessons
+
+* HA should be observable: without metrics and logs, recovery behavior is difficult to understand.
+* Monitoring and Auto Scaling are related but not the same thing.
+* Managed services such as RDS Multi-AZ reduce operational work, but failover behavior still needs to be tested and understood.
+* Good technical documentation should clearly separate what was **tested** from what was only **configured**.
+
+**AWS Study Group post URL:** _Update after publishing._

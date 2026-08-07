@@ -1,31 +1,41 @@
 ---
-title: "Workshop"
-date: 2024-01-01
+title: "Workshop - High Availability on AWS using Terraform"
+date: 2026-08-08
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Building a 3-tier High Availability architecture on AWS using Terraform
 
-#### Overview
+This workshop documents my **individual technical project** as a reproducible, step-by-step lab for a basic High Availability environment on AWS.
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+### Goals
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+After completing the workshop, the reader should be able to:
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+* understand a 3-tier architecture across two Availability Zones;
+* deploy VPC, Security Groups, RDS Multi-AZ, S3, ALB, Launch Template, ASG, and CloudWatch using Terraform;
+* access the Flask demo through the ALB;
+* terminate one EC2 instance and observe ASG restoring Desired Capacity;
+* clean up resources to avoid unnecessary cost.
 
-#### Content
+### Actual scope
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+The workshop only claims what was deployed or clearly marks limitations. Flask currently displays the RDS endpoint but does not query the database; the CloudWatch Alarm monitors CPU only; RDS failover/downtime/error rate were not tested; centralized application logging is not implemented.
+
+### Contents
+
+1. [Architecture overview and service selection](5.1-Workshop-overview/)
+2. [Prerequisites and environment setup](5.2-Prerequiste/)
+3. [Network, Security, RDS, and S3](5.3-Network-Database/)
+4. [EC2 Launch Template and Auto Scaling Group](5.4-Compute-Scaling/)
+5. [Application Load Balancer and CloudWatch](5.5-Load-Balancing/)
+6. [Testing and validation](5.6-Failover-Test/)
+7. [Clean-up](5.7-Cleanup/)
+
+### Terraform source
+
+The workshop source is stored under `static/files/terraform/` in the repository. After pushing this update, it can be viewed at:
+
+<https://github.com/SonNguyen0604/fcj-workshop-template-v1/tree/main/static/files/terraform>

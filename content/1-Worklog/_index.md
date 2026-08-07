@@ -1,32 +1,22 @@
 ---
 title: "Worklog"
-date: 2026-06-24
+date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-In this section, I document my comprehensive week-by-week progress throughout the **8-week internship program (From June 22, 2026, to August 15, 2026)** at **AWS Vietnam** as part of the **First Cloud AI Journey (FCAJ)** bootcamp.
+This worklog covers the **8-week internship period from 22/06/2026 to 15/08/2026** according to Saigon University's schedule. The 8-week timeline was accepted by FCAJ/AWS for this internship, so this report uses Week 1 - Week 8 instead of the generic 12-week template.
 
-Each weekly log reflects specific objectives, assigned milestones, technical deployment tasks, and empirical outcomes accomplished in my specialized role as the **Technical Writer & Monitoring Engineer** for our team's **High Availability (HA) Architecture** project.
+The project was initially planned for a five-member team. During implementation, the team structure changed and the final scope was adjusted so that I could continue the project individually, focusing on High Availability infrastructure on AWS using Terraform.
 
----
+### 8-week roadmap
 
-### 📅 WEEKLY WORKLOG ROADMAP
-
-* **[Week 1: System Initialization & Planning](1.1-Week1/)**
-  * *Content:* Formed Team SS3, allocated project roles, initialized the Hugo bilingual portfolio, and configured AWS Budgets to secure the account threshold under $5.00.
-* **[Week 2: Advanced Networking & Core Provisioning](1.2-Week2/)**
-  * *Content:* Explored AWS Networking core principles (VPC, Subnets), launched experimental EC2 instances, and established the CloudWatch baseline metrics framework.
-* **[Week 3: Web Application & Containerization](1.3-Week3/)**
-  * *Content:* Reviewed the core Python web application source code from the developer, conducted QA testing, and assisted in packaging the application via Docker.
-* **[Week 4: Multi-AZ VPC & Amazon RDS Deployment](1.4-Week4/)**
-  * *Content:* Coordinated the deployment of a secure Multi-AZ network topology and provisioned a highly resilient Relational Database layer using Amazon RDS Multi-AZ.
-* **[Week 5: Load Balancer & Auto Scaling Configuration](1.5-Week5/)**
-  * *Content:* Implemented an Application Load Balancer (ALB) and established an Auto Scaling Group (ASG) to dynamically scale compute instances based on traffic loads.
-* **[Week 6: Advanced Observability via AWS CloudWatch](1.6-Week6/)**
-  * *Content:* Personally engineered real-time CloudWatch Dashboards, configured threshold Alarms, and set up automated email notifications for system health monitoring.
-* **[Week 7: Stress Testing & Failover Validation](1.7-Week7/)**
-  * *Content:* Executed load testing tools (Stress Testing) to experimentally validate the self-healing failover mechanisms and elastic auto-scaling features under peak conditions.
-* **[Week 8: Documentation Consolidation & Wrap-up](1.8-Week8/)**
-  * *Content:* Consolidated all source repositories, finalized the technical guidelines, optimized the personal report website, and prepared for final evaluation.
+* **[Week 1 - Kick-off, project selection and cost control](1.1-Week1/)**
+* **[Week 2 - AWS Networking research and architecture design](1.2-Week2/)**
+* **[Week 3 - Flask demo and Terraform foundation](1.3-Week3/)**
+* **[Week 4 - VPC, RDS Multi-AZ and S3 deployment](1.4-Week4/)**
+* **[Week 5 - ALB, Launch Template and Auto Scaling Group](1.5-Week5/)**
+* **[Week 6 - CloudWatch, configuration security and infrastructure review](1.6-Week6/)**
+* **[Week 7 - EC2 failure testing and evidence collection](1.7-Week7/)**
+* **[Week 8 - Workshop/report finalization and clean-up](1.8-Week8/)**

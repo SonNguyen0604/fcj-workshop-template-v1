@@ -1,20 +1,44 @@
 ---
-title: "5.7 Resource Clean-up"
-date: 2026-07-27T10:40:00+07:00
+title: "5.7 Clean-up"
+date: 2026-08-08
 weight: 7
 ---
 
-### Cost Optimization and Resource Teardown
+## Why clean up?
 
-Upon successfully deploying the system, recording the demo, and capturing test evidence, the most crucial step in a hands-on Cloud lab is cleaning up resources to prevent unexpected billing charges (especially for NAT Gateway and RDS Multi-AZ).
+NAT Gateway and RDS Multi-AZ can continue generating cost after the lab is finished. Because the infrastructure is managed by Terraform, clean-up should be performed from the same source/state used for deployment.
 
-Because the entire infrastructure was provisioned using **Infrastructure as Code (IaC) via Terraform**, the teardown process was extremely safe and efficient.
+## Step 1 - Review before deletion
 
-By executing a single command:
+```bash
+terraform plan -destroy
+```
+
+Review the resources that Terraform plans to delete.
+
+## Step 2 - Destroy the infrastructure
+
 ```bash
 terraform destroy --auto-approve
+```
 
-Terraform automatically calculated the dependency graph and dismantled all resources (VPC, ALB, ASG, EC2, RDS) cleanly.
+Expected result: Terraform removes resources tracked by the state and returns `Destroy complete!` when finished.
 
-(Insert your Terminal screenshot showing the successful execution of terraform destroy with the "Destroy complete!" message here)
-![Terraform Destroy](/images/terraform-destroy.png)
+## Step 3 - Verify in AWS Console
+
+After destroy, check:
+
+* EC2/Auto Scaling Group;
+* Application Load Balancer/Target Group;
+* RDS;
+* NAT Gateway and VPC;
+* S3 bucket;
+* CloudWatch Alarm.
+
+If the bucket contains objects/versions or if resources were created manually outside Terraform, they may require separate handling.
+
+## Lab note
+
+`skip_final_snapshot = true` and `force_destroy = true` are used for convenient teardown in a disposable lab. Do not copy these settings to production without an appropriate backup/data-retention policy.
+
+<!-- TODO before submission: add a real terminal screenshot showing Destroy complete! if available. -->

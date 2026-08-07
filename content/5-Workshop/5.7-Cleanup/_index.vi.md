@@ -1,20 +1,44 @@
 ---
-title: "5.7 Clean-up (Dọn dẹp)"
-date: 2026-07-27T10:40:00+07:00
+title: "5.7 Clean-up"
+date: 2026-08-08
 weight: 7
 ---
 
-### Tối ưu chi phí và dọn dẹp tài nguyên
+## Vì sao phải clean-up?
 
-Sau khi hoàn thành việc triển khai, quay video demo và chụp lại các bằng chứng kiểm thử, việc quan trọng nhất đối với một hệ thống Cloud thực hành là dọn dẹp tài nguyên để tránh phát sinh chi phí ngoài ý muốn (đặc biệt là với NAT Gateway và RDS Multi-AZ).
+NAT Gateway và RDS Multi-AZ có thể tiếp tục phát sinh chi phí khi lab đã kết thúc. Vì toàn bộ hạ tầng được quản lý bằng Terraform, clean-up nên được thực hiện từ cùng source/state đã dùng để deploy.
 
-Do toàn bộ hệ thống được tôi xây dựng dưới dạng **Infrastructure as Code (IaC) thông qua Terraform**, việc dọn dẹp diễn ra vô cùng an toàn và nhanh chóng.
+## Bước 1 - Kiểm tra trước khi xóa
 
-Chỉ với một câu lệnh:
+```bash
+terraform plan -destroy
+```
+
+Rà soát danh sách resource dự kiến bị xóa.
+
+## Bước 2 - Xóa hạ tầng
+
 ```bash
 terraform destroy --auto-approve
+```
 
-Terraform đã tự động tính toán dependency graph và tháo gỡ toàn bộ tài nguyên (VPC, ALB, ASG, EC2, RDS) một cách sạch sẽ.
+Kết quả mong đợi là Terraform xóa các resource do state quản lý và trả về `Destroy complete!` khi hoàn tất.
 
-(Chèn ảnh chụp màn hình Terminal chạy thành công lệnh terraform destroy hiển thị dòng chữ "Destroy complete!" vào đây)
-![Terraform Destroy](/images/terraform-destroy.png)
+## Bước 3 - Kiểm tra AWS Console
+
+Sau destroy, kiểm tra lại:
+
+* EC2/Auto Scaling Group;
+* Application Load Balancer/Target Group;
+* RDS;
+* NAT Gateway và VPC;
+* S3 bucket;
+* CloudWatch Alarm.
+
+Nếu bucket có object/version hoặc có resource được tạo thủ công ngoài Terraform, cần xử lý riêng.
+
+## Lưu ý lab
+
+`skip_final_snapshot = true` và `force_destroy = true` được dùng để thuận tiện teardown trong môi trường thực nghiệm. Không nên sao chép nguyên cấu hình này sang production nếu chưa có chính sách backup/data retention phù hợp.
+
+<!-- TODO trước khi nộp: nếu có ảnh terminal hiển thị Destroy complete!, chèn ảnh thật tại đây. -->

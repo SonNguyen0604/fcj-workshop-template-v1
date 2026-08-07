@@ -6,34 +6,22 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-Trong suốt quá trình thực tập và triển khai dự án hạ tầng High Availability tại AWS Vietnam, tôi thực hiện nghiên cứu, đúc kết thực nghiệm và biên soạn các bài viết chuyên sâu. Chuỗi bài viết này nhằm chia sẻ kiến thức cốt lõi, lan tỏa giải pháp công nghệ đám mây và ghi lại các cột mốc trưởng thành kỹ thuật của bản thân.
+Trong kỳ thực tập, tôi chuẩn bị 3 bài chia sẻ kỹ thuật gắn trực tiếp với project High Availability. Nội dung được viết từ những gì tôi đã cấu hình hoặc nghiên cứu trong quá trình làm lab.
 
----
+## [Blog 1 - Quản lý chi phí chủ động với AWS Budgets](3.1-Blog1/)
 
-## [BÀI BLOG 1: Từ Nỗi Sợ "Hóa Đơn Khủng" Đến Vùng An Toàn Cloud: Quản Lý Chi Phí Chủ Động Với AWS Budgets](3.1-Blog1/)
+* **Trạng thái:** Nội dung đã hoàn thiện.
+* **Chủ đề:** Cost control/FinOps cơ bản cho tài khoản lab.
+* **Việc cần cập nhật trước khi nộp:** link bài đã đăng trên AWS Study Group.
 
-* **Trạng thái:** Đã đăng vào Tuần 1 (Ngày 24/06/2026).
-* **Nội dung chính:**
-  * Phân tích bài toán quản trị chi phí đám mây (FinOps) dành cho sinh viên và thực tập sinh khi làm Lab thực tế trên AWS.
-  * Hướng dẫn tư duy thiết lập "vòng an toàn" chủ động thông qua các ngưỡng cảnh báo thông minh (Alert Thresholds) thay vì kiểm tra thủ công bị động.
-  * Minh chứng cấu hình thực tế bộ kiểm soát dòng tiền ở ngưỡng $5.00/tháng, tạo tâm lý tự tin thử nghiệm hạ tầng lớn mà không lo rủi ro tài chính.
+## [Blog 2 - ALB + Auto Scaling Group: xây dựng tầng ứng dụng tự phục hồi](3.2-Blog2/)
 
----
+* **Trạng thái:** Bản nháp đã hoàn thiện, sẵn sàng đăng.
+* **Chủ đề:** Health check, Desired Capacity, self-healing và giới hạn giữa fixed capacity với dynamic scaling.
+* **Việc cần cập nhật:** link bài đăng sau khi post lên AWS Study Group.
 
-## BÀI BLOG 2: Tối Ưu Hóa Hạ Tầng Tự Động Co Giãn Với Application Load Balancer Và Auto Scaling Group
+## [Blog 3 - RDS Multi-AZ + CloudWatch: tăng khả năng phục hồi và quan sát hệ thống](3.3-Blog3/)
 
-* **Trạng thái:** Dự kiến đăng vào Tuần 5 (Giai đoạn cấu hình Load Balancer & Auto Scaling).
-* **Nội dung chính:**
-  * Giới thiệu về Application Load Balancer (ALB): Cơ chế điều phối lưu lượng, kiểm tra sức khỏe hệ thống (Health Checks) và phân phối thông minh request để loại bỏ điểm lỗi đơn lẻ (SPOF).
-  * Sức mạnh của AWS Auto Scaling Group (ASG): Cách thiết lập các chính sách co giãn tự động (Scaling Policies) linh hoạt theo CPU Utilization hoặc Request Count.
-  * Sự kết hợp hoàn hảo giữa ALB và ASG giúp hệ thống đạt năng lực tự chữa lành (Self-healing) và tối ưu hóa chi phí vận hành cho doanh nghiệp.
-
----
-
-## BÀI BLOG 3: Bảo Mật Dữ Liệu Multi-AZ Với Amazon RDS Và Giám Sát Tập Trung Bằng Amazon CloudWatch
-
-* **Trạng thái:** Dự kiến đăng vào Tuần 6 (Giai đoạn tối ưu hóa giám sát nâng cao).
-* **Nội dung chính:**
-  * Giải pháp lưu trữ bền vững với Amazon RDS Multi-AZ: Cơ chế đồng bộ hóa dữ liệu theo thời gian thực (Synchronous Replication) sang vùng dự phòng (Standby DB).
-  * Quy trình tự động chuyển vùng sự cố (Automated Failover) giúp ứng dụng duy trì kết nối liên tục 24/7 ngay cả khi một trung tâm dữ liệu gặp thảm họa vật lý.
-  * Thiết lập Dashboard giám sát toàn diện và cấu hình CloudWatch Alarms để chủ động bắt bệnh hệ thống, tự động gửi mail cảnh báo cho kỹ sư vận hành.
+* **Trạng thái:** Bản nháp đã hoàn thiện, sẵn sàng đăng.
+* **Chủ đề:** Multi-AZ database, monitoring, alarm và các giới hạn observability của bản demo.
+* **Việc cần cập nhật:** link bài đăng sau khi post lên AWS Study Group.

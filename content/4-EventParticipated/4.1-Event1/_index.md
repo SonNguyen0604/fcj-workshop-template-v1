@@ -1,44 +1,44 @@
 ---
-title: "Event 1: Cloud Architect Tournament"
+title: "Event 1 - Event 7: Cloud Architect"
 date: 2026-06-20
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# SUMMARY REPORT: "CLOUD ARCHITECT" ARCHITECTURE TOURNAMENT
+# Event 7: Cloud Architect
 
-### 1. Event Objectives
-* To test and reinforce cloud architectural design thinking, core AWS services, and fundamental cloud computing knowledge through a gamified, head-to-head competitive format.
-* To foster teamwork, role delegation, and rapid strategic decision-making under intense real-time pressure.
-* To create an interactive tech space for networking and collective learning among all interns within the First Cloud AI Journey (FCAJ) program.
+### Event information
 
-### 2. Speakers & Organizers
-* **Organizers:** Core Mentors and Operations Team of the AWS FCAJ program.
-* **Participants:** 8 teams selected randomly by the organizers and announced on June 19, 2026. Each team consisted of exactly 5 members to participate in the tournament.
+* **Time:** 09:00 - 12:00, 20/06/2026.
+* **Location:** Amazon Web Services Vietnam office, Ho Chi Minh City.
+* **Role:** Member of a five-person contestant team.
 
-### 3. Tournament Format & Tactical Rules
-The tournament utilized a direct single-elimination (Knockout) format with unique professional rules:
-* **Scoring Mechanism:** Two teams battled directly by answering a set of questions scaling from Easy to Hard regarding cloud computing and infrastructure design. The team with the higher score advanced to the next round.
-* **Tie-breaker (Question 11):** If a match ended in a draw, a 11th tie-breaker question was triggered, where victory was determined by the fastest and most accurate buzzer response.
-* **Special Strategic Skills (1-time use per team):**
-  * **Minimum Risk:** Activated for uncertain answers. If incorrect, 0 points were deducted; if correct, the team earned 1/2 of the question's standard points.
-  * **Star of Hope:** Activated for the team's most confident answer. If correct, points earned were doubled (x2); if incorrect, the penalty deduction was also doubled (x2).
+> The event took place on 20/06/2026, two days before the official internship start date (22/06/2026), and served as a program kick-off activity.
 
-### 4. Key Highlights & Personal Experience
+### Format
 
-#### Match 2 and Lessons from Early Elimination
-My team competed right in the second match of the qualifiers. Although all 5 members collaborated intensively—delegating question reading, buzzer hitting, and final answering—the high-speed requirement for cloud infrastructure specifications caught us off guard. We failed to secure the scoring advantage and were eliminated early in the round.
+Two teams competed head-to-head and answered question sets with increasing difficulty. The team with the higher score advanced. If both teams were tied, question 11 was used as a speed-based tiebreaker.
 
-#### Deep Observation and Knowledge Catching
-Following our elimination, I remained in the audience as an active observer for the rest of the matches. This allowed me to note down excellent architectural questions and identify common traps regarding VPC networking, IAM security policies, and operational parameters that other teams consistently stumbled on under psychological pressure.
+Questions focused on **Cloud concepts and architecture design knowledge**.
 
-#### Dramatic Postponement of the Finals
-The tournament escalated in tension until only the final two elite teams remained. Due to a breathless point-for-point tug-of-war using strategic skills like the "Star of Hope" and limited session time, both finalists mutually agreed to postpone the ultimate showdown to the next event, leaving an intensely cliffhanging conclusion.
+Two tactical skills were available:
 
-### 5. Key Takeaways & Action Plan
-* **Team Synergy Under Pressure:** Real-time team dynamics require clear structure—designating roles for buzzer control, prompt analyzing, and final decision-making is critical to optimize competitive outcomes.
-* **Project Application:** The elimination highlighted core infrastructure knowledge gaps. I will immediately review VPC topology and High Availability mechanisms to directly support our team's upcoming Project Proposal phase.
+* **Minimum Risk - one use:** for an uncertain answer; a wrong answer did not lose points, while a correct answer earned half points.
+* **Hope Star - one use:** for the most confident answer; a correct answer earned double points, while a wrong answer lost double points.
 
-### 6. Evidence
-<img src="https://github.com/user-attachments/assets/8b6a4818-4c13-48e1-9023-279ca075874d" alt="Thi đấu Cloud Architect" style="width: 100% !important; max-width: 100% !important; height: auto !important; display: block; margin: 20px auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+### Personal experience
+
+My team competed directly but did not reach the final round. The most valuable part was having to discuss quickly before committing to an answer, especially when multiple architecture options looked similar.
+
+After my team's match, I continued observing other teams to learn how they analyzed questions, divided responsibilities, and used the two tactical skills.
+
+### Lessons learned
+
+* Cloud knowledge should be connected to architecture context instead of memorizing service names.
+* Under time pressure, a team should quickly identify who is strongest in Networking, Compute, Database, or Security.
+* Incorrect answers helped me identify topics to review before implementing the HA project.
+
+### Evidence
+
+<img src="https://github.com/user-attachments/assets/8b6a4818-4c13-48e1-9023-279ca075874d" alt="Cloud Architect event" style="width: 100% !important; max-width: 100% !important; height: auto !important; display: block; margin: 20px auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">

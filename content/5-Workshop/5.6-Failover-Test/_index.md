@@ -1,20 +1,68 @@
 ---
-title: "5.6 Failover Testing"
-date: 2026-07-27T10:30:00+07:00
+title: "5.6 Testing and validation"
+date: 2026-08-08
 weight: 6
 ---
 
-### Experimental Scenario: Simulating Server Failure
+## Test 1 - Terraform validation
 
-To validate that the architecture meets High Availability standards, I conducted a proactive failure injection test (basic Chaos Engineering).
+Run:
 
-**Execution Steps:**
-1.  Accessed the EC2 Console, randomly selected 1 running application instance, and executed the **Terminate** command (simulating a hardware failure or OS crash).
-2.  Instantly, the **Application Load Balancer** detected the unhealthy target via its Health Check mechanism and rerouted all user requests to the surviving instance in the second AZ. The system continued to serve traffic without complete disruption.
-3.  Within 1-2 minutes, the **Auto Scaling Group** recognized a mismatch between the Desired Capacity (2) and the actual healthy count (1). It automatically triggered the Launch Template to provision a brand-new EC2 instance to replace the terminated one.
+```bash
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
 
-<img width="1888" height="922" alt="image" src="https://github.com/user-attachments/assets/6f2398dc-1061-42c0-a056-7b8e9e3d95a4" />
-<img width="1893" height="893" alt="image" src="https://github.com/user-attachments/assets/1071fb9f-261c-4a4c-bbe0-32a75df7fda7" />
-`![ASG Failover Log](/images/asg-failover.png)`
+During a final verification, `terraform apply` may return `No changes` when the deployed infrastructure already matches Terraform state/configuration. This proves consistency; it does not mean the screenshot shows a fresh deployment from zero.
 
-**Conclusion:** The system successfully demonstrated its self-healing capabilities exactly as designed in the architecture.
+## Test 2 - Inbound traffic through ALB
+
+Get the DNS name from Terraform output:
+
+```hcl
+output "Link_Truy_Cap_Web" {
+  value = aws_lb.app_alb.dns_name
+}
+```
+
+Open the DNS name in a browser. Expected result:
+
+* HTTP 200 from the Flask demo.
+* The page displays the hostname of the EC2 instance serving the request.
+* The page displays the RDS endpoint configuration injected by Terraform.
+
+Displaying the endpoint **does not mean the application queried RDS**.
+
+## Test 3 - Terminate one EC2 instance
+
+1. Confirm the ASG has `Desired Capacity = 2`.
+2. Terminate one EC2 instance managed by the ASG.
+3. Observe the Target Group. After the target fails the configured health checks, it becomes unhealthy.
+4. Observe Auto Scaling Activity/EC2. When actual capacity drops below Desired Capacity, the ASG launches a replacement.
+5. Wait for the new instance to register in the Target Group and become healthy.
+
+<img width="1888" height="922" alt="EC2 replacement" src="https://github.com/user-attachments/assets/6f2398dc-1061-42c0-a056-7b8e9e3d95a4" />
+<img width="1893" height="893" alt="CloudWatch/ASG evidence" src="https://github.com/user-attachments/assets/1071fb9f-261c-4a4c-bbe0-32a75df7fda7" />
+
+### Observed result
+
+The ASG launched a new instance to restore the configured capacity. The project **did not measure exact downtime, error rate, or recovery time**, so this workshop does not claim guaranteed zero downtime or a fixed recovery duration.
+
+## Test 4 - CloudWatch
+
+Open the CloudWatch Alarm and verify that the alarm exists, CPU metrics are visible, and the state is updated. The current alarm is monitoring-only.
+
+## Summary
+
+| Test | Result |
+|---|---|
+| Terraform state/config validation | Pass |
+| ALB -> Flask demo | Pass |
+| EC2 termination -> ASG replacement | Pass |
+| CloudWatch CPU monitoring | Pass |
+| RDS failover | Not tested |
+| Downtime/error-rate measurement | Not tested |
+| CPU-based dynamic scaling | Not implemented |
+| Centralized application logging | Not implemented |

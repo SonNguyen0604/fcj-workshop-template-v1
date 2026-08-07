@@ -6,41 +6,77 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-### 1. Tổng quan dự án (Project Overview)
-Dự án tập trung vào nghiên cứu và thực nghiệm triển khai một hệ thống hạ tầng có khả năng chống chịu lỗi và đảm bảo tính sẵn sàng cao (High Availability) cho ứng dụng trên nền tảng điện toán đám mây AWS. Hệ thống này mô phỏng một môi trường production thực tế, nơi ứng dụng phải hoạt động liên tục 24/7 ngay cả khi một trung tâm dữ liệu (Availability Zone) gặp sự cố hoàn toàn.
+## 1. Tổng quan dự án
 
-### 2. Vấn đề cần giải quyết (Problem Statement)
-* **Rủi ro gián đoạn:** Các hệ thống chạy trên một máy chủ đơn lẻ (Single Point of Failure) rất dễ bị sập khi phần cứng lỗi hoặc gặp sự cố vật lý tại trung tâm dữ liệu.
-* **Bài toán quá tải:** Khi lượng người dùng truy cập tăng đột biến, hệ thống không thể tự co giãn băng thông và tài nguyên, dẫn đến nghẽn mạng.
-* **Mất mát dữ liệu:** Cơ sở dữ liệu nếu không được đồng bộ theo thời gian thực giữa các phân vùng độc lập sẽ có nguy cơ cao bị mất dữ liệu khi xảy ra sự cố nghiêm trọng.
+**Tên dự án:** Đảm bảo tính sẵn sàng cao (High Availability) trên AWS bằng Terraform.
 
-### 3. Mục tiêu dự án (Objectives)
-* Triển khai thành công ứng dụng demo (Python) chạy trên môi trường container hóa (Docker).
-* Thiết kế mạng VPC chuẩn doanh nghiệp phân tách giữa Public Subnet và Private Subnet trên Multi-AZ.
-* Cấu hình cơ chế tự động cân bằng tải (Application Load Balancer) và tự động co giãn tài nguyên (Auto Scaling Group) theo số lượng request thực tế.
-* Triển khai cơ sở dữ liệu có tính năng sao lưu tự động và đồng bộ Multi-AZ (Amazon RDS).
-* Thiết lập hệ thống giám sát, thu thập log và cảnh báo tự động thông qua Amazon CloudWatch.
+Dự án xây dựng một môi trường 3-Tier dạng lab trên AWS để minh họa cách giảm phụ thuộc vào một máy chủ đơn lẻ. Ứng dụng Python/Flask đóng vai trò workload demo; trọng tâm của project là thiết kế, triển khai, vận hành và kiểm thử hạ tầng cloud.
 
-### 4. Kiến trúc giải pháp dự kiến (Solution Architecture)
-Hệ thống sử dụng các dịch vụ cốt lõi sau của AWS để hiện thực hóa mô hình HA:
-* **Networking:** AWS VPC chia làm 2 Availability Zones độc lập (AZ-A và AZ-B), mỗi AZ bao gồm Public Subnet (chứa Load Balancer) và Private Subnet (chứa EC2 chạy ứng dụng).
-* **Compute:** Amazon EC2 Instances chạy ứng dụng Python được quản lý tập trung bởi Auto Scaling Group.
-* **Load Balancing:** Application Load Balancer (ALB) tiếp nhận traffic từ internet và phân phối đều xuống các EC2 ở cả 2 AZ.
-* **Database:** Amazon RDS (MySQL/PostgreSQL) cấu hình chế độ Multi-AZ nhằm tự động đồng bộ dữ liệu sang AZ dự phòng.
-* **Storage:** Amazon S3 dùng để lưu trữ các tài nguyên tĩnh và các tệp đính kèm của ứng dụng.
-* **Management & Monitoring:** AWS IAM để quản lý quyền truy cập tối thiểu (Least Privilege) và Amazon CloudWatch để giám sát CPU, RAM, Network.
+## 2. Bối cảnh và vấn đề cần giải quyết
 
-### 5. Timeline thực hiện rút gọn (5 tuần)
-* **Tuần 1:** Thiết kế kiến trúc tổng quan, khởi tạo website báo cáo và viết ứng dụng demo bằng Python.
-* **Tuần 2:** Thiết lập môi trường mạng VPC Multi-AZ, khởi tạo RDS, S3 và đóng gói Docker ứng dụng.
-* **Tuần 3:** Cấu hình Application Load Balancer (ALB) và Auto Scaling Group (ASG) để hoàn thiện tính năng High Availability.
-* **Tuần 4:** Thiết lập hệ thống giám sát Amazon CloudWatch, tiến hành bài thử nghiệm Failover (giả lập sự cố sập AZ) và viết 3 bài blog kỹ thuật chia sẻ.
-* **Tuần 5:** Tối ưu hóa chi phí, thắt chặt bảo mật IAM, thực hiện dọn dẹp tài nguyên (Clean-up) để tránh phát sinh chi phí và tổng duyệt báo cáo.
+* Một EC2 đơn lẻ tạo ra Single Point of Failure ở tầng ứng dụng.
+* Nếu không có Load Balancer, người dùng phải phụ thuộc vào địa chỉ của từng máy chủ.
+* Cơ sở dữ liệu cần có cơ chế dự phòng tốt hơn một DB instance đơn lẻ.
+* Việc tạo tài nguyên thủ công dễ sai lệch giữa các lần triển khai và khó clean-up.
+* Môi trường lab cần kiểm soát chi phí để tránh NAT Gateway/RDS chạy ngoài thời gian cần thiết.
 
-### 6. Ngân sách dự kiến (Budget)
-* Sử dụng hoàn toàn trong phạm vi gói tài khoản **AWS Free Tier** kết hợp với khoản **$200 Credit** được chương trình First Cloud Journey cấp.
-* Thiết lập AWS Budgets để cảnh báo ngay lập tức nếu chi phí vượt ngưỡng $5.
+## 3. Mục tiêu và tiêu chí thành công
 
-### 7. Rủi ro và Biện pháp giảm thiểu (Risks & Mitigations)
-* **Rủi ro:** Cấu hình sai Security Group hoặc IAM Role dẫn đến việc lộ lọt dữ liệu hoặc tài nguyên bị hack công khai.
-* **Biện pháp:** Áp dụng nghiêm ngặt nguyên tắc trao quyền tối thiểu (Principle of Least Privilege), không mở public các tài nguyên trong Private Subnet (như EC2 và RDS) và tuyệt đối không hard-code các khóa bảo mật (Access Keys).
+* Tạo VPC trên **2 Availability Zones** với public, private và database subnets.
+* Đặt **Application Load Balancer** ở public subnets và EC2 ở private subnets.
+* Duy trì **2 EC2** trong Auto Scaling Group với `health_check_type = "ELB"`.
+* Triển khai **RDS PostgreSQL Multi-AZ** và S3 Versioning.
+* Dùng **Terraform** để khai báo và quản lý hạ tầng.
+* Cấu hình **CloudWatch CPU Alarm** để giám sát.
+* Kiểm thử bằng cách terminate một EC2 và quan sát ASG tạo instance thay thế.
+* Kết quả được xem là đạt khi ALB vẫn có target phục vụ và ASG khôi phục Desired Capacity sau sự cố EC2.
+
+## 4. Kiến trúc giải pháp
+
+Các dịch vụ chính:
+
+* **Amazon VPC:** mạng 10.0.0.0/16, 6 subnets trên 2 AZ.
+* **Internet Gateway + NAT Gateway:** ALB nhận inbound từ Internet; EC2 private có outbound qua NAT.
+* **Application Load Balancer:** điểm truy cập của người dùng và health check target.
+* **Amazon EC2 + Auto Scaling Group:** tầng ứng dụng, min = 2, desired = 2, max = 3.
+* **Amazon RDS PostgreSQL Multi-AZ:** tầng dữ liệu có standby đồng bộ do AWS quản lý.
+* **Amazon S3:** bucket có Versioning; trong bản demo hiện chưa tích hợp upload/download từ Flask.
+* **Amazon CloudWatch:** giám sát CPU; application log vẫn ở local `app.log` trên EC2.
+
+![Sơ đồ kiến trúc HA](/images/5-Workshop/5.1-Workshop-overview/ha-architecture.png)
+
+## 5. Timeline 8 tuần
+
+| Tuần | Nội dung chính |
+|---|---|
+| 1 | Kick-off, chọn đề tài, fork template, AWS Budgets |
+| 2 | Networking, HA theory, architecture diagram, Terraform foundation |
+| 3 | Flask demo, user_data, Security Groups, sensitive variable |
+| 4 | VPC 2 AZ, RDS Multi-AZ, S3 Versioning |
+| 5 | ALB, Target Group, Launch Template, ASG |
+| 6 | CloudWatch Alarm, rà soát bảo mật và limitation |
+| 7 | Terminate EC2, quan sát self-healing, thu thập evidence |
+| 8 | Hoàn thiện workshop, blogs, events, report và clean-up |
+
+## 6. Ngân sách và kiểm soát chi phí
+
+AWS Budgets được cấu hình với ngưỡng cảnh báo nhỏ để phát hiện sớm chi phí phát sinh. Đây là **ngưỡng cảnh báo**, không phải cam kết tổng chi phí luôn dưới mức đó. NAT Gateway và RDS Multi-AZ có thể phát sinh chi phí, vì vậy tài nguyên chỉ được duy trì trong thời gian thực hành và được clean-up khi không còn cần thiết.
+
+## 7. Rủi ro và biện pháp giảm thiểu
+
+| Rủi ro | Biện pháp |
+|---|---|
+| Lộ credential/password | Không hard-code access key; dùng AWS CloudShell/CLI profile và Terraform sensitive variable |
+| EC2/RDS bị truy cập trực tiếp | EC2/RDS không public; SG theo chuỗi ALB -> App -> DB |
+| Single NAT Gateway là SPOF | Chấp nhận trong lab để giảm chi phí; production nên có NAT theo AZ hoặc kiến trúc phù hợp hơn |
+| Log mất khi EC2 bị terminate | Ghi nhận limitation; hướng phát triển là CloudWatch Agent/centralized logging |
+| Chưa có dynamic scaling | CloudWatch Alarm hiện chỉ monitoring; Target Tracking là hướng mở rộng |
+| Chi phí tăng | AWS Budgets + `terraform destroy` sau khi kiểm thử |
+
+## 8. Phạm vi không thực hiện trong phiên bản hiện tại
+
+* Không xây hệ thống Workforce nghiệp vụ đầy đủ.
+* Flask demo chưa kết nối/query RDS thực tế.
+* Chưa thực nghiệm RDS failover, chưa đo downtime/error rate.
+* Chưa tích hợp S3 từ code ứng dụng.
+* Chưa cấu hình centralized logging hoặc dynamic scaling policy.

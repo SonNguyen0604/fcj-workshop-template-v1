@@ -1,18 +1,34 @@
 ---
-title : "Introduction"
-date : 2024-01-01 
-weight : 1 
-chapter : false
-pre : " <b> 5.1. </b> "
+title: "5.1 Architecture overview"
+date: 2026-08-08
+weight: 1
 ---
 
-#### VPC endpoints
-+ **VPC endpoints** are virtual devices. They are horizontally scaled, redundant, and highly available VPC components. They allow communication between your compute resources and AWS services without imposing availability risks.
-+ Compute resources running in VPC can access  **Amazon S3**  using a Gateway endpoint. PrivateLink interface endpoints can be used by compute resources running in VPC or on-premises.
+## Problem
 
-#### Workshop overview
-In this workshop, you will use two VPCs. 
-+ **"VPC Cloud"** is for cloud resources such as a  **Gateway endpoint** and an EC2 instance to test with. 
-+ **"VPC On-Prem"** simulates an on-premises environment such as a factory or corporate datacenter. An EC2 instance running strongSwan VPN software has been deployed in "VPC On-prem" and automatically configured to establish a Site-to-Site VPN tunnel with AWS Transit Gateway. This VPN simulates connectivity from an on-premises location to the AWS cloud. To minimize costs, only one VPN instance is provisioned to support this workshop. When planning VPN connectivity for your production workloads, AWS recommends using multiple VPN devices for high availability.
+The architecture avoids making the application tier depend on a single EC2 instance. The lab uses two Availability Zones in `ap-southeast-1`.
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+![3-tier High Availability architecture](/images/5-Workshop/5.1-Workshop-overview/ha-architecture.png)
+
+## Request flow
+
+**User -> Internet Gateway -> Application Load Balancer -> EC2 instances in Auto Scaling Group**
+
+The data tier uses **RDS PostgreSQL Multi-AZ**. S3 and CloudWatch provide object storage/monitoring within the current project scope.
+
+## Services and rationale
+
+| Service | Role | Why it is used |
+|---|---|---|
+| VPC + Subnets | Network isolation | Separate public/app/database tiers across two AZs |
+| ALB | Entry point + health check | Route requests only to healthy targets |
+| EC2 | Run the Flask demo | Easy to observe hostname/instance behavior in the lab |
+| Auto Scaling Group | Maintain capacity | Launch a replacement when actual capacity drops |
+| RDS PostgreSQL Multi-AZ | Database tier | Managed DB with synchronous standby in another AZ |
+| S3 + Versioning | Object storage | Separate object storage from the EC2 lifecycle |
+| CloudWatch | Monitoring | Monitor CPU and Alarm state |
+| Terraform | Infrastructure as Code | Reproducible deployment, review, and clean-up |
+
+## Lab trade-off
+
+The project uses `single_nat_gateway = true` to reduce cost. This leaves the NAT Gateway as a shared dependency and is not a fully redundant production NAT design. A production environment should evaluate a per-AZ NAT strategy or another design suitable for the workload.

@@ -1,31 +1,54 @@
 ---
-title: "Blog 2"
-date: 2024-01-01
-weight: 1
+title: "Blog 2 - ALB và Auto Scaling Group: tầng ứng dụng tự phục hồi"
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# ALB + Auto Scaling Group: cách tôi xây tầng ứng dụng tự phục hồi trên AWS
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Một ứng dụng chạy trên đúng một EC2 instance có một vấn đề rất rõ: nếu máy đó lỗi, người dùng mất điểm truy cập. Trong project High Availability, tôi kết hợp **Application Load Balancer (ALB)** và **Auto Scaling Group (ASG)** để giảm phụ thuộc vào một máy chủ duy nhất.
 
-Các điểm chính cần nắm:
+## Vai trò của ALB
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+ALB là điểm truy cập public của ứng dụng. Thay vì người dùng gọi thẳng vào EC2, request đi qua ALB và được chuyển đến các target đang healthy.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Trong lab của tôi:
 
-...Hình ảnh...
+* ALB nằm ở public subnets.
+* EC2 nằm ở private subnets.
+* Target Group dùng HTTP port 80.
+* Health check dùng path `/`.
 
-...Link...
+Điểm quan trọng là ALB **không sửa máy hỏng**. Nó chỉ ngừng route traffic tới target không còn healthy.
 
-...Hướng dẫn...
+## Vai trò của Auto Scaling Group
+
+ASG quản lý số lượng EC2 theo cấu hình:
+
+* `min_size = 2`
+* `desired_capacity = 2`
+* `max_size = 3`
+* `health_check_type = "ELB"`
+
+Khi một instance bị terminate, actual capacity giảm xuống dưới Desired Capacity. ASG sau đó tạo instance mới từ Launch Template để khôi phục số lượng máy chủ mong muốn.
+
+## ALB và ASG bổ sung cho nhau như thế nào?
+
+* **ALB** giải quyết bài toán routing và health check.
+* **ASG** giải quyết bài toán duy trì capacity và thay thế instance.
+* **Launch Template** giúp instance mới có cùng AMI, Security Group và user_data.
+
+Kết quả là tầng ứng dụng có khả năng **self-healing** tốt hơn so với mô hình một EC2 đơn lẻ.
+
+## Một điểm dễ nhầm: self-healing không đồng nghĩa dynamic scaling
+
+Trong bản demo hiện tại, CloudWatch Alarm của tôi chỉ dùng để monitoring CPU. Tôi **chưa cấu hình Target Tracking/Dynamic Scaling policy theo tải**. Vì vậy project chứng minh ASG duy trì Desired Capacity khi instance lỗi, không tuyên bố đã tự scale-out theo CPU.
+
+Nếu mở rộng project, có thể bổ sung Target Tracking với metric như `ASGAverageCPUUtilization` hoặc `ALBRequestCountPerTarget` tùy workload.
+
+## Bài học rút ra
+
+High Availability không đến từ một service duy nhất. ALB, Target Group, Launch Template và ASG phải được cấu hình nhất quán. Quan trọng hơn, khi viết báo cáo cần phân biệt rõ **traffic routing**, **instance replacement** và **dynamic scaling** vì đây là ba cơ chế khác nhau.
+
+**Link bài đăng trên AWS Study Group:** _Cần cập nhật sau khi đăng._

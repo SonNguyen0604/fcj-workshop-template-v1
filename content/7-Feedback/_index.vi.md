@@ -1,44 +1,29 @@
 ---
-title: "Chia sẻ, đóng góp ý kiến"
-date: 2024-01-01
+title: "Chia sẻ và Phản hồi"
+date: 2026-08-08
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
+### Cảm nhận về chương trình
 
-### Đánh giá chung
+Điểm tôi đánh giá cao nhất ở FCAJ là việc học thông qua project và hoạt động thực tế thay vì chỉ đọc lý thuyết. Khi tự dựng VPC, ALB, Auto Scaling, RDS và CloudWatch, tôi hiểu rõ hơn mối quan hệ giữa các service và những trade-off mà tài liệu lý thuyết khó thể hiện hết.
 
-**1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+### Mức độ hài lòng
 
-**2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Tôi hài lòng với cơ hội được tiếp cận môi trường AWS, được xem các nhóm khác trình bày project và được nghe kinh nghiệm học/thi chứng chỉ. Các hoạt động như Cloud Architect cũng giúp việc ôn kiến thức Cloud bớt khô khan hơn.
 
-**3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+### Điểm tôi nghĩ chương trình có thể cải thiện
 
-**4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+* Nên làm rõ rubric và phạm vi deliverable sớm hơn để sinh viên chủ động phân bổ thời gian giữa project kỹ thuật, website, blog và event report.
+* Khi cấu trúc nhóm thay đổi, nên có mốc rà soát scope để tránh một cá nhân tiếp tục mang khối lượng vốn thiết kế cho nhiều người.
+* Có thể bổ sung thêm các buổi ngắn về troubleshooting, cost control và cách thu thập evidence/metric khi demo.
 
-**5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+### Có giới thiệu chương trình cho bạn bè không?
 
-**6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
+**Có, nếu bạn đó thực sự quan tâm Cloud/AWS và chấp nhận phải tự học nhiều.** Chương trình phù hợp với người muốn có trải nghiệm thực hành và xây một sản phẩm có thể demo, nhưng cần chủ động đọc tài liệu và quản lý thời gian tốt.
 
+### Điều tôi muốn tiếp tục sau kỳ thực tập
 
-### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
-
-
-### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+Tôi muốn tiếp tục củng cố nền tảng AWS, đặc biệt là monitoring/observability, database resilience và cách vận hành hệ thống bằng Infrastructure as Code. Tôi cũng muốn cải thiện khả năng trình bày kiến trúc để có thể giải thích rõ hơn lý do chọn từng service và giới hạn của giải pháp.

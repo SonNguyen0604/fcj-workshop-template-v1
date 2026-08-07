@@ -1,33 +1,41 @@
 ---
-title: "Workshop"
-date: 2024-01-01
+title: "Workshop - High Availability trên AWS bằng Terraform"
+date: 2026-08-08
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Xây dựng kiến trúc High Availability 3-Tier trên AWS bằng Terraform
 
+Workshop này trình bày lại **project kỹ thuật cá nhân** theo hướng từng bước để người đọc có thể hiểu và tái triển khai một môi trường lab High Availability cơ bản trên AWS.
 
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+### Mục tiêu
 
-#### Tổng quan
+Sau workshop, người đọc có thể:
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+* hiểu kiến trúc 3-Tier trên 2 Availability Zones;
+* triển khai VPC, Security Groups, RDS Multi-AZ, S3, ALB, Launch Template, ASG và CloudWatch bằng Terraform;
+* truy cập Flask demo qua ALB;
+* thực hiện kịch bản terminate EC2 và quan sát ASG khôi phục Desired Capacity;
+* clean-up tài nguyên để tránh phát sinh chi phí.
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+### Phạm vi thực tế
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+Workshop chỉ mô tả những gì đã triển khai hoặc được ghi rõ là giới hạn. Flask hiện chỉ hiển thị RDS endpoint, chưa query database; CloudWatch Alarm chỉ monitoring CPU; chưa test RDS failover/downtime/error rate; chưa có centralized application logging.
 
-#### Nội dung
+### Nội dung
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+1. [Tổng quan kiến trúc và lựa chọn dịch vụ](5.1-Workshop-overview/)
+2. [Prerequisites và chuẩn bị môi trường](5.2-Prerequiste/)
+3. [Network, Security, RDS và S3](5.3-Network-Database/)
+4. [EC2 Launch Template và Auto Scaling Group](5.4-Compute-Scaling/)
+5. [Application Load Balancer và CloudWatch](5.5-Load-Balancing/)
+6. [Kiểm thử và Validation](5.6-Failover-Test/)
+7. [Clean-up](5.7-Cleanup/)
+
+### Source Terraform
+
+Source dùng trong workshop được đặt tại `static/files/terraform/` của repository. Sau khi push bản cập nhật, có thể xem trực tiếp tại:
+
+<https://github.com/SonNguyen0604/fcj-workshop-template-v1/tree/main/static/files/terraform>

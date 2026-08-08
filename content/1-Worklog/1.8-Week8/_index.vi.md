@@ -13,7 +13,7 @@ pre: " <b> 1.8. </b> "
 ### Công việc đã thực hiện / kế hoạch
 
 * Hoàn thiện website workshop song ngữ theo đúng cấu trúc FCAJ.
-* Hoàn thiện/đăng 3 bài blog kỹ thuật và cập nhật link bài đăng trên AWS Study Group.
+* Hoàn thiện 3 bài blog kỹ thuật trên website và cập nhật ngày tạo nội dung cho từng bài.
 * Bổ sung thông tin 3 sự kiện, self-evaluation, feedback và kiểm tra các link/ảnh trên website.
 * Chạy kiểm tra cuối, thực hiện clean-up các resource không còn cần thiết để tránh phát sinh chi phí.
 

@@ -11,7 +11,7 @@ pre: " <b> 4.1. </b> "
 ### Event information
 
 * **Time:** 09:00 - 12:00, 20/06/2026.
-* **Location:** Amazon Web Services Vietnam office, Ho Chi Minh City.
+* **Location:** Amazon Web Services Vietnam Office, Bitexco Financial Tower, Ho Chi Minh City.
 * **Role:** Member of a five-person competing team.
 
 > This was the program's **7th event**, named **Cloud Architect**. It took place shortly before the official internship period began on 22/06/2026 and served as an onboarding activity for the program.

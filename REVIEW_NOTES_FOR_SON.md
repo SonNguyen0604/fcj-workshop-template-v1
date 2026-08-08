@@ -1,27 +1,18 @@
-# Việc còn cần Sơn tự bổ sung trước khi nộp FCAJ
+# Kiểm tra cuối trước khi nộp
 
-Các nội dung kỹ thuật, Worklog 8 tuần, Proposal, 3 blog draft, 3 event pages, Workshop, Self-evaluation và Feedback đã được chỉnh lại theo project High Availability thực tế.
+Bản này đã được cập nhật theo thông tin thực tế hiện có:
 
-Còn các dữ liệu chỉ bạn mới có thể xác nhận:
+- Kỳ thực tập: 22/06/2026 - 15/08/2026 (8 tuần, đã được FCAJ/AWS chấp thuận).
+- Event 1: Cloud Architect, 20/06/2026.
+- Event 2: Cloud Architect - Vòng chung kết, 11/07/2026, có ảnh minh chứng.
+- Event 3: Chia sẻ project và kinh nghiệm thi chứng chỉ AWS, 25/07/2026, có 2 ảnh minh chứng.
+- Ba blog được ghi theo ngày tạo nội dung; không mô tả là đã đăng công khai.
+- Workshop HA đã thay toàn bộ nội dung workshop mẫu và đồng bộ với Terraform/report thực tế.
 
-1. **Event 2 - Cloud Architect: Vòng chung kết**
-   - Điền ngày/giờ chính xác.
-   - Thêm ảnh/video thực tế.
-   - Địa điểm đã thống nhất với Event 1: Văn phòng Amazon Web Services Vietnam, TP. Hồ Chí Minh.
+Việc còn cần kiểm tra sau ngày 15/08/2026:
 
-2. **Event 3 - Chia sẻ sản phẩm và kinh nghiệm thi chứng chỉ AWS**
-   - Điền ngày/giờ chính xác.
-   - Thêm ảnh/video thực tế.
-   - Địa điểm đã thống nhất với Event 1.
+1. Cập nhật phần **Kết quả Week 8** theo kết quả thực tế sau khi kết thúc kỳ thực tập.
+2. Nếu đã thực hiện `terraform destroy`, có thể bổ sung ảnh `Destroy complete!` vào mục Clean-up.
+3. Xác nhận lần cuối thông tin hành chính trên homepage khớp giấy tờ thực tập chính thức.
 
-3. **3 bài Blog**
-   - Nội dung Blog 1, 2, 3 đã có bản VI/EN.
-   - Sau khi đăng lên AWS Study Group, dán URL bài đăng thật vào cuối từng blog.
-
-4. **Week 8**
-   - Kỳ thực tập kết thúc 15/08/2026. Sau ngày này, cập nhật kết quả Week 8 nếu trạng thái thực tế khác nội dung hiện tại.
-
-5. **Thông tin hành chính**
-   - Chỉ giữ tên công ty/vị trí thực tập trên homepage nếu khớp giấy tờ thực tập chính thức của bạn.
-
-Không cần tự thêm RDS failover, zero downtime, dynamic scaling hoặc centralized logging nếu bạn chưa thực nghiệm thật.
+Không tự thêm RDS failover, zero downtime, dynamic scaling hoặc centralized logging nếu chưa thực nghiệm thật.

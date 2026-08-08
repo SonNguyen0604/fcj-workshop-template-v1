@@ -1,27 +1,29 @@
 ---
-title: "Blog Posts"
+title: "Technical Blog Articles"
 date: 2026-06-24
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-During the internship, I prepared three technical posts directly related to the High Availability project. The content is based on the configurations and lessons learned from my AWS lab work.
+During the internship, I prepared three technical articles directly related to the High Availability project. They are used to organize what I learned and to document the configurations and lessons from my AWS lab work.
+
+> This section records the **content creation date** of each article. The articles are kept on my personal workshop site and are not described as publicly published AWS Study Group posts.
 
 ## [Blog 1 - Proactive cost control with AWS Budgets](3.1-Blog1/)
 
-* **Status:** Content completed.
+* **Created:** 24/06/2026.
 * **Topic:** Basic cost control/FinOps for a lab account.
-* **Before final submission:** add the AWS Study Group post URL.
+* **Project connection:** Cost control before running resources such as NAT Gateway, EC2, ALB, and RDS Multi-AZ.
 
 ## [Blog 2 - ALB + Auto Scaling Group: building a self-healing application tier](3.2-Blog2/)
 
-* **Status:** Draft completed and ready to publish.
-* **Topic:** Health checks, Desired Capacity, self-healing, and the difference between fixed capacity and dynamic scaling.
-* **Before final submission:** add the post URL after publishing to AWS Study Group.
+* **Created:** 08/08/2026.
+* **Topic:** Health checks, Desired Capacity, self-healing, and the difference between capacity maintenance and dynamic scaling.
+* **Project connection:** The actual EC2 termination -> unhealthy target -> ASG replacement flow.
 
 ## [Blog 3 - RDS Multi-AZ + CloudWatch: resilience and observability](3.3-Blog3/)
 
-* **Status:** Draft completed and ready to publish.
-* **Topic:** Multi-AZ database, monitoring, alarms, and observability limitations in the current demo.
-* **Before final submission:** add the post URL after publishing to AWS Study Group.
+* **Created:** 08/08/2026.
+* **Topic:** Multi-AZ database, monitoring, alarms, and observability limitations in the demo.
+* **Project connection:** Separating configured components from untested items such as RDS failover and centralized logging.

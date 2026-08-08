@@ -1,5 +1,6 @@
 ---
 title: "Event 3 - Chia sẻ sản phẩm và kinh nghiệm thi chứng chỉ AWS"
+date: 2026-07-25
 weight: 3
 chapter: false
 pre: " <b> 4.3. </b> "
@@ -9,31 +10,33 @@ pre: " <b> 4.3. </b> "
 
 ### Thông tin sự kiện
 
-* **Thời gian:** _Sẽ cập nhật ngày/giờ chính xác theo lịch chương trình._
-* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, TP. Hồ Chí Minh.
+* **Thời gian:** 25/07/2026.
+* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, Bitexco Financial Tower, TP. Hồ Chí Minh.
 * **Vai trò:** Người tham dự/quan sát.
 
 ### Nội dung chính
 
-Trong buổi chia sẻ, các nhóm trong chương trình lần lượt lên trình bày sản phẩm/project mà họ đã thực hiện. Tôi tham dự với vai trò người nghe và quan sát cách từng nhóm giới thiệu bài toán, sơ đồ kiến trúc, các dịch vụ AWS đã sử dụng, phần demo và kết quả đạt được.
+Tôi tham gia với vai trò người nghe và quan sát. Buổi chia sẻ gồm hai nhóm nội dung chính.
 
-Bên cạnh nội dung project, các thành viên còn chia sẻ kinh nghiệm cá nhân khi học và tham gia các kỳ thi chứng chỉ AWS. Những phần tôi quan tâm nhất là cách họ tổ chức quá trình học, ôn lại các nhóm kiến thức, xử lý câu hỏi tình huống và rút kinh nghiệm sau khi thi.
+**Phần trình bày sản phẩm/project:** các nhóm lần lượt giới thiệu sản phẩm đã thực hiện trong chương trình. Tôi theo dõi cách họ mô tả bài toán, sơ đồ kiến trúc, các dịch vụ AWS đã sử dụng, phần demo, kết quả và những khó khăn gặp phải trong quá trình triển khai.
+
+**Phần chia sẻ kinh nghiệm học và thi chứng chỉ AWS:** những người đã có trải nghiệm thi chia sẻ cách xây dựng lộ trình học, chọn tài liệu, luyện câu hỏi tình huống và những điểm cần chú ý khi chuẩn bị cho kỳ thi.
 
 ### Điều tôi học được
 
-* Một project kỹ thuật dễ thuyết phục hơn khi có **bài toán rõ ràng, sơ đồ kiến trúc, demo và bằng chứng kiểm thử**.
-* Khi trình bày, việc giải thích **vì sao chọn một service** quan trọng không kém việc liệt kê đã sử dụng service nào.
-* Quan sát nhiều nhóm giúp tôi thấy có nhiều cách tổ chức slide, demo và dẫn dắt câu chuyện kỹ thuật khác nhau.
-* Kinh nghiệm thi chứng chỉ từ những người đã trải qua kỳ thi giúp tôi hiểu rằng cần học theo use-case và câu hỏi tình huống, không chỉ học thuộc định nghĩa.
+* Một project Cloud dễ thuyết phục hơn khi trình bày theo chuỗi **bài toán -> kiến trúc -> triển khai -> kiểm thử -> kết quả**.
+* Việc giải thích **vì sao chọn service** quan trọng không kém việc liệt kê service đã dùng.
+* Demo nên đi kèm bằng chứng và giới hạn rõ ràng để người nghe phân biệt phần đã làm với phần dự kiến phát triển.
+* Kinh nghiệm thi chứng chỉ cho thấy nên học theo scenario/use-case và hiểu trade-off giữa các dịch vụ, thay vì chỉ học thuộc định nghĩa.
 
 ### Liên hệ với project cá nhân
 
-Sau buổi chia sẻ, tôi rà soát lại workshop High Availability của mình theo hướng dễ kiểm chứng hơn: mô tả rõ prerequisite, từng bước triển khai, test/validation, giới hạn của bản demo và clean-up. Tôi cũng chú ý hơn đến việc phân biệt phần **đã triển khai**, **đã kiểm thử** và **hướng phát triển** khi trình bày.
-
-### Bài học về trình bày
-
-Với một project Cloud, phần demo chỉ hiệu quả khi người nghe hiểu được luồng request và vai trò của từng thành phần. Vì vậy, tôi ưu tiên trình bày theo thứ tự: bài toán → kiến trúc → triển khai → kiểm thử → giới hạn → hướng phát triển.
+Sau buổi này, tôi điều chỉnh cách trình bày workshop High Availability theo hướng dễ theo dõi và dễ kiểm chứng hơn: có prerequisite, kiến trúc, từng bước triển khai, test/validation, limitation và clean-up. Tôi cũng chú ý hơn đến việc tách rõ phần **đã triển khai**, **đã kiểm thử** và **hướng phát triển**.
 
 ### Minh chứng
 
-Ảnh/video thực tế của buổi chia sẻ sẽ được bổ sung trước khi nộp bản cuối.
+![Event 3 - Project sharing](/images/4-EventParticipated/event3-project-sharing.png)
+
+![Event 3 - FCAJ sharing session](/images/4-EventParticipated/event3-sharing-session.png)
+
+Hai ảnh trên được chụp trong buổi trình bày/chia sẻ ngày 25/07/2026 tại văn phòng AWS Vietnam.

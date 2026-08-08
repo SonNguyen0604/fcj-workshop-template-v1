@@ -1,5 +1,6 @@
 ---
 title: "Blog 2 - ALB and Auto Scaling Group: a self-healing application tier"
+date: 2026-08-08
 weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
@@ -51,4 +52,6 @@ A future version could use Target Tracking with metrics such as `ASGAverageCPUUt
 
 High Availability does not come from one AWS service. ALB, Target Group, Launch Template, and ASG must be configured consistently. It is also important to distinguish **traffic routing**, **instance replacement**, and **dynamic scaling** because they are different mechanisms.
 
-**AWS Study Group post URL:** _Update after publishing._
+---
+
+**Article created:** 08/08/2026

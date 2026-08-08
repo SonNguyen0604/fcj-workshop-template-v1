@@ -1,5 +1,6 @@
 ---
 title: "Event 2 - Cloud Architect: Vòng chung kết"
+date: 2026-07-11
 weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
@@ -9,30 +10,32 @@ pre: " <b> 4.2. </b> "
 
 ### Thông tin sự kiện
 
-* **Thời gian:** _Sẽ cập nhật ngày/giờ chính xác theo lịch chương trình._
-* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, TP. Hồ Chí Minh.
+* **Thời gian:** 09:00 - 12:00, 11/07/2026.
+* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, Bitexco Financial Tower, TP. Hồ Chí Minh.
 * **Vai trò:** Người tham dự/quan sát.
 
 ### Nội dung chính
 
-Buổi này là phần **tiếp nối của Cloud Architect**. Do buổi đầu chưa đủ thời gian để hoàn thành toàn bộ các trận, các đội còn lại tiếp tục thi đấu và đi đến vòng chung kết tại cùng địa điểm tổ chức.
+Đây là buổi **tiếp nối của Cloud Architect**. Do buổi thi đầu chưa đủ thời gian để hoàn thành toàn bộ các trận, các đội còn lại tiếp tục thi đấu và đi đến vòng chung kết.
 
-Sau khi đội của mình dừng ở vòng trước, tôi tham gia buổi tiếp theo với vai trò người xem. Tôi tập trung quan sát cách các đội còn lại xử lý câu hỏi Cloud và Architecture trong điều kiện áp lực thời gian, thay vì chỉ theo dõi đáp án đúng hay sai.
+Tôi tham gia buổi này với vai trò người xem. Thay vì chịu áp lực phải trả lời, tôi có thể tập trung quan sát cách các đội phân tích câu hỏi, thảo luận nhanh và đưa ra quyết định kiến trúc trong thời gian giới hạn.
 
-Một số điểm tôi chú ý trong quá trình quan sát:
+Những điểm tôi chú ý nhiều nhất:
 
-* cách các thành viên phân chia người trả lời theo thế mạnh kỹ thuật;
-* cách đội trao đổi nhanh khi có nhiều phương án kiến trúc gần giống nhau;
+* cách các thành viên phân chia người trả lời theo thế mạnh về Networking, Compute, Database hoặc Security;
+* cách loại trừ các phương án gần giống nhau dựa trên yêu cầu của bài toán;
 * cách cân nhắc độ chắc chắn trước khi sử dụng **Rủi ro tối thiểu** hoặc **Ngôi sao hi vọng**;
-* cách liên hệ yêu cầu của câu hỏi với reliability, security, cost và khả năng vận hành của giải pháp.
+* cách liên hệ một lựa chọn kiến trúc với reliability, security, cost và khả năng vận hành.
 
 ### Bài học rút ra
 
-* Một câu hỏi kiến trúc AWS thường không chỉ có yếu tố kỹ thuật thuần túy mà còn liên quan đến trade-off giữa độ tin cậy, chi phí và độ phức tạp vận hành.
-* Quan sát các đội mạnh giúp tôi học được cách loại trừ phương án và đưa ra quyết định nhanh hơn.
-* Việc nghe lập luận của người khác giúp tôi rà soát lại cách giải thích các lựa chọn ALB, Auto Scaling, RDS Multi-AZ và CloudWatch trong project cá nhân.
-* Vai trò người xem vẫn mang lại giá trị vì tôi có thể tập trung vào quá trình suy luận thay vì áp lực thi đấu.
+* Kiến thức AWS cần được đặt trong use-case thay vì học riêng lẻ từng service.
+* Một quyết định kiến trúc thường là sự cân bằng giữa độ tin cậy, chi phí và độ phức tạp vận hành.
+* Quan sát phần tranh luận của các đội giúp tôi học cách giải thích lựa chọn kỹ thuật ngắn gọn hơn.
+* Những nội dung về ALB, Auto Scaling, RDS Multi-AZ và CloudWatch trong event giúp tôi liên hệ trực tiếp với project High Availability cá nhân.
 
 ### Minh chứng
 
-Ảnh/video thực tế của buổi chung kết sẽ được bổ sung trước khi nộp bản cuối.
+![Cloud Architect - Vòng chung kết](/images/4-EventParticipated/event2-cloud-architect-final.png)
+
+Ảnh tại sự kiện thể hiện **Cloud Architect - Trận chung kết**, tổ chức ngày 11/07/2026 tại Bitexco Financial Tower.

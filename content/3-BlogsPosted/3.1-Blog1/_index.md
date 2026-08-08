@@ -39,4 +39,6 @@ AWS Budgets does not replace Pricing documentation or Billing reviews. It works 
 
 **Project connection:** I used AWS Budgets to control costs while building the Terraform-based HA lab.
 
-**AWS Study Group post URL:** _Update after publishing/verifying the post URL._
+---
+
+**Article created:** 24/06/2026

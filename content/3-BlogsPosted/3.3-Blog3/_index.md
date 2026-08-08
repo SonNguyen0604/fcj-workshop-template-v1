@@ -1,5 +1,6 @@
 ---
 title: "Blog 3 - RDS Multi-AZ and CloudWatch: more resilient data and better observability"
+date: 2026-08-08
 weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
@@ -36,4 +37,6 @@ Application logs are stored in `app.log` on each EC2 instance. This is a limitat
 * Managed services such as RDS Multi-AZ reduce operational work, but failover behavior still needs to be tested and understood.
 * Good technical documentation should clearly separate what was **tested** from what was only **configured**.
 
-**AWS Study Group post URL:** _Update after publishing._
+---
+
+**Article created:** 08/08/2026

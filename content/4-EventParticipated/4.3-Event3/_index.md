@@ -1,39 +1,42 @@
 ---
-title: "Event 3 - Project sharing and AWS certification experience sharing"
+title: "Event 3 - Project Sharing and AWS Certification Experience"
+date: 2026-07-25
 weight: 3
 chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Project sharing and AWS certification experience sharing
+# Project Sharing and AWS Certification Experience
 
 ### Event information
 
-* **Time:** _The exact date/time will be updated according to the program schedule._
-* **Location:** Amazon Web Services Vietnam office, Ho Chi Minh City.
+* **Time:** 25/07/2026.
+* **Location:** Amazon Web Services Vietnam Office, Bitexco Financial Tower, Ho Chi Minh City.
 * **Role:** Attendee/observer.
 
 ### Main content
 
-During this sharing session, teams in the program presented the products/projects they had built. I attended as an observer and focused on how each team introduced its problem, architecture diagram, AWS services, demo, and achieved results.
+I participated as an audience member and observer. The session contained two main groups of content.
 
-In addition to project presentations, participants shared personal experiences from studying for and taking AWS certification exams. I was particularly interested in how they organized their study process, reviewed knowledge domains, handled scenario-based questions, and learned from the actual exam experience.
+**Project/product presentations:** different teams took turns presenting the products they had built during the program. I focused on how they explained the problem, architecture diagram, AWS services, demo, results, and the difficulties they encountered during implementation.
+
+**AWS certification experience sharing:** participants with exam experience discussed how they built a study roadmap, selected learning resources, practiced scenario-based questions, and prepared for the actual certification exam.
 
 ### What I learned
 
-* A technical project is easier to understand when it has a **clear problem statement, architecture diagram, demo, and test evidence**.
+* A Cloud project is easier to understand when presented as **problem -> architecture -> implementation -> testing -> results**.
 * Explaining **why a service was selected** is as important as listing which services were used.
-* Watching multiple teams showed me different ways to structure presentations, demos, and technical storytelling.
-* Certification experiences reinforced that service use cases and scenario reasoning matter more than memorizing definitions alone.
+* A demo should be supported by evidence and clear limitations so the audience can distinguish completed work from future improvements.
+* Certification preparation is more effective when learning through scenarios/use cases and understanding service trade-offs instead of memorizing definitions only.
 
 ### Connection to my project
 
-After the session, I reviewed my High Availability workshop with a stronger focus on reproducibility: clear prerequisites, deployment steps, test/validation, demo limitations, and clean-up. I also became more careful about separating what was **configured**, what was **actually tested**, and what remains a **future improvement**.
-
-### Presentation takeaway
-
-For a Cloud project, a demo is only effective when the audience understands the request flow and the role of each component. I therefore prefer the sequence: problem → architecture → deployment → testing → limitations → future improvements.
+After this session, I organized my High Availability workshop in a more reproducible structure: prerequisites, architecture, step-by-step deployment, test/validation, limitations, and clean-up. I also became more careful about separating what was **implemented**, what was **tested**, and what remains a **future improvement**.
 
 ### Evidence
 
-Actual photo/video evidence from the sharing session will be added before final submission.
+![Event 3 - Project sharing](/images/4-EventParticipated/event3-project-sharing.png)
+
+![Event 3 - FCAJ sharing session](/images/4-EventParticipated/event3-sharing-session.png)
+
+The photos above were taken during the presentation/sharing session on 25/07/2026 at the AWS Vietnam office.

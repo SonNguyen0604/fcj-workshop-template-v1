@@ -1,5 +1,6 @@
 ---
 title: "Blog 3 - RDS Multi-AZ và CloudWatch: dữ liệu bền vững hơn, hệ thống dễ quan sát hơn"
+date: 2026-08-08
 weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
@@ -36,4 +37,6 @@ Application log được ghi vào `app.log` trên từng EC2. Đây là một li
 * Managed service như RDS Multi-AZ giảm phần việc vận hành, nhưng vẫn cần kiểm thử và hiểu hành vi failover.
 * Báo cáo kỹ thuật tốt nên nói rõ phần **đã test** và phần **chỉ mới cấu hình**.
 
-**Link bài đăng trên AWS Study Group:** _Cần cập nhật sau khi đăng._
+---
+
+**Ngày tạo bài:** 08/08/2026

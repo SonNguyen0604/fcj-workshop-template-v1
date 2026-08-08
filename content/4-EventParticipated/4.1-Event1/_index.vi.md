@@ -11,7 +11,7 @@ pre: " <b> 4.1. </b> "
 ### Thông tin sự kiện
 
 * **Thời gian:** 09:00 - 12:00, 20/06/2026.
-* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, TP. Hồ Chí Minh.
+* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, Bitexco Financial Tower, TP. Hồ Chí Minh.
 * **Vai trò:** Thành viên một đội thi 5 người.
 
 > Đây là **Event thứ 7 của chương trình**, mang tên **Cloud Architect**. Sự kiện diễn ra trước ngày bắt đầu kỳ thực tập chính thức (22/06/2026) và được xem là một hoạt động khởi động của chương trình.

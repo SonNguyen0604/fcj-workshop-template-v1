@@ -13,7 +13,7 @@ pre: " <b> 1.8. </b> "
 ### Work completed / planned
 
 * Finalize the bilingual workshop website according to FCAJ structure.
-* Finalize/publish three technical blog posts and add their AWS Study Group URLs.
+* Finalize three technical blog articles on the website and record the creation date for each article.
 * Complete the three event reports, self-evaluation, feedback, and final link/image checks.
 * Run the final verification and clean up AWS resources that are no longer required.
 

@@ -1,38 +1,41 @@
 ---
-title: "Event 2 - Cloud Architect: Final round"
+title: "Event 2 - Cloud Architect: Final Round"
+date: 2026-07-11
 weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Cloud Architect - Final round
+# Cloud Architect - Final Round
 
 ### Event information
 
-* **Time:** _The exact date/time will be updated according to the program schedule._
-* **Location:** Amazon Web Services Vietnam office, Ho Chi Minh City.
+* **Time:** 09:00 - 12:00, 11/07/2026.
+* **Location:** Amazon Web Services Vietnam Office, Bitexco Financial Tower, Ho Chi Minh City.
 * **Role:** Attendee/observer.
 
 ### Main content
 
-This session was the **continuation of Cloud Architect**. Because the first session did not have enough time to complete all matches, the remaining teams continued toward the final round at the same venue.
+This session was a **continuation of Cloud Architect**. Because the first competition session did not have enough time to finish every match, the remaining teams continued until the final round.
 
-After my team had stopped in an earlier round, I attended the follow-up session as an observer. I focused on how the remaining teams handled Cloud and Architecture questions under time pressure rather than simply tracking correct and incorrect answers.
+I attended this session as an observer. Without the pressure of answering questions myself, I could focus on how teams analyzed scenarios, discussed alternatives quickly, and made architecture decisions under time constraints.
 
-I paid particular attention to:
+The points I paid most attention to were:
 
-* how team members divided responsibility by technical strength;
-* how teams discussed quickly when several architecture options looked similar;
-* how they evaluated confidence before using the **Minimum Risk** or **Hope Star** skills;
-* how they connected question requirements to reliability, security, cost, and operational considerations.
+* how team members divided questions based on strengths in Networking, Compute, Database, or Security;
+* how similar architecture options were eliminated based on the scenario requirements;
+* how teams evaluated confidence before using the **Minimum Risk** or **Hope Star** tactical skill;
+* how architecture choices were connected to reliability, security, cost, and operational complexity.
 
 ### Lessons learned
 
-* AWS architecture questions often involve trade-offs between reliability, cost, and operational complexity, not only technical correctness.
-* Observing stronger teams helped me learn faster elimination and decision-making techniques.
-* Listening to other teams' reasoning helped me review how I explain ALB, Auto Scaling, RDS Multi-AZ, and CloudWatch in my own project.
-* Being an observer was still valuable because I could focus on the reasoning process without competition pressure.
+* AWS knowledge is more useful when understood through use cases rather than isolated services.
+* Architecture decisions usually involve trade-offs among reliability, cost, and operational complexity.
+* Observing team discussions helped me learn how to explain technical choices more concisely.
+* Topics around ALB, Auto Scaling, RDS Multi-AZ, and CloudWatch were directly relevant to my individual High Availability project.
 
 ### Evidence
 
-Actual photo/video evidence from the final session will be added before final submission.
+![Cloud Architect - Final Round](/images/4-EventParticipated/event2-cloud-architect-final.png)
+
+The event photo shows the **Cloud Architect Final Round** held on 11/07/2026 at Bitexco Financial Tower.

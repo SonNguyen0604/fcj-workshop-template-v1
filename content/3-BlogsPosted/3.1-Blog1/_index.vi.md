@@ -39,4 +39,6 @@ AWS Budgets không thay thế việc đọc Pricing hay kiểm tra Billing. Nó 
 
 **Liên hệ project:** Tôi sử dụng AWS Budgets để kiểm soát chi phí trong quá trình dựng kiến trúc HA bằng Terraform.
 
-**Link bài đăng trên AWS Study Group:** _Cần cập nhật sau khi đăng/đối chiếu URL bài đã đăng._
+---
+
+**Ngày tạo bài:** 24/06/2026

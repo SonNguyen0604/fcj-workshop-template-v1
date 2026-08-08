@@ -1,5 +1,6 @@
 ---
 title: "Blog 2 - ALB và Auto Scaling Group: tầng ứng dụng tự phục hồi"
+date: 2026-08-08
 weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
@@ -51,4 +52,6 @@ Nếu mở rộng project, có thể bổ sung Target Tracking với metric như
 
 High Availability không đến từ một service duy nhất. ALB, Target Group, Launch Template và ASG phải được cấu hình nhất quán. Quan trọng hơn, khi viết báo cáo cần phân biệt rõ **traffic routing**, **instance replacement** và **dynamic scaling** vì đây là ba cơ chế khác nhau.
 
-**Link bài đăng trên AWS Study Group:** _Cần cập nhật sau khi đăng._
+---
+
+**Ngày tạo bài:** 08/08/2026

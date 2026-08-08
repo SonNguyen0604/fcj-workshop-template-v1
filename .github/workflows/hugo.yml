@@ -22,40 +22,8 @@ jobs:
           hugo-version: "0.134.3"
           extended: true
 
-      - name: Verify required source assets
-        run: |
-          set -e
-          test -f static/images/profile-nguyen-duy-son.png
-          test -f static/images/4-EventParticipated/event2-cloud-architect-final.png
-          test -f static/images/4-EventParticipated/event3-project-sharing.png
-          test -f static/images/4-EventParticipated/event3-sharing-session.png
-          test -f static/images/5-Workshop/5.1-workshop-overview/ha-architecture.png
-          test -f static/images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png
-          test -f static/images/5-Workshop/5.6-Validation/terraform-validation.png
-          test -f static/images/5-Workshop/5.6-Validation/alb-web-validation.png
-          test -f static/images/5-Workshop/5.6-Validation/ec2-replacement.png
-          test -f static/images/5-Workshop/5.6-Validation/cloudwatch-alarm.png
-
       - name: Build website
-        run: hugo --minify --baseURL "https://sonnguyen0604.github.io/fcj-workshop-template-v1/"
-
-      - name: Guarantee static assets in build output
-        run: |
-          set -e
-          mkdir -p public/images public/files
-          cp -a static/images/. public/images/
-          cp -a static/files/. public/files/
-          touch public/.nojekyll
-          test -f public/images/profile-nguyen-duy-son.png
-          test -f public/images/5-Workshop/5.1-workshop-overview/ha-architecture.png
-          test -f public/images/4-EventParticipated/event2-cloud-architect-final.png
-          test -f public/images/4-EventParticipated/event3-project-sharing.png
-          test -f public/images/4-EventParticipated/event3-sharing-session.png
-          test -f public/images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png
-          test -f public/images/5-Workshop/5.6-Validation/terraform-validation.png
-          test -f public/images/5-Workshop/5.6-Validation/alb-web-validation.png
-          test -f public/images/5-Workshop/5.6-Validation/ec2-replacement.png
-          test -f public/images/5-Workshop/5.6-Validation/cloudwatch-alarm.png
+        run: hugo --minify
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

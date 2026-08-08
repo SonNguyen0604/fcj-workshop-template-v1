@@ -1,0 +1,12 @@
+static/images/4-EventParticipated/event2-cloud-architect-final.png
+static/images/4-EventParticipated/event3-project-sharing.png
+static/images/4-EventParticipated/event3-sharing-session.png
+static/images/5-Workshop/5.1-workshop-overview/ha-architecture.png
+static/images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png
+static/images/5-Workshop/5.6-Validation/alb-web-validation.png
+static/images/5-Workshop/5.6-Validation/cloudwatch-alarm.png
+static/images/5-Workshop/5.6-Validation/ec2-replacement.png
+static/images/5-Workshop/5.6-Validation/terraform-validation.png
+static/images/favicon-16x16.png
+static/images/favicon.png
+static/images/profile-nguyen-duy-son.png

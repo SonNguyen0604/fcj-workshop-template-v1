@@ -23,7 +23,7 @@ resource "aws_lb_target_group" "app_tg" {
 }
 ```
 
-Health check của project dùng **path `/`**, không phải `/health/ready`.
+Health check của Target Group dùng **path `/`** với HTTP port 80.
 
 ## Bước 2 - Tạo ALB và Listener
 

@@ -48,7 +48,7 @@ Việc hiển thị endpoint **không đồng nghĩa ứng dụng đã query RDS
 
 ### Kết quả quan sát
 
-ASG đã tạo instance mới để khôi phục số lượng máy chủ theo cấu hình. Project **chưa đo downtime, error rate hoặc recovery time chính xác**, vì vậy workshop không tuyên bố Zero Downtime hay thời gian phục hồi cố định.
+ASG đã tạo instance mới để khôi phục số lượng máy chủ theo cấu hình. Project **chưa đo downtime, error rate hoặc recovery time chính xác**, vì vậy kết quả failover trong workshop được đánh giá theo quan sát định tính thay vì cam kết một thời gian phục hồi cố định.
 
 ## Test 4 - CloudWatch
 

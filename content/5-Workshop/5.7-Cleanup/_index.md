@@ -41,4 +41,3 @@ If the bucket contains objects/versions or if resources were created manually ou
 
 `skip_final_snapshot = true` and `force_destroy = true` are used for convenient teardown in a disposable lab. Do not copy these settings to production without an appropriate backup/data-retention policy.
 
-<!-- TODO before submission: add a real terminal screenshot showing Destroy complete! if available. -->

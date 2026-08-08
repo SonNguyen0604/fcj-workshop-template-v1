@@ -20,7 +20,7 @@ data "aws_ami" "amazon_linux" {
 
 ## Bước 2 - Launch Template và Flask demo
 
-Launch Template dùng `t3.micro`, `app-sg` và `user_data`. Project hiện **không dùng Docker/FastAPI**; Flask được cài và chạy trực tiếp khi instance boot.
+Launch Template dùng `t3.micro`, `app-sg` và `user_data`. Flask được cài và chạy trực tiếp khi instance khởi động.
 
 ```hcl
 resource "aws_launch_template" "app_lt" {

@@ -24,7 +24,7 @@ Project HA sử dụng nhiều loại tài nguyên: VPC, NAT Gateway, EC2, Appli
 4. Đăng ký email nhận thông báo.
 5. Khi có cảnh báo, kiểm tra Cost Explorer/Billing và dọn các resource không cần thiết.
 
-Trong lab của tôi, ngưỡng ngân sách được đặt ở mức nhỏ (ví dụ 5 USD) để phát hiện sớm chi phí bất thường. Đây là **ngưỡng cảnh báo**, không có nghĩa AWS sẽ tự động dừng toàn bộ dịch vụ khi đạt mức đó.
+Trong môi trường lab, tôi ưu tiên đặt ngưỡng ngân sách nhỏ và cảnh báo sớm để phát hiện chi phí bất thường. Đây là **ngưỡng cảnh báo**, không có nghĩa AWS sẽ tự động dừng toàn bộ dịch vụ khi đạt mức đó.
 
 ## Điều tôi học được
 

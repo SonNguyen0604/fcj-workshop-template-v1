@@ -9,27 +9,30 @@ pre: " <b> 4.2. </b> "
 
 ### Event information
 
-* **Time:** _Add the exact date/time before final submission._
-* **Location:** _Add the exact location before final submission._
+* **Time:** _The exact date/time will be updated according to the program schedule._
+* **Location:** Amazon Web Services Vietnam office, Ho Chi Minh City.
 * **Role:** Attendee/observer.
 
 ### Main content
 
-This session was the **continuation of Event 7 - Cloud Architect**. The first session did not have enough time to complete all matches, so the remaining teams continued toward the final round.
+This session was the **continuation of Cloud Architect**. Because the first session did not have enough time to complete all matches, the remaining teams continued toward the final round at the same venue.
 
-I attended as an observer after my team had already stopped in the earlier round. Instead of focusing only on correct/incorrect answers, I paid attention to how stronger teams:
+After my team had stopped in an earlier round, I attended the follow-up session as an observer. I focused on how the remaining teams handled Cloud and Architecture questions under time pressure rather than simply tracking correct and incorrect answers.
 
-* divided responsibilities by technical domain;
-* discussed quickly before committing to an answer;
-* managed the risk of the tactical skills;
-* connected AWS services to architecture requirements rather than answering from memory alone.
+I paid particular attention to:
+
+* how team members divided responsibility by technical strength;
+* how teams discussed quickly when several architecture options looked similar;
+* how they evaluated confidence before using the **Minimum Risk** or **Hope Star** skills;
+* how they connected question requirements to reliability, security, cost, and operational considerations.
 
 ### Lessons learned
 
-* A good architecture answer should consider reliability, security, cost, and operational complexity together.
-* Observing other teams' reasoning helped me understand cloud questions through trade-offs.
-* The experience directly supported my review of architecture decisions in the High Availability project.
+* AWS architecture questions often involve trade-offs between reliability, cost, and operational complexity, not only technical correctness.
+* Observing stronger teams helped me learn faster elimination and decision-making techniques.
+* Listening to other teams' reasoning helped me review how I explain ALB, Auto Scaling, RDS Multi-AZ, and CloudWatch in my own project.
+* Being an observer was still valuable because I could focus on the reasoning process without competition pressure.
 
 ### Evidence
 
-_Add photo/video evidence from the final session before submission._
+Actual photo/video evidence from the final session will be added before final submission.

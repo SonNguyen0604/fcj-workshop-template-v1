@@ -9,27 +9,30 @@ pre: " <b> 4.2. </b> "
 
 ### Thông tin sự kiện
 
-* **Thời gian:** _Cần cập nhật ngày/giờ chính xác trước khi nộp._
-* **Địa điểm:** _Cần cập nhật địa điểm chính xác trước khi nộp._
+* **Thời gian:** _Sẽ cập nhật ngày/giờ chính xác theo lịch chương trình._
+* **Địa điểm:** Văn phòng Amazon Web Services Vietnam, TP. Hồ Chí Minh.
 * **Vai trò:** Người tham dự/quan sát.
 
 ### Nội dung chính
 
-Buổi này là phần **tiếp nối của Event 7 - Cloud Architect**. Do buổi đầu chưa đủ thời gian để hoàn thành toàn bộ các trận, các đội còn lại tiếp tục thi đấu và đi đến vòng chung kết.
+Buổi này là phần **tiếp nối của Cloud Architect**. Do buổi đầu chưa đủ thời gian để hoàn thành toàn bộ các trận, các đội còn lại tiếp tục thi đấu và đi đến vòng chung kết tại cùng địa điểm tổ chức.
 
-Tôi tham gia với vai trò quan sát sau khi đội của mình đã dừng ở vòng trước. Thay vì chỉ tập trung vào đáp án đúng/sai, tôi chú ý nhiều hơn đến cách các đội mạnh:
+Sau khi đội của mình dừng ở vòng trước, tôi tham gia buổi tiếp theo với vai trò người xem. Tôi tập trung quan sát cách các đội còn lại xử lý câu hỏi Cloud và Architecture trong điều kiện áp lực thời gian, thay vì chỉ theo dõi đáp án đúng hay sai.
 
-* chia người theo nhóm kiến thức;
-* tranh luận nhanh trước khi chốt đáp án;
-* cân nhắc rủi ro khi dùng "Rủi ro tối thiểu" và "Ngôi sao hi vọng";
-* liên hệ dịch vụ AWS với yêu cầu kiến trúc thay vì trả lời theo trí nhớ đơn thuần.
+Một số điểm tôi chú ý trong quá trình quan sát:
+
+* cách các thành viên phân chia người trả lời theo thế mạnh kỹ thuật;
+* cách đội trao đổi nhanh khi có nhiều phương án kiến trúc gần giống nhau;
+* cách cân nhắc độ chắc chắn trước khi sử dụng **Rủi ro tối thiểu** hoặc **Ngôi sao hi vọng**;
+* cách liên hệ yêu cầu của câu hỏi với reliability, security, cost và khả năng vận hành của giải pháp.
 
 ### Bài học rút ra
 
-* Một đáp án kiến trúc tốt cần cân nhắc reliability, security, cost và operational complexity cùng lúc.
-* Quan sát phần trình bày/lập luận của đội khác giúp tôi hiểu rõ hơn cách giải một câu hỏi Cloud theo trade-off.
-* Kinh nghiệm này hỗ trợ trực tiếp khi tôi rà soát các quyết định trong project High Availability của mình.
+* Một câu hỏi kiến trúc AWS thường không chỉ có yếu tố kỹ thuật thuần túy mà còn liên quan đến trade-off giữa độ tin cậy, chi phí và độ phức tạp vận hành.
+* Quan sát các đội mạnh giúp tôi học được cách loại trừ phương án và đưa ra quyết định nhanh hơn.
+* Việc nghe lập luận của người khác giúp tôi rà soát lại cách giải thích các lựa chọn ALB, Auto Scaling, RDS Multi-AZ và CloudWatch trong project cá nhân.
+* Vai trò người xem vẫn mang lại giá trị vì tôi có thể tập trung vào quá trình suy luận thay vì áp lực thi đấu.
 
 ### Minh chứng
 
-_Cần bổ sung ảnh/video của buổi chung kết trước khi nộp._
+Ảnh/video thực tế của buổi chung kết sẽ được bổ sung trước khi nộp bản cuối.

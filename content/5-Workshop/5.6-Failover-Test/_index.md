@@ -48,7 +48,7 @@ Displaying the endpoint **does not mean the application queried RDS**.
 
 ### Observed result
 
-The ASG launched a new instance to restore the configured capacity. The project **did not measure exact downtime, error rate, or recovery time**, so this workshop does not claim guaranteed zero downtime or a fixed recovery duration.
+The ASG launched a new instance to restore the configured capacity. The project **did not measure exact downtime, error rate, or recovery time**, so failover is evaluated qualitatively rather than against a fixed recovery-time claim.
 
 ## Test 4 - CloudWatch
 

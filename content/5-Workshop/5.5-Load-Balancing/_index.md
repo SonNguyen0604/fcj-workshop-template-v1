@@ -23,7 +23,7 @@ resource "aws_lb_target_group" "app_tg" {
 }
 ```
 
-The project health check uses **path `/`**, not `/health/ready`.
+The Target Group health check uses **path `/`** over HTTP port 80.
 
 ## Step 2 - Create the ALB and listener
 

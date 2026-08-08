@@ -1,36 +1,27 @@
-# Remaining manual items before final submission
+# Việc còn cần Sơn tự bổ sung trước khi nộp FCAJ
 
-The repository has been rewritten to match the actual High Availability project and the 8-week internship schedule (22/06/2026 - 15/08/2026). The generic 12-week template is intentionally not used because this internship follows the approved 8-week schedule.
+Các nội dung kỹ thuật, Worklog 8 tuần, Proposal, 3 blog draft, 3 event pages, Workshop, Self-evaluation và Feedback đã được chỉnh lại theo project High Availability thực tế.
 
-## Must fill with real information
+Còn các dữ liệu chỉ bạn mới có thể xác nhận:
 
-1. `content/4-EventParticipated/4.2-Event2/_index.vi.md` and `_index.md`
-   - Exact date/time of the Cloud Architect final session
-   - Exact location
-   - Real photo/video evidence
+1. **Event 2 - Cloud Architect: Vòng chung kết**
+   - Điền ngày/giờ chính xác.
+   - Thêm ảnh/video thực tế.
+   - Địa điểm đã thống nhất với Event 1: Văn phòng Amazon Web Services Vietnam, TP. Hồ Chí Minh.
 
-2. `content/4-EventParticipated/4.3-Event3/_index.vi.md` and `_index.md`
-   - Exact date/time of the project/certification sharing session
-   - Exact location
-   - Real photo/video evidence
+2. **Event 3 - Chia sẻ sản phẩm và kinh nghiệm thi chứng chỉ AWS**
+   - Điền ngày/giờ chính xác.
+   - Thêm ảnh/video thực tế.
+   - Địa điểm đã thống nhất với Event 1.
 
-3. Blog URLs after posting to AWS Study Group
-   - `content/3-BlogsPosted/3.1-Blog1/_index.vi.md`
-   - `content/3-BlogsPosted/3.2-Blog2/_index.vi.md`
-   - `content/3-BlogsPosted/3.3-Blog3/_index.vi.md`
-   - Update the English counterparts too.
+3. **3 bài Blog**
+   - Nội dung Blog 1, 2, 3 đã có bản VI/EN.
+   - Sau khi đăng lên AWS Study Group, dán URL bài đăng thật vào cuối từng blog.
 
-4. Week 8 result after 15/08/2026
-   - `content/1-Worklog/1.8-Week8/_index.vi.md`
-   - `content/1-Worklog/1.8-Week8/_index.md`
-   - Replace the current planned/finalization status with actual completed results.
+4. **Week 8**
+   - Kỳ thực tập kết thúc 15/08/2026. Sau ngày này, cập nhật kết quả Week 8 nếu trạng thái thực tế khác nội dung hiện tại.
 
-5. Optional but recommended clean-up evidence
-   - Add a real `terraform destroy` screenshot to Workshop 5.7 if available.
+5. **Thông tin hành chính**
+   - Chỉ giữ tên công ty/vị trí thực tập trên homepage nếu khớp giấy tờ thực tập chính thức của bạn.
 
-## Verify before pushing
-
-- Confirm student/company/position information on `content/_index.vi.md` and English version.
-- Test navigation on both `/vi/` and `/en/` after GitHub Pages deployment.
-- Confirm all 3 blog posts are actually published (the FCAJ rule requires posting, not only drafting).
-- Do not add RDS failover, zero-downtime, CPU dynamic scaling, centralized logging, or Flask-to-RDS query claims unless they are actually implemented/tested.
+Không cần tự thêm RDS failover, zero downtime, dynamic scaling hoặc centralized logging nếu bạn chưa thực nghiệm thật.

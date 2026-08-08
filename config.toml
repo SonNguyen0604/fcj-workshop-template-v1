@@ -14,7 +14,7 @@ home = [ "HTML", "RSS", "JSON"]
   editURL = ""
   description = "Internship report and High Availability workshop on AWS using Terraform"
   author = "Nguyễn Duy Sơn"
-  showVisitedLinks = true
+  showVisitedLinks = false
   disableBreadcrumb = false
   disableNextPrev = false
 

@@ -41,4 +41,13 @@ AWS Budgets không thay thế việc đọc Pricing hay kiểm tra Billing. Nó 
 
 ---
 
-**Ngày tạo bài:** 24/06/2026
+## Thông tin chia sẻ
+
+* **Ngày tạo nội dung:** 24/06/2026
+* **Ngày đăng:** 08/08/2026
+* **Nơi đăng:** AWS Study Group VN
+* **Trạng thái:** Đã đăng và được quản trị viên phê duyệt.
+
+## Minh chứng
+
+{{< assetimg src="images/3-BlogsPosted/blog1-aws-study-group.png" alt="Minh chứng bài viết đã đăng trên AWS Study Group VN" >}}

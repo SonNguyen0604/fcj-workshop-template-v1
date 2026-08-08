@@ -4,7 +4,7 @@ date: 2026-08-08
 weight: 5
 ---
 
-## Step 1 - Target Group and health check
+## Step 1 - Target Group and Health Check
 
 ```hcl
 resource "aws_lb_target_group" "app_tg" {
@@ -23,9 +23,9 @@ resource "aws_lb_target_group" "app_tg" {
 }
 ```
 
-The Target Group health check uses **path `/`** over HTTP port 80.
+The health check uses **path `/`** on HTTP port 80. With `unhealthy_threshold = 2`, a target becomes unhealthy only after failing the configured health checks, so the state change is not instantaneous.
 
-## Step 2 - Create the ALB and listener
+## Step 2 - Create the ALB and Listener
 
 ```hcl
 resource "aws_lb" "app_alb" {
@@ -48,7 +48,7 @@ resource "aws_lb_listener" "front_end" {
 }
 ```
 
-The ALB is the public entry point; EC2 instances do not need public IP addresses for direct user access.
+The ALB is the public entry point; users do not access EC2 instances directly.
 
 <img width="1895" height="908" alt="ALB" src="https://github.com/user-attachments/assets/a4e0d2c0-3298-4e74-9bdd-878b3fa232c4" />
 <img width="1900" height="903" alt="Target Group" src="https://github.com/user-attachments/assets/0f53e104-5ec8-47b7-8a19-b1a5581b31a3" />
@@ -73,6 +73,11 @@ resource "aws_cloudwatch_metric_alarm" "cpu_high" {
 }
 ```
 
-This alarm is **for monitoring only**. The project does not currently define `aws_autoscaling_policy`, so the CloudWatch Alarm is not described as a CPU-based scaling trigger.
+This alarm is **monitoring-only**. The current project has no `aws_autoscaling_policy`, so the CloudWatch Alarm is not described as a CPU-driven scaling mechanism.
 
-Application logs are currently written to `/home/ec2-user/app.log`; CloudWatch Agent/centralized logging is not implemented.
+## Verify
+
+* The ALB DNS returns HTTP 200 from the Flask demo.
+* The Target Group shows healthy targets.
+* The CloudWatch Alarm exists and displays the CPU metric.
+* The lab currently uses HTTP without TLS/ACM; HTTPS is a production improvement.

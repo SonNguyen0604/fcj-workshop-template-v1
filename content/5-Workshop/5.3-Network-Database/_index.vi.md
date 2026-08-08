@@ -24,17 +24,17 @@ module "vpc" {
 }
 ```
 
-Kết quả mong đợi: VPC có 2 public, 2 private và 2 database subnets. Single NAT chỉ là trade-off cho lab.
+**Kiểm tra:** VPC có 2 public, 2 private và 2 database subnets. `single_nat_gateway = true` là trade-off giảm chi phí của lab.
 
 <img width="1892" height="912" alt="VPC" src="https://github.com/user-attachments/assets/6d00ac3d-921d-4c7b-85b1-2f851e93d0b7" />
 
 ## Bước 2 - Security Groups theo chuỗi ALB -> App -> DB
 
-* `alb-sg`: inbound TCP/80 từ Internet.
+* `alb-sg`: inbound TCP/80 từ `0.0.0.0/0`.
 * `app-sg`: inbound TCP/80 chỉ từ `alb-sg`.
 * `db-sg`: inbound TCP/5432 chỉ từ `app-sg`.
 
-Cách này giảm việc expose trực tiếp EC2/RDS ra Internet.
+**Kiểm tra:** EC2 và RDS không cần public inbound rule; luồng vào application tier phải đi qua ALB.
 
 ## Bước 3 - Tạo RDS PostgreSQL Multi-AZ
 
@@ -55,9 +55,11 @@ resource "aws_db_instance" "ha_db" {
 }
 ```
 
-`skip_final_snapshot = true` chỉ phù hợp cho môi trường lab cần teardown nhanh. Với production cần chính sách backup/snapshot/deletion protection phù hợp.
+`skip_final_snapshot = true` chỉ dùng để teardown nhanh trong môi trường lab. Production cần backup/snapshot/deletion protection phù hợp.
 
 <img width="1906" height="858" alt="RDS Multi-AZ" src="https://github.com/user-attachments/assets/a1520d34-f18e-477d-a8ed-d84177ad84e8" />
+
+**Kiểm tra:** RDS hiển thị Multi-AZ và sử dụng database subnet group của VPC.
 
 ## Bước 4 - S3 và Versioning
 
@@ -69,10 +71,13 @@ resource "aws_s3_bucket" "app_storage" {
 
 resource "aws_s3_bucket_versioning" "app_storage_versioning" {
   bucket = aws_s3_bucket.app_storage.id
+
   versioning_configuration {
     status = "Enabled"
   }
 }
 ```
 
-`force_destroy = true` được dùng để thuận tiện clean-up lab. Flask hiện chưa upload/download object từ S3; bucket được triển khai để thể hiện storage độc lập với vòng đời EC2.
+`force_destroy = true` chỉ dùng để thuận tiện clean-up lab. Flask hiện chưa upload/download object từ S3; bucket thể hiện storage độc lập với vòng đời EC2.
+
+**Kiểm tra:** S3 Console hiển thị Versioning = Enabled.

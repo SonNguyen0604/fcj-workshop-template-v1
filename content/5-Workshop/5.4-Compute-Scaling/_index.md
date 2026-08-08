@@ -20,7 +20,7 @@ data "aws_ami" "amazon_linux" {
 
 ## Step 2 - Launch Template and Flask demo
 
-The Launch Template uses `t3.micro`, `app-sg`, and `user_data`. Flask is installed and started directly when the instance boots.
+The Launch Template uses `t3.micro`, `app-sg` and `user_data`. Flask is installed and started directly during instance boot.
 
 ```hcl
 resource "aws_launch_template" "app_lt" {
@@ -54,7 +54,7 @@ resource "aws_launch_template" "app_lt" {
 }
 ```
 
-Flask only displays the RDS endpoint injected by Terraform; it **does not connect to or query the database** in the current version.
+The Flask app **only displays the RDS endpoint injected by Terraform**; it does not open a PostgreSQL connection or query the database. `app.log` remains local on EC2.
 
 ## Step 3 - Auto Scaling Group
 
@@ -74,6 +74,13 @@ resource "aws_autoscaling_group" "app_asg" {
 }
 ```
 
-The ASG spans two private subnets. This configuration focuses on **maintaining Desired Capacity and self-healing**. CPU-based dynamic scaling is not implemented.
+The configuration focuses on **Desired Capacity maintenance and self-healing**. `max_size = 3` leaves room for future scaling, but the current project has no CPU-based dynamic scaling policy.
 
 <img width="1893" height="868" alt="Auto Scaling Group" src="https://github.com/user-attachments/assets/74407911-1949-41cd-a6df-1c7bc21f00dc" />
+
+## Verify
+
+* ASG shows `Min = 2`, `Desired = 2`, `Max = 3`.
+* Two EC2 instances are Running and managed by the ASG.
+* Instances do not expose Public IPv4 DNS in the private-subnet design.
+* The Target Group receives instances registered through the ASG.

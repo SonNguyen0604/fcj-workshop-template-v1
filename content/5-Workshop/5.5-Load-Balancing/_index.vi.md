@@ -23,7 +23,7 @@ resource "aws_lb_target_group" "app_tg" {
 }
 ```
 
-Health check của Target Group dùng **path `/`** với HTTP port 80.
+Health check dùng **path `/`** trên HTTP port 80. Với `unhealthy_threshold = 2`, target chỉ bị đánh dấu unhealthy sau khi không vượt qua số lần health check theo cấu hình, vì vậy trạng thái không chuyển sang unhealthy tức thời.
 
 ## Bước 2 - Tạo ALB và Listener
 
@@ -48,7 +48,7 @@ resource "aws_lb_listener" "front_end" {
 }
 ```
 
-ALB là public entry point; EC2 không cần public IP để người dùng truy cập trực tiếp.
+ALB là public entry point; người dùng không truy cập EC2 trực tiếp.
 
 <img width="1895" height="908" alt="ALB" src="https://github.com/user-attachments/assets/5a3f549e-81e5-4f54-9a92-aaab04e2d60a" />
 <img width="1900" height="903" alt="Target Group" src="https://github.com/user-attachments/assets/9d9627a9-24c7-4f89-9f25-7997452a32db" />
@@ -75,4 +75,9 @@ resource "aws_cloudwatch_metric_alarm" "cpu_high" {
 
 Alarm này **chỉ dùng để giám sát**. Project hiện chưa có `aws_autoscaling_policy`, nên không mô tả CloudWatch Alarm là cơ chế tự scale theo CPU.
 
-Application log hiện được ghi tại `/home/ec2-user/app.log`; chưa có CloudWatch Agent/centralized logging.
+## Kiểm tra
+
+* ALB DNS trả về HTTP 200 từ Flask demo.
+* Target Group hiển thị target healthy.
+* CloudWatch Alarm tồn tại và hiển thị CPU metric.
+* HTTP hiện chưa có TLS/ACM; HTTPS là hướng phát triển cho production.

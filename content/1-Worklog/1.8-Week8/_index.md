@@ -1,23 +1,30 @@
 ---
-title: "Week 8 Worklog"
-date: 2026-08-10
+title: "Worklog Week 8 - After project submission"
+date: 2026-08-08
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
 
-### Period
+### Time
 
 **10/08/2026 - 15/08/2026**
 
-### Work completed / planned
+### Status
 
-* Finalize the bilingual workshop website according to FCAJ structure.
-* Finalize three technical blog articles on the website and record the creation date for each article.
-* Complete the three event reports, self-evaluation, feedback, and final link/image checks.
-* Run the final verification and clean up AWS resources that are no longer required.
+The technical project and workshop website were completed for submission on **08/08/2026**, before Week 8 began. Because the official internship schedule continues until 15/08/2026, this page records **planned follow-up activities after project submission** rather than presenting future activities as completed results.
 
-### Results
+### Follow-up plan
 
-* **Status:** Week 8 is the finalization period; update this result section after the tasks above are completed.
-* The final goal is a step-by-step workshop that remains consistent with the university report and the actual AWS implementation.
+* Monitor feedback from mentors/reviewers and fix minor issues if requested.
+* Keep the repository and website available during the evaluation period.
+* Review AWS costs and clean up lab resources that are no longer required.
+* Summarize lessons learned and prepare to explain architecture choices, trade-offs and limitations.
+* Complete remaining internship activities or administrative requirements through 15/08/2026 as instructed by the program.
+
+### Project status at submission on 08/08/2026
+
+* The bilingual workshop is complete and includes the Terraform source files.
+* Three technical blog articles and three events are documented on the website.
+* Core project tests have evidence/results, while untested items are explicitly marked.
+* The repository is prepared for GitHub Pages build and deployment.

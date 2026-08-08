@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Trong kỳ thực tập 22/06/2026 - 15/08/2026, tôi thực hiện project High Availability trên AWS bằng Terraform và đồng thời hoàn thiện website workshop song ngữ. Quá trình này giúp tôi cải thiện kiến thức Cloud, kỹ năng đọc tài liệu, triển khai IaC và khả năng tự rà soát các giới hạn kỹ thuật của sản phẩm.
+Tại thời điểm hoàn thiện project ngày **08/08/2026**, tôi đã thực hiện project High Availability trên AWS bằng Terraform và hoàn thiện website workshop song ngữ trong khuôn khổ kỳ thực tập 22/06/2026 - 15/08/2026. Quá trình này giúp tôi cải thiện kiến thức Cloud, kỹ năng đọc tài liệu, triển khai IaC và khả năng tự rà soát các giới hạn kỹ thuật của sản phẩm.
 
 | Tiêu chí | Đánh giá | Nhận xét |
 |---|---|---|

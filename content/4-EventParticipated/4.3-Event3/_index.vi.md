@@ -1,16 +1,16 @@
 ---
-title: "Event 3 - Chia sẻ sản phẩm và kinh nghiệm thi chứng chỉ AWS"
+title: "Event 3 - FCAJ Agentic AI Build Week: Chia sẻ sản phẩm và kinh nghiệm AWS"
 date: 2026-07-25
 weight: 3
 chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Chia sẻ sản phẩm và kinh nghiệm thi chứng chỉ AWS
+# FCAJ Agentic AI Build Week - Chia sẻ sản phẩm và kinh nghiệm AWS
 
 ### Thông tin sự kiện
 
-* **Thời gian:** 25/07/2026.
+* **Thời gian:** 09:30 - 12:00, 25/07/2026.
 * **Địa điểm:** Văn phòng Amazon Web Services Vietnam, Bitexco Financial Tower, TP. Hồ Chí Minh.
 * **Vai trò:** Người tham dự/quan sát.
 
@@ -18,7 +18,7 @@ pre: " <b> 4.3. </b> "
 
 Tôi tham gia với vai trò người nghe và quan sát. Buổi chia sẻ gồm hai nhóm nội dung chính.
 
-**Phần trình bày sản phẩm/project:** các nhóm lần lượt giới thiệu sản phẩm đã thực hiện trong chương trình. Tôi theo dõi cách họ mô tả bài toán, sơ đồ kiến trúc, các dịch vụ AWS đã sử dụng, phần demo, kết quả và những khó khăn gặp phải trong quá trình triển khai.
+**Phần trình bày sản phẩm/project:** các nhóm lần lượt giới thiệu sản phẩm đã thực hiện trong chương trình. Tôi theo dõi cách họ mô tả bài toán, sơ đồ kiến trúc, các dịch vụ AWS đã sử dụng, phần demo, kết quả và những khó khăn gặp phải trong quá trình triển khai. Một trong các phần trình bày tại sự kiện là **Adaptive AML Workflow Engine**.
 
 **Phần chia sẻ kinh nghiệm học và thi chứng chỉ AWS:** những người đã có trải nghiệm thi chia sẻ cách xây dựng lộ trình học, chọn tài liệu, luyện câu hỏi tình huống và những điểm cần chú ý khi chuẩn bị cho kỳ thi.
 
@@ -37,6 +37,6 @@ Sau buổi này, tôi điều chỉnh cách trình bày workshop High Availabili
 
 ![Event 3 - Project sharing](/images/4-EventParticipated/event3-project-sharing.png)
 
-![Event 3 - FCAJ sharing session](/images/4-EventParticipated/event3-sharing-session.png)
+![Event 3 - FCAJ Agentic AI Build Week](/images/4-EventParticipated/event3-sharing-session.png)
 
-Hai ảnh trên được chụp trong buổi trình bày/chia sẻ ngày 25/07/2026 tại văn phòng AWS Vietnam.
+Các ảnh được chụp trong buổi **FCAJ Agentic AI Build Week** ngày **25/07/2026** tại Bitexco Financial Tower; ảnh màn hình sự kiện thể hiện thời gian **09:30 - 12:00**.

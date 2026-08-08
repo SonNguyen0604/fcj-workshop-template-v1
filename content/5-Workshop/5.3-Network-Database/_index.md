@@ -1,5 +1,5 @@
 ---
-title: "5.3 Network, Security, RDS, and S3"
+title: "5.3 Network, Security, RDS and S3"
 date: 2026-08-08
 weight: 3
 ---
@@ -24,17 +24,17 @@ module "vpc" {
 }
 ```
 
-Expected result: two public, two private, and two database subnets. The single NAT Gateway is a lab cost trade-off.
+**Verify:** the VPC contains two public, two private and two database subnets. `single_nat_gateway = true` is a cost-saving lab trade-off.
 
 <img width="1892" height="912" alt="VPC" src="https://github.com/user-attachments/assets/2505d986-eea9-41b4-b7b9-3c816a384eed" />
 
 ## Step 2 - Security Groups: ALB -> App -> DB
 
-* `alb-sg`: inbound TCP/80 from the Internet.
-* `app-sg`: inbound TCP/80 only from `alb-sg`.
-* `db-sg`: inbound TCP/5432 only from `app-sg`.
+* `alb-sg`: TCP/80 inbound from `0.0.0.0/0`.
+* `app-sg`: TCP/80 inbound only from `alb-sg`.
+* `db-sg`: TCP/5432 inbound only from `app-sg`.
 
-This reduces direct Internet exposure for EC2 and RDS.
+**Verify:** EC2 and RDS do not require public inbound rules; application traffic enters through the ALB.
 
 ## Step 3 - Create PostgreSQL RDS Multi-AZ
 
@@ -55,9 +55,11 @@ resource "aws_db_instance" "ha_db" {
 }
 ```
 
-`skip_final_snapshot = true` is used only for a disposable lab. Production should apply appropriate backup/snapshot/deletion-protection policies.
+`skip_final_snapshot = true` is only for fast teardown in the lab. Production needs an appropriate backup/snapshot/deletion-protection policy.
 
 <img width="1906" height="858" alt="RDS Multi-AZ" src="https://github.com/user-attachments/assets/cacd926c-1b5f-4c9f-851d-97b438feeda1" />
+
+**Verify:** RDS shows Multi-AZ and uses the VPC database subnet group.
 
 ## Step 4 - S3 and Versioning
 
@@ -69,10 +71,13 @@ resource "aws_s3_bucket" "app_storage" {
 
 resource "aws_s3_bucket_versioning" "app_storage_versioning" {
   bucket = aws_s3_bucket.app_storage.id
+
   versioning_configuration {
     status = "Enabled"
   }
 }
 ```
 
-`force_destroy = true` is only for convenient lab clean-up. Flask does not currently upload/download objects from S3; the bucket demonstrates storage independent of the EC2 lifecycle.
+`force_destroy = true` is only for convenient lab clean-up. The Flask demo does not upload/download S3 objects; the bucket demonstrates storage independent from EC2 lifecycle.
+
+**Verify:** S3 Console shows Versioning = Enabled.

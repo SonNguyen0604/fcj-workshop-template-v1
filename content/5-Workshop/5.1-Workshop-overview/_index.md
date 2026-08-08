@@ -4,31 +4,43 @@ date: 2026-08-08
 weight: 1
 ---
 
-## Problem
+## Overall architecture
 
-The architecture avoids making the application tier depend on a single EC2 instance. The lab uses two Availability Zones in `ap-southeast-1`.
+![3-tier High Availability architecture](/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
 
-![3-tier High Availability architecture](/images/5-Workshop/5.1-Workshop-overview/ha-architecture.png)
+Main traffic flow:
 
-## Request flow
+**User -> Internet Gateway -> Application Load Balancer -> EC2 instances in the Auto Scaling Group**
 
-**User -> Internet Gateway -> Application Load Balancer -> EC2 instances in Auto Scaling Group**
+The data tier uses **PostgreSQL RDS Multi-AZ**. S3 provides object storage independent from the EC2 lifecycle, while CloudWatch provides basic monitoring.
 
-The data tier uses **RDS PostgreSQL Multi-AZ**. S3 and CloudWatch provide object storage/monitoring within the current project scope.
+## Services and selection rationale
 
-## Services and rationale
-
-| Service | Role | Why it is used |
+| Service | Role | Why it was selected |
 |---|---|---|
 | VPC + Subnets | Network isolation | Separate public/app/database tiers across two AZs |
-| ALB | Entry point + health check | Route requests only to healthy targets |
-| EC2 | Run the Flask demo | Easy to observe hostname/instance behavior in the lab |
-| Auto Scaling Group | Maintain capacity | Launch a replacement when actual capacity drops |
-| RDS PostgreSQL Multi-AZ | Database tier | Managed DB with synchronous standby in another AZ |
-| S3 + Versioning | Object storage | Separate object storage from the EC2 lifecycle |
-| CloudWatch | Monitoring | Monitor CPU and Alarm state |
-| Terraform | Infrastructure as Code | Reproducible deployment, review, and clean-up |
+| ALB | Entry point + health check | Routes requests only to healthy targets |
+| EC2 | Runs the Flask demo | Makes instance/hostname behavior easy to observe |
+| Auto Scaling Group | Maintains capacity | Launches replacement instances when actual capacity drops |
+| RDS PostgreSQL Multi-AZ | Database tier | Managed database with a synchronous standby in another AZ |
+| S3 + Versioning | Object storage | Separates object storage from the EC2 lifecycle |
+| CloudWatch | Monitoring | Monitors CPU and Alarm state |
+| Terraform | Infrastructure as Code | Repeatable provisioning, review and clean-up |
+
+## Network separation and security boundary
+
+* **Public subnets:** ALB and NAT Gateway.
+* **Private subnets:** EC2 application instances; no direct public inbound traffic.
+* **Database subnets:** RDS; PostgreSQL inbound is allowed only from `app-sg`.
+* **Security Group chain:** Internet -> `alb-sg` -> `app-sg` -> `db-sg`.
+
+## Where is High Availability implemented?
+
+* The application tier maintains at least two EC2 instances across two private subnets.
+* ALB health checks prevent traffic from being routed to unhealthy targets.
+* ASG maintains Desired Capacity and replaces lost instances.
+* RDS is configured with `multi_az = true` so AWS manages a synchronous standby in another AZ.
 
 ## Lab trade-off
 
-The project uses `single_nat_gateway = true` to reduce cost. This leaves the NAT Gateway as a shared dependency and is not a fully redundant production NAT design. A production environment should evaluate a per-AZ NAT strategy or another design suitable for the workload.
+`single_nat_gateway = true` reduces cost but leaves the NAT Gateway as a shared dependency. This is a **lab trade-off**, not a fully redundant production HA design.

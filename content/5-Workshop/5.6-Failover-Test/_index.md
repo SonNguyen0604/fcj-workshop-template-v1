@@ -15,54 +15,59 @@ terraform plan
 terraform apply
 ```
 
-During a final verification, `terraform apply` may return `No changes` when the deployed infrastructure already matches Terraform state/configuration. This proves consistency; it does not mean the screenshot shows a fresh deployment from zero.
+During the final check, `terraform apply` returned `No changes` because the existing infrastructure matched Terraform state/configuration. This confirms configuration consistency; it **does not prove that resources were created from scratch in that run**.
 
-## Test 2 - Inbound traffic through ALB
+![Terraform validation](/images/5-Workshop/5.6-Validation/terraform-validation.png)
 
-Get the DNS name from Terraform output:
+## Test 2 - Inbound traffic through the ALB
 
-```hcl
-output "Link_Truy_Cap_Web" {
-  value = aws_lb.app_alb.dns_name
-}
+Get the ALB DNS name:
+
+```bash
+terraform output Link_Truy_Cap_Web
 ```
 
-Open the DNS name in a browser. Expected result:
+Open the DNS name in a browser. Observed result:
 
-* HTTP 200 from the Flask demo.
-* The page displays the hostname of the EC2 instance serving the request.
-* The page displays the RDS endpoint configuration injected by Terraform.
+* The Flask demo returns HTTP 200 through the ALB.
+* The page displays the hostname of the EC2 instance processing the request.
+* The page displays the RDS endpoint injected by Terraform.
 
-Displaying the endpoint **does not mean the application queried RDS**.
+![ALB web validation](/images/5-Workshop/5.6-Validation/alb-web-validation.png)
+
+> Displaying the endpoint **does not mean the application connected to or queried RDS**.
 
 ## Test 3 - Terminate one EC2 instance
 
 1. Confirm the ASG has `Desired Capacity = 2`.
-2. Terminate one EC2 instance managed by the ASG.
-3. Observe the Target Group. After the target fails the configured health checks, it becomes unhealthy.
-4. Observe Auto Scaling Activity/EC2. When actual capacity drops below Desired Capacity, the ASG launches a replacement.
-5. Wait for the new instance to register in the Target Group and become healthy.
+2. Select one EC2 instance managed by the ASG and terminate it.
+3. Observe the Target Group; the failed target becomes unhealthy after failing the configured health checks.
+4. Observe Auto Scaling Activity/EC2; when actual capacity drops below Desired Capacity, the ASG launches a replacement instance.
+5. Wait for the new instance to register with the Target Group and become healthy.
 
-<img width="1888" height="922" alt="EC2 replacement" src="https://github.com/user-attachments/assets/6f2398dc-1061-42c0-a056-7b8e9e3d95a4" />
-<img width="1893" height="893" alt="CloudWatch/ASG evidence" src="https://github.com/user-attachments/assets/1071fb9f-261c-4a4c-bbe0-32a75df7fda7" />
+![EC2 replacement](/images/5-Workshop/5.6-Validation/ec2-replacement.png)
 
 ### Observed result
 
-The ASG launched a new instance to restore the configured capacity. The project **did not measure exact downtime, error rate, or recovery time**, so failover is evaluated qualitatively rather than against a fixed recovery-time claim.
+The ASG launched a new instance and restored the configured server count. The project **did not measure exact downtime, error rate or recovery time**, so this test is evaluated qualitatively rather than claiming a fixed recovery time.
 
-## Test 4 - CloudWatch
+## Test 4 - CloudWatch Alarm
 
-Open the CloudWatch Alarm and verify that the alarm exists, CPU metrics are visible, and the state is updated. The current alarm is monitoring-only.
+Open the CloudWatch Alarm and verify that the alarm exists, the CPU metric is displayed and the state is updated.
 
-## Summary
+![CloudWatch CPU Alarm](/images/5-Workshop/5.6-Validation/cloudwatch-alarm.png)
 
-| Test | Result |
-|---|---|
-| Terraform state/config validation | Pass |
-| ALB -> Flask demo | Pass |
-| EC2 termination -> ASG replacement | Pass |
-| CloudWatch CPU monitoring | Pass |
-| RDS failover | Not tested |
-| Downtime/error-rate measurement | Not tested |
-| CPU-based dynamic scaling | Not implemented |
-| Centralized application logging | Not implemented |
+The alarm is **monitoring-only**; there is no CPU-based scaling policy.
+
+## Validation summary
+
+| Objective | Action | Observed result | Status |
+|---|---|---|---|
+| Terraform config/state consistency | `terraform validate/plan/apply` | `No changes`, ALB DNS output | **Pass** |
+| User -> ALB -> Flask | Open ALB DNS | HTTP 200 and EC2 hostname displayed | **Pass** |
+| EC2 self-healing | Terminate 1 ASG EC2 | ASG launches a replacement and restores Desired Capacity | **Pass** |
+| CPU monitoring | Open CloudWatch Alarm | Alarm and CPU metric displayed | **Pass** |
+| RDS failover | No failover test performed | No experimental data | **Not tested** |
+| Downtime/error rate | No probe/load test | No quantitative data | **Not measured** |
+| Load-based dynamic scaling | No scaling policy | Alarm is monitoring-only | **Not implemented** |
+| Centralized application logging | Logs remain in local `app.log` | Logs may be lost on instance replacement | **Not implemented** |

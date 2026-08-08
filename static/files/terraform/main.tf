@@ -1,3 +1,4 @@
+# 1. AWS Provider and database password variable
 provider "aws" {
   region = "ap-southeast-1"
 }
@@ -8,6 +9,7 @@ variable "db_password" {
   description = "Password for the PostgreSQL RDS database"
 }
 
+# 2. VPC and six subnets across two Availability Zones
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.0.0"
@@ -24,6 +26,7 @@ module "vpc" {
   single_nat_gateway           = true
 }
 
+# 3. Security Groups for ALB, application instances and RDS
 resource "aws_security_group" "alb_sg" {
   name   = "alb-sg"
   vpc_id = module.vpc.vpc_id
@@ -81,6 +84,7 @@ resource "aws_security_group" "db_sg" {
   }
 }
 
+# 4. PostgreSQL RDS Multi-AZ
 resource "aws_db_instance" "ha_db" {
   identifier             = "workforce-ha-db-v2"
   engine                 = "postgres"
@@ -91,13 +95,16 @@ resource "aws_db_instance" "ha_db" {
   username               = "dbadmin"
   password               = var.db_password
   multi_az               = true
+  # Lab-only: skip final snapshot to simplify teardown
   skip_final_snapshot    = true
   db_subnet_group_name   = module.vpc.database_subnet_group_name
   vpc_security_group_ids = [aws_security_group.db_sg.id]
 }
 
+# 5. S3 bucket with Versioning
 resource "aws_s3_bucket" "app_storage" {
   bucket        = "workforce-ha-storage-sn-2026"
+  # Lab-only: allow bucket cleanup during terraform destroy
   force_destroy = true
 }
 
@@ -109,6 +116,7 @@ resource "aws_s3_bucket_versioning" "app_storage_versioning" {
   }
 }
 
+# 6. Application Load Balancer, Target Group and Listener
 resource "aws_lb" "app_alb" {
   name               = "workforce-alb-v2"
   internal           = false
@@ -143,6 +151,7 @@ resource "aws_lb_listener" "front_end" {
   }
 }
 
+# 7. Latest Amazon Linux 2023 AMI
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"]
@@ -153,6 +162,7 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
+# 8. Launch Template and Flask demo bootstrap
 resource "aws_launch_template" "app_lt" {
   name                   = "workforce-app-lt"
   image_id               = data.aws_ami.amazon_linux.id
@@ -183,6 +193,7 @@ resource "aws_launch_template" "app_lt" {
   )
 }
 
+# 9. Auto Scaling Group maintaining two application instances
 resource "aws_autoscaling_group" "app_asg" {
   vpc_zone_identifier = module.vpc.private_subnets
   desired_capacity    = 2
@@ -197,6 +208,7 @@ resource "aws_autoscaling_group" "app_asg" {
   }
 }
 
+# 10. CloudWatch CPU monitoring alarm (no scaling action attached)
 resource "aws_cloudwatch_metric_alarm" "cpu_high" {
   alarm_name          = "workforce-cpu-utilization-high"
   comparison_operator = "GreaterThanOrEqualToThreshold"
@@ -213,6 +225,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_high" {
   }
 }
 
+# Output the public ALB DNS name
 output "Link_Truy_Cap_Web" {
   value = aws_lb.app_alb.dns_name
 }

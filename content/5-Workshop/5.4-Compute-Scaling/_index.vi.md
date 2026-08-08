@@ -54,7 +54,7 @@ resource "aws_launch_template" "app_lt" {
 }
 ```
 
-Flask chỉ hiển thị endpoint RDS để chứng minh cấu hình được inject; **chưa thực hiện DB connection/query**.
+Flask **chỉ hiển thị endpoint RDS được Terraform inject**, chưa mở connection/query PostgreSQL. `app.log` hiện là log local trên EC2.
 
 ## Bước 3 - Auto Scaling Group
 
@@ -74,6 +74,13 @@ resource "aws_autoscaling_group" "app_asg" {
 }
 ```
 
-ASG được trải trên 2 private subnets. Cấu hình này tập trung vào **duy trì Desired Capacity và self-healing**. Dynamic scaling theo CPU chưa được triển khai.
+Cấu hình tập trung vào **duy trì Desired Capacity và self-healing**. `max_size = 3` tạo dư địa mở rộng nhưng project hiện chưa có dynamic scaling policy theo CPU.
 
 <img width="1893" height="868" alt="Auto Scaling Group" src="https://github.com/user-attachments/assets/49202059-d916-4af0-aa2f-289663fcffc4" />
+
+## Kiểm tra
+
+* ASG hiển thị `Min = 2`, `Desired = 2`, `Max = 3`.
+* Có 2 EC2 Running do ASG quản lý.
+* Instances không có Public IPv4 DNS trong kiến trúc private subnet.
+* Target Group nhận các instance do ASG đăng ký.

@@ -1,41 +1,48 @@
 ---
-title: "Workshop - High Availability on AWS using Terraform"
+title: "Workshop - High Availability on AWS with Terraform"
 date: 2026-08-08
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Building a 3-tier High Availability architecture on AWS using Terraform
+# Building a 3-Tier High Availability Architecture on AWS with Terraform
 
-This workshop documents my **individual technical project** as a reproducible, step-by-step lab for a basic High Availability environment on AWS.
+This is my **individual technical project**, rewritten as an end-to-end workshop so readers can understand the architecture, inspect the source, deploy the lab, validate the result and clean up resources.
 
-### Goals
+## Workshop objectives
 
-After completing the workshop, the reader should be able to:
+After this workshop, readers should be able to:
 
-* understand a 3-tier architecture across two Availability Zones;
-* deploy VPC, Security Groups, RDS Multi-AZ, S3, ALB, Launch Template, ASG, and CloudWatch using Terraform;
+* understand a 3-tier architecture spanning two Availability Zones;
+* deploy VPC, Security Groups, RDS Multi-AZ, S3, ALB, Launch Template, Auto Scaling Group and CloudWatch with Terraform;
 * access the Flask demo through the ALB;
-* terminate one EC2 instance and observe ASG restoring Desired Capacity;
+* terminate one EC2 instance and observe the ASG restore Desired Capacity;
+* distinguish self-healing from dynamic scaling;
+* understand cost, security and operational trade-offs in the lab design;
 * clean up resources to avoid unnecessary cost.
 
-### Actual scope
+## Actual scope
 
-The workshop only claims what was deployed or clearly marks limitations. Flask currently displays the RDS endpoint but does not query the database; the CloudWatch Alarm monitors CPU only; RDS failover/downtime/error rate were not tested; centralized application logging is not implemented.
+The workshop only describes implemented items or explicitly documented limitations. The Flask demo **only displays the RDS endpoint** and does not connect/query the database; the CloudWatch Alarm monitors CPU only; RDS failover, quantitative downtime/error-rate measurement and centralized application logging were not implemented/tested.
 
-### Contents
+## Contents
 
-1. [Architecture overview and service selection](5.1-Workshop-overview/)
-2. [Prerequisites and environment setup](5.2-Prerequiste/)
-3. [Network, Security, RDS, and S3](5.3-Network-Database/)
-4. [EC2 Launch Template and Auto Scaling Group](5.4-Compute-Scaling/)
-5. [Application Load Balancer and CloudWatch](5.5-Load-Balancing/)
-6. [Testing and validation](5.6-Failover-Test/)
-7. [Clean-up](5.7-Cleanup/)
+1. [Architecture overview and service selection](5.1-workshop-overview/)
+2. [Prerequisites and environment setup](5.2-prerequisites/)
+3. [Network, Security, RDS and S3](5.3-network-database/)
+4. [EC2 Launch Template and Auto Scaling Group](5.4-compute-scaling/)
+5. [Application Load Balancer and CloudWatch](5.5-load-balancing/)
+6. [Testing and validation](5.6-failover-test/)
+7. [Optimization, security and limitations](5.7-optimization-limitations/)
+8. [Clean-up](5.8-cleanup/)
 
-### Terraform source
+## Attached Terraform source
 
-The workshop source is stored under `static/files/terraform/` in the repository. After pushing this update, it can be viewed at:
+* [main.tf](/files/terraform/main.tf)
+* [terraform.tfvars.example](/files/terraform/terraform.tfvars.example)
+* [Execution README](/files/terraform/README.md)
+
+The source is also available in the repository:
 
 <https://github.com/SonNguyen0604/fcj-workshop-template-v1/tree/main/static/files/terraform>

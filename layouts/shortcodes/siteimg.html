@@ -1,0 +1,6 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "Image" -}}
+{{- $width := .Get "width" | default "100%" -}}
+<div class="fcj-site-image" style="text-align:center; margin:1.5rem auto;">
+  <img src="{{ $src | absURL }}" alt="{{ $alt }}" loading="lazy" style="display:block; width:{{ $width }}; max-width:100%; height:auto; margin:0 auto; border-radius:6px;">
+</div>

@@ -52,7 +52,7 @@ ALB là public entry point; người dùng không truy cập EC2 trực tiếp.
 
 **Minh chứng Target Group:** tại thời điểm kiểm tra, Target Group có **2 target healthy và 0 target unhealthy**.
 
-![Target Group có 2 target healthy](/fcj-workshop-template-v1/images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png)
+{{< siteimg src="images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png" alt="Target Group có 2 target healthy" >}}
 
 
 ## Bước 3 - CloudWatch CPU Alarm

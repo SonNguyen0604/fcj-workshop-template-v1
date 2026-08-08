@@ -19,7 +19,7 @@ title: "Báo cáo thực tập"
 
 ### Ảnh sinh viên
 
-<p align="center"><img src="/fcj-workshop-template-v1/images/profile-nguyen-duy-son.png" alt="Ảnh sinh viên Nguyễn Duy Sơn" width="220"></p>
+{{< siteimg src="images/profile-nguyen-duy-son.png" alt="Ảnh sinh viên Nguyễn Duy Sơn" width="220px" >}}
 
 > Project kỹ thuật và website workshop được hoàn thiện để nộp ngày **08/08/2026**. Lịch thực tập của trường vẫn tiếp tục đến **15/08/2026**; các hoạt động sau ngày nộp project được ghi ở Worklog Tuần 8 dưới dạng kế hoạch tiếp tục chương trình.
 

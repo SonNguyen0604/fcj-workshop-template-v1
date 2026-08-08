@@ -18,9 +18,9 @@ Cần chuẩn bị:
 
 Source Terraform dùng trong workshop:
 
-* [main.tf](/fcj-workshop-template-v1/files/terraform/main.tf)
-* [terraform.tfvars.example](/fcj-workshop-template-v1/files/terraform/terraform.tfvars.example)
-* [README](/fcj-workshop-template-v1/files/terraform/README.md)
+* {{< sitefile path="files/terraform/main.tf" label="main.tf" >}}
+* {{< sitefile path="files/terraform/terraform.tfvars.example" label="terraform.tfvars.example" >}}
+* {{< sitefile path="files/terraform/README.md" label="README" >}}
 
 Cấu trúc:
 

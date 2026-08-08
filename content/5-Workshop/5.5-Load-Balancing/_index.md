@@ -52,7 +52,7 @@ The ALB is the public entry point; users do not access EC2 instances directly.
 
 **Target Group evidence:** at the time of validation, the Target Group showed **2 healthy targets and 0 unhealthy targets**.
 
-![Target Group with 2 healthy targets](/fcj-workshop-template-v1/images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png)
+{{< siteimg src="images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png" alt="Target Group with 2 healthy targets" >}}
 
 
 ## Step 3 - CloudWatch CPU Alarm

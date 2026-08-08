@@ -36,6 +36,6 @@ Những điểm tôi chú ý nhiều nhất:
 
 ### Minh chứng
 
-![Cloud Architect - Trận chung kết](/fcj-workshop-template-v1/images/4-EventParticipated/event2-cloud-architect-final.png)
+{{< siteimg src="images/4-EventParticipated/event2-cloud-architect-final.png" alt="Cloud Architect - Trận chung kết" width="760px" >}}
 
 Ảnh minh chứng ghi rõ **Cloud Architect - Trận chung kết**, thời gian **11/07/2026, 09:00 - 12:00** và địa điểm **Bitexco Financial Tower**.

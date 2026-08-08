@@ -17,7 +17,7 @@ terraform apply
 
 During the final check, `terraform apply` returned `No changes` because the existing infrastructure matched Terraform state/configuration. This confirms configuration consistency; it **does not prove that resources were created from scratch in that run**.
 
-![Terraform validation](/fcj-workshop-template-v1/images/5-Workshop/5.6-Validation/terraform-validation.png)
+{{< siteimg src="images/5-Workshop/5.6-Validation/terraform-validation.png" alt="Terraform validation" >}}
 
 ## Test 2 - Inbound traffic through the ALB
 
@@ -33,7 +33,7 @@ Open the DNS name in a browser. Observed result:
 * The page displays the hostname of the EC2 instance processing the request.
 * The page displays the RDS endpoint injected by Terraform.
 
-![ALB web validation](/fcj-workshop-template-v1/images/5-Workshop/5.6-Validation/alb-web-validation.png)
+{{< siteimg src="images/5-Workshop/5.6-Validation/alb-web-validation.png" alt="ALB web validation" >}}
 
 > Displaying the endpoint **does not mean the application connected to or queried RDS**.
 
@@ -45,7 +45,7 @@ Open the DNS name in a browser. Observed result:
 4. Observe Auto Scaling Activity/EC2; when actual capacity drops below Desired Capacity, the ASG launches a replacement instance.
 5. Wait for the new instance to register with the Target Group and become healthy.
 
-![EC2 replacement](/fcj-workshop-template-v1/images/5-Workshop/5.6-Validation/ec2-replacement.png)
+{{< siteimg src="images/5-Workshop/5.6-Validation/ec2-replacement.png" alt="EC2 replacement" >}}
 
 ### Observed result
 
@@ -55,7 +55,7 @@ The ASG launched a new instance and restored the configured server count. The pr
 
 Open the CloudWatch Alarm and verify that the alarm exists, the CPU metric is displayed and the state is updated.
 
-![CloudWatch CPU Alarm](/fcj-workshop-template-v1/images/5-Workshop/5.6-Validation/cloudwatch-alarm.png)
+{{< siteimg src="images/5-Workshop/5.6-Validation/cloudwatch-alarm.png" alt="CloudWatch CPU Alarm" >}}
 
 The alarm is **monitoring-only**; there is no CPU-based scaling policy.
 

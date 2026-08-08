@@ -19,7 +19,7 @@ title: "Internship Report"
 
 ### Student photo
 
-<p align="center"><img src="/fcj-workshop-template-v1/images/profile-nguyen-duy-son.png" alt="Nguyen Duy Son student photo" width="220"></p>
+{{< siteimg src="images/profile-nguyen-duy-son.png" alt="Nguyen Duy Son student photo" width="220px" >}}
 
 > The technical project and workshop website were completed for submission on **08/08/2026**. The university internship schedule continues until **15/08/2026**; activities after the project submission date are recorded in Week 8 as planned follow-up activities.
 

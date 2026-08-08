@@ -35,8 +35,8 @@ After this session, I refined my High Availability workshop to be easier to foll
 
 ### Evidence
 
-![Event 3 - Project sharing](/fcj-workshop-template-v1/images/4-EventParticipated/event3-project-sharing.png)
+{{< siteimg src="images/4-EventParticipated/event3-project-sharing.png" alt="Event 3 - Project sharing" width="760px" >}}
 
-![Event 3 - FCAJ Agentic AI Build Week](/fcj-workshop-template-v1/images/4-EventParticipated/event3-sharing-session.png)
+{{< siteimg src="images/4-EventParticipated/event3-sharing-session.png" alt="Event 3 - FCAJ Agentic AI Build Week" width="760px" >}}
 
 The images were taken during **FCAJ Agentic AI Build Week** on **25/07/2026** at Bitexco Financial Tower; the event screen shows the session time as **09:30 - 12:00**.

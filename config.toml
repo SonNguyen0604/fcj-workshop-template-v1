@@ -1,6 +1,6 @@
 baseURL = "https://sonnguyen0604.github.io/fcj-workshop-template-v1/"
 relativeURLs = false
-canonifyURLs = true
+canonifyURLs = false
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 

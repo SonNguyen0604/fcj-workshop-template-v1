@@ -35,8 +35,8 @@ Sau buổi này, tôi điều chỉnh cách trình bày workshop High Availabili
 
 ### Minh chứng
 
-![Event 3 - Project sharing](/fcj-workshop-template-v1/images/4-EventParticipated/event3-project-sharing.png)
+{{< siteimg src="images/4-EventParticipated/event3-project-sharing.png" alt="Event 3 - Project sharing" width="760px" >}}
 
-![Event 3 - FCAJ Agentic AI Build Week](/fcj-workshop-template-v1/images/4-EventParticipated/event3-sharing-session.png)
+{{< siteimg src="images/4-EventParticipated/event3-sharing-session.png" alt="Event 3 - FCAJ Agentic AI Build Week" width="760px" >}}
 
 Các ảnh được chụp trong buổi **FCAJ Agentic AI Build Week** ngày **25/07/2026** tại Bitexco Financial Tower; ảnh màn hình sự kiện thể hiện thời gian **09:30 - 12:00**.

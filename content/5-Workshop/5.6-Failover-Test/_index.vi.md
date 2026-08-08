@@ -17,7 +17,7 @@ terraform apply
 
 Ở lần kiểm tra cuối, `terraform apply` trả về `No changes` vì hạ tầng hiện tại đã khớp với state/configuration. Điều này xác nhận tính đồng nhất của cấu hình, **không phải bằng chứng rằng resource vừa được tạo từ con số 0**.
 
-![Terraform validation](/fcj-workshop-template-v1/images/5-Workshop/5.6-Validation/terraform-validation.png)
+{{< siteimg src="images/5-Workshop/5.6-Validation/terraform-validation.png" alt="Terraform validation" >}}
 
 ## Test 2 - Inbound traffic qua ALB
 
@@ -33,7 +33,7 @@ Mở DNS trên trình duyệt. Kết quả quan sát:
 * Trang hiển thị hostname của EC2 đang xử lý request.
 * Trang hiển thị endpoint RDS được Terraform inject.
 
-![ALB web validation](/fcj-workshop-template-v1/images/5-Workshop/5.6-Validation/alb-web-validation.png)
+{{< siteimg src="images/5-Workshop/5.6-Validation/alb-web-validation.png" alt="ALB web validation" >}}
 
 > Việc hiển thị endpoint **không đồng nghĩa ứng dụng đã kết nối/query RDS**.
 
@@ -45,7 +45,7 @@ Mở DNS trên trình duyệt. Kết quả quan sát:
 4. Theo dõi Auto Scaling Activity/EC2; khi actual capacity thấp hơn Desired Capacity, ASG tạo instance thay thế.
 5. Chờ instance mới đăng ký vào Target Group và trở thành healthy.
 
-![EC2 replacement](/fcj-workshop-template-v1/images/5-Workshop/5.6-Validation/ec2-replacement.png)
+{{< siteimg src="images/5-Workshop/5.6-Validation/ec2-replacement.png" alt="EC2 replacement" >}}
 
 ### Kết quả quan sát
 
@@ -55,7 +55,7 @@ ASG đã tạo instance mới để khôi phục số lượng máy chủ theo c
 
 Mở CloudWatch Alarm và xác nhận alarm tồn tại, metric CPU được hiển thị và trạng thái được cập nhật.
 
-![CloudWatch CPU Alarm](/fcj-workshop-template-v1/images/5-Workshop/5.6-Validation/cloudwatch-alarm.png)
+{{< siteimg src="images/5-Workshop/5.6-Validation/cloudwatch-alarm.png" alt="CloudWatch CPU Alarm" >}}
 
 Alarm hiện là **monitoring-only**; không có scaling policy theo CPU.
 

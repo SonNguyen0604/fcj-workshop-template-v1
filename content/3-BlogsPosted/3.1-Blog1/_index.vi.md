@@ -50,4 +50,4 @@ AWS Budgets không thay thế việc đọc Pricing hay kiểm tra Billing. Nó 
 
 ## Minh chứng
 
-{{< assetimg src="images/3-BlogsPosted/blog1-aws-study-group.png" alt="Minh chứng bài viết đã đăng trên AWS Study Group VN" >}}
+{{< siteimg src="images/3-BlogsPosted/blog1-aws-study-group.png" alt="Minh chứng bài viết đã đăng trên AWS Study Group VN" >}}

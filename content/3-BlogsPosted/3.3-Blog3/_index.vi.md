@@ -48,4 +48,4 @@ Application log được ghi vào `app.log` trên từng EC2. Đây là một li
 
 ## Minh chứng
 
-{{< assetimg src="images/3-BlogsPosted/blog3-aws-study-group.png" alt="Minh chứng bài viết đã đăng trên AWS Study Group VN" >}}
+{{< siteimg src="images/3-BlogsPosted/blog3-aws-study-group.png" alt="Minh chứng bài viết đã đăng trên AWS Study Group VN" >}}

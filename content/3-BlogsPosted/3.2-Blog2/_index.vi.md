@@ -63,4 +63,4 @@ High Availability không đến từ một service duy nhất. ALB, Target Group
 
 ## Minh chứng
 
-{{< assetimg src="images/3-BlogsPosted/blog2-aws-study-group.png" alt="Minh chứng bài viết đã đăng trên AWS Study Group VN" >}}
+{{< siteimg src="images/3-BlogsPosted/blog2-aws-study-group.png" alt="Minh chứng bài viết đã đăng trên AWS Study Group VN" >}}

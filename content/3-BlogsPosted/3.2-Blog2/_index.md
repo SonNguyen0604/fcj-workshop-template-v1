@@ -67,4 +67,4 @@ High Availability does not come from one AWS service. ALB, Target Group, Launch 
 
 ## Evidence
 
-{{< assetimg src="images/3-BlogsPosted/blog2-aws-study-group.png" alt="ALB and Auto Scaling Group post shared in AWS Study Group VN" >}}
+{{< siteimg src="images/3-BlogsPosted/blog2-aws-study-group.png" alt="ALB and Auto Scaling Group post shared in AWS Study Group VN" >}}

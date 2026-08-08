@@ -10,7 +10,7 @@ During the internship, I prepared **three technical blog posts** directly relate
 
 On **08 August 2026**, all three posts were shared in **AWS Study Group VN** and approved by the group administrators.
 
-{{< assetimg src="images/3-BlogsPosted/blogs-approved.png" alt="Notifications showing that the three blog posts were approved in AWS Study Group VN" >}}
+{{< siteimg src="images/3-BlogsPosted/blogs-approved.png" alt="Notifications showing that the three blog posts were approved in AWS Study Group VN" >}}
 
 ## [Blog 1 - Proactive AWS Cost Control with AWS Budgets](3.1-blog1/)
 

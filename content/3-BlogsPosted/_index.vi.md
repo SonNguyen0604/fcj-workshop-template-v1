@@ -10,7 +10,7 @@ Trong kỳ thực tập, tôi biên soạn **3 bài viết kỹ thuật** gắn 
 
 Ngày **08/08/2026**, cả 3 bài đã được chia sẻ trên **AWS Study Group VN** và được quản trị viên phê duyệt.
 
-{{< assetimg src="images/3-BlogsPosted/blogs-approved.png" alt="Thông báo ba bài blog đã được phê duyệt trên AWS Study Group VN" >}}
+{{< siteimg src="images/3-BlogsPosted/blogs-approved.png" alt="Thông báo ba bài blog đã được phê duyệt trên AWS Study Group VN" >}}
 
 ## [Blog 1 - Quản lý chi phí chủ động với AWS Budgets](3.1-blog1/)
 

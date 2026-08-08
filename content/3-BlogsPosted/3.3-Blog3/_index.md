@@ -52,4 +52,4 @@ Application logs are stored in `app.log` on each EC2 instance. This is a limitat
 
 ## Evidence
 
-{{< assetimg src="images/3-BlogsPosted/blog3-aws-study-group.png" alt="RDS Multi-AZ and CloudWatch post shared in AWS Study Group VN" >}}
+{{< siteimg src="images/3-BlogsPosted/blog3-aws-study-group.png" alt="RDS Multi-AZ and CloudWatch post shared in AWS Study Group VN" >}}

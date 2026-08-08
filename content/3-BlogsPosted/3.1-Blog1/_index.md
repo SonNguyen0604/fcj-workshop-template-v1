@@ -54,4 +54,4 @@ AWS Budgets does not replace Pricing documentation or Billing reviews. It works 
 
 ## Evidence
 
-{{< assetimg src="images/3-BlogsPosted/blog1-aws-study-group.png" alt="AWS Budgets post shared in AWS Study Group VN" >}}
+{{< siteimg src="images/3-BlogsPosted/blog1-aws-study-group.png" alt="AWS Budgets post shared in AWS Study Group VN" >}}

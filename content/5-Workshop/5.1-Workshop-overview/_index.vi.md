@@ -6,7 +6,7 @@ weight: 1
 
 ## Kiến trúc tổng thể
 
-{{< siteimg src="images/5-Workshop/5.1-workshop-overview/ha-architecture.png" alt="Sơ đồ High Availability 3-Tier" >}}
+{{< siteimg src="images/ha-architecture.png" alt="Sơ đồ High Availability 3-Tier" >}}
 
 Luồng truy cập chính:
 

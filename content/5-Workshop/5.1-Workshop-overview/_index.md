@@ -6,7 +6,7 @@ weight: 1
 
 ## Overall architecture
 
-{{< siteimg src="images/5-Workshop/5.1-workshop-overview/ha-architecture.png" alt="3-tier High Availability architecture" >}}
+{{< siteimg src="images/ha-architecture.png" alt="3-tier High Availability architecture" >}}
 
 Main traffic flow:
 

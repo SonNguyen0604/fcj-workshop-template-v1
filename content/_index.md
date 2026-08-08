@@ -10,10 +10,16 @@ title: "Internship Report"
 * **University:** Saigon University (SGU)
 * **Major:** Information Systems
 * **Class:** DCT1223
-* **Internship company:** Amazon Web Services Vietnam Co., Ltd.
-* **Internship position/program:** Workforce Bootcamp - First Cloud Journey (FCAJ)
+* **Internship program/unit:** First Cloud Journey (FCAJ) - AWS Study Group
+* **Activity location:** Amazon Web Services Vietnam Office, Bitexco Financial Tower, Ho Chi Minh City
+* **Internship role:** AWS Cloud Operations / Workforce Bootcamp
 * **Internship period:** 22/06/2026 - 15/08/2026
 * **Project/workshop completion date:** **08/08/2026**
+
+
+### Student photo
+
+<p align="center"><img src="/fcj-workshop-template-v1/images/profile-nguyen-duy-son.png" alt="Nguyen Duy Son student photo" width="220"></p>
 
 > The technical project and workshop website were completed for submission on **08/08/2026**. The university internship schedule continues until **15/08/2026**; activities after the project submission date are recorded in Week 8 as planned follow-up activities.
 

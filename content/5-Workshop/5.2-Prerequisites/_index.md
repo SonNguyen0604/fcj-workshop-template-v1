@@ -18,9 +18,9 @@ Prepare:
 
 Terraform source used in the workshop:
 
-* [main.tf](/files/terraform/main.tf)
-* [terraform.tfvars.example](/files/terraform/terraform.tfvars.example)
-* [README](/files/terraform/README.md)
+* [main.tf](/fcj-workshop-template-v1/files/terraform/main.tf)
+* [terraform.tfvars.example](/fcj-workshop-template-v1/files/terraform/terraform.tfvars.example)
+* [README](/fcj-workshop-template-v1/files/terraform/README.md)
 
 Structure:
 

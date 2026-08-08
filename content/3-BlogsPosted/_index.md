@@ -10,6 +10,8 @@ During the internship, I prepared **three technical articles** directly related 
 
 This section records only the **content creation/completion date** of each article.
 
+> The three items below are **technical articles created on this personal workshop website**. Only the content creation date is recorded; they are not presented as publicly published posts.
+
 ## [Blog 1 - Proactive cost control with AWS Budgets](3.1-blog1/)
 
 * **Created:** 24/06/2026.

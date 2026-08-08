@@ -26,8 +26,6 @@ module "vpc" {
 
 **Verify:** the VPC contains two public, two private and two database subnets. `single_nat_gateway = true` is a cost-saving lab trade-off.
 
-<img width="1892" height="912" alt="VPC" src="https://github.com/user-attachments/assets/2505d986-eea9-41b4-b7b9-3c816a384eed" />
-
 ## Step 2 - Security Groups: ALB -> App -> DB
 
 * `alb-sg`: TCP/80 inbound from `0.0.0.0/0`.
@@ -56,8 +54,6 @@ resource "aws_db_instance" "ha_db" {
 ```
 
 `skip_final_snapshot = true` is only for fast teardown in the lab. Production needs an appropriate backup/snapshot/deletion-protection policy.
-
-<img width="1906" height="858" alt="RDS Multi-AZ" src="https://github.com/user-attachments/assets/cacd926c-1b5f-4c9f-851d-97b438feeda1" />
 
 **Verify:** RDS shows Multi-AZ and uses the VPC database subnet group.
 

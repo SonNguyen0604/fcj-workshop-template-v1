@@ -76,8 +76,6 @@ resource "aws_autoscaling_group" "app_asg" {
 
 Cấu hình tập trung vào **duy trì Desired Capacity và self-healing**. `max_size = 3` tạo dư địa mở rộng nhưng project hiện chưa có dynamic scaling policy theo CPU.
 
-<img width="1893" height="868" alt="Auto Scaling Group" src="https://github.com/user-attachments/assets/49202059-d916-4af0-aa2f-289663fcffc4" />
-
 ## Kiểm tra
 
 * ASG hiển thị `Min = 2`, `Desired = 2`, `Max = 3`.

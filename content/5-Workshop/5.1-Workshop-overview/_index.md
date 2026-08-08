@@ -6,7 +6,7 @@ weight: 1
 
 ## Overall architecture
 
-![3-tier High Availability architecture](/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
+![3-tier High Availability architecture](/fcj-workshop-template-v1/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
 
 Main traffic flow:
 

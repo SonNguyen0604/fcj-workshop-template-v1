@@ -36,6 +36,6 @@ The points I focused on most were:
 
 ### Evidence
 
-![Cloud Architect - Final Match](/images/4-EventParticipated/event2-cloud-architect-final.png)
+![Cloud Architect - Final Match](/fcj-workshop-template-v1/images/4-EventParticipated/event2-cloud-architect-final.png)
 
 The evidence image shows the **Cloud Architect final match**, held on **11/07/2026 from 09:00 to 12:00** at **Bitexco Financial Tower**.

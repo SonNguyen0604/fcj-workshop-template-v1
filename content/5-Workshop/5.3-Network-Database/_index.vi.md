@@ -26,8 +26,6 @@ module "vpc" {
 
 **Kiểm tra:** VPC có 2 public, 2 private và 2 database subnets. `single_nat_gateway = true` là trade-off giảm chi phí của lab.
 
-<img width="1892" height="912" alt="VPC" src="https://github.com/user-attachments/assets/6d00ac3d-921d-4c7b-85b1-2f851e93d0b7" />
-
 ## Bước 2 - Security Groups theo chuỗi ALB -> App -> DB
 
 * `alb-sg`: inbound TCP/80 từ `0.0.0.0/0`.
@@ -56,8 +54,6 @@ resource "aws_db_instance" "ha_db" {
 ```
 
 `skip_final_snapshot = true` chỉ dùng để teardown nhanh trong môi trường lab. Production cần backup/snapshot/deletion protection phù hợp.
-
-<img width="1906" height="858" alt="RDS Multi-AZ" src="https://github.com/user-attachments/assets/a1520d34-f18e-477d-a8ed-d84177ad84e8" />
 
 **Kiểm tra:** RDS hiển thị Multi-AZ và sử dụng database subnet group của VPC.
 

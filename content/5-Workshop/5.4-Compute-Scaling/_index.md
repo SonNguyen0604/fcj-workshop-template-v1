@@ -76,8 +76,6 @@ resource "aws_autoscaling_group" "app_asg" {
 
 The configuration focuses on **Desired Capacity maintenance and self-healing**. `max_size = 3` leaves room for future scaling, but the current project has no CPU-based dynamic scaling policy.
 
-<img width="1893" height="868" alt="Auto Scaling Group" src="https://github.com/user-attachments/assets/74407911-1949-41cd-a6df-1c7bc21f00dc" />
-
 ## Verify
 
 * ASG shows `Min = 2`, `Desired = 2`, `Max = 3`.

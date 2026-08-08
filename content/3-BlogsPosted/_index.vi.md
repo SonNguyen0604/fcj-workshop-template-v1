@@ -10,6 +10,8 @@ Trong kỳ thực tập, tôi biên soạn **3 bài viết kỹ thuật** gắn 
 
 Mục này chỉ ghi **ngày tạo/hoàn thiện nội dung** của từng bài.
 
+> Ba bài dưới đây là **bài viết kỹ thuật được tạo trên website workshop cá nhân**. Tôi chỉ ghi ngày tạo nội dung; không ghi nhận là bài đã đăng công khai.
+
 ## [Blog 1 - Quản lý chi phí chủ động với AWS Budgets](3.1-blog1/)
 
 * **Ngày tạo:** 24/06/2026.

@@ -59,7 +59,7 @@ Main services:
 * **Amazon CloudWatch:** CPU monitoring; application logs are still local in `app.log` on EC2.
 * **Terraform:** Infrastructure as Code for review, repeatability and clean-up.
 
-![HA architecture](/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
+![HA architecture](/fcj-workshop-template-v1/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
 
 ## 6. Basic security and operations
 

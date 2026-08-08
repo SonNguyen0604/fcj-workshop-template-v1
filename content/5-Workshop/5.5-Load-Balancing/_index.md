@@ -50,8 +50,10 @@ resource "aws_lb_listener" "front_end" {
 
 The ALB is the public entry point; users do not access EC2 instances directly.
 
-<img width="1895" height="908" alt="ALB" src="https://github.com/user-attachments/assets/a4e0d2c0-3298-4e74-9bdd-878b3fa232c4" />
-<img width="1900" height="903" alt="Target Group" src="https://github.com/user-attachments/assets/0f53e104-5ec8-47b7-8a19-b1a5581b31a3" />
+**Target Group evidence:** at the time of validation, the Target Group showed **2 healthy targets and 0 unhealthy targets**.
+
+![Target Group with 2 healthy targets](/fcj-workshop-template-v1/images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png)
+
 
 ## Step 3 - CloudWatch CPU Alarm
 

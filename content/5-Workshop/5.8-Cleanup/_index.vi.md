@@ -40,5 +40,3 @@ Nếu bucket có object/version hoặc có resource được tạo thủ công n
 ## Lưu ý lab
 
 `skip_final_snapshot = true` và `force_destroy = true` được dùng để thuận tiện teardown trong môi trường thực nghiệm. Không nên sao chép nguyên cấu hình này sang production nếu chưa có chính sách backup/data retention phù hợp.
-
-> Trước khi clean-up, cần lưu lại đầy đủ ảnh/log/evidence phục vụ đánh giá project.

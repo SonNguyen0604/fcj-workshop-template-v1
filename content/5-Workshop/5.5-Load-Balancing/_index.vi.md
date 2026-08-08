@@ -50,8 +50,10 @@ resource "aws_lb_listener" "front_end" {
 
 ALB là public entry point; người dùng không truy cập EC2 trực tiếp.
 
-<img width="1895" height="908" alt="ALB" src="https://github.com/user-attachments/assets/5a3f549e-81e5-4f54-9a92-aaab04e2d60a" />
-<img width="1900" height="903" alt="Target Group" src="https://github.com/user-attachments/assets/9d9627a9-24c7-4f89-9f25-7997452a32db" />
+**Minh chứng Target Group:** tại thời điểm kiểm tra, Target Group có **2 target healthy và 0 target unhealthy**.
+
+![Target Group có 2 target healthy](/fcj-workshop-template-v1/images/5-Workshop/5.5-Load-Balancing/target-group-2-healthy.png)
+
 
 ## Bước 3 - CloudWatch CPU Alarm
 

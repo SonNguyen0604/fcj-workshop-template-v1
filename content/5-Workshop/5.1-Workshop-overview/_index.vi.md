@@ -6,7 +6,7 @@ weight: 1
 
 ## Kiến trúc tổng thể
 
-![Sơ đồ High Availability 3-Tier](/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
+![Sơ đồ High Availability 3-Tier](/fcj-workshop-template-v1/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
 
 Luồng truy cập chính:
 

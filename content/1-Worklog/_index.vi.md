@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-Nhật ký ghi lại kỳ thực tập **8 tuần, từ 22/06/2026 đến 15/08/2026** theo lịch của Trường Đại học Sài Gòn. Lộ trình 8 tuần đã được phía chương trình chấp thuận cho kỳ thực tập này, vì vậy website sử dụng Week 1 - Week 8 thay vì mẫu 12 tuần chung.
+Nhật ký ghi lại kỳ thực tập **8 tuần, từ 22/06/2026 đến 15/08/2026** theo lịch của Trường Đại học Sài Gòn. Lộ trình 8 tuần này đã được phía chương trình chấp thuận cho kỳ thực tập của tôi.
 
 Đề tài ban đầu được định hướng cho nhóm 5 thành viên. Khi nhân sự thay đổi, phạm vi cuối được thu gọn để tôi tiếp tục hoàn thiện theo hình thức cá nhân, tập trung vào kiến trúc High Availability trên AWS bằng Terraform.
 

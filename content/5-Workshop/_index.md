@@ -39,9 +39,9 @@ The workshop only describes implemented items or explicitly documented limitatio
 
 ## Attached Terraform source
 
-* [main.tf](/files/terraform/main.tf)
-* [terraform.tfvars.example](/files/terraform/terraform.tfvars.example)
-* [Execution README](/files/terraform/README.md)
+* [main.tf](/fcj-workshop-template-v1/files/terraform/main.tf)
+* [terraform.tfvars.example](/fcj-workshop-template-v1/files/terraform/terraform.tfvars.example)
+* [Execution README](/fcj-workshop-template-v1/files/terraform/README.md)
 
 The source is also available in the repository:
 

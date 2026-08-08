@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-This worklog covers the **8-week internship from 22/06/2026 to 15/08/2026** according to Saigon University's schedule. The 8-week plan was accepted for this internship, so the website uses Week 1 - Week 8 instead of the generic 12-week sample.
+This worklog covers the **8-week internship from 22/06/2026 to 15/08/2026** according to Saigon University's schedule. This 8-week plan was accepted for my internship.
 
 The project was initially planned for a five-member team. After the team structure changed, the final scope was reduced so that I could continue and complete it individually, focusing on High Availability on AWS with Terraform.
 

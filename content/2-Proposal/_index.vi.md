@@ -59,7 +59,7 @@ Các dịch vụ chính:
 * **Amazon CloudWatch:** giám sát CPU; application log hiện vẫn ở local `app.log` trên EC2.
 * **Terraform:** khai báo, review, tái triển khai và clean-up tài nguyên bằng IaC.
 
-![Sơ đồ kiến trúc HA](/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
+![Sơ đồ kiến trúc HA](/fcj-workshop-template-v1/images/5-Workshop/5.1-workshop-overview/ha-architecture.png)
 
 ## 6. Bảo mật và vận hành cơ bản
 
